@@ -387,7 +387,7 @@ if(i)P.forEach(function(e){e.hidden=true});if(a)return;
 fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
 if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>`
 
-// A visitor who arrives with utm_* (a Pinterest pin, a newsletter) takes that origin to the store instead of
+// A visitor who arrives with utm_* (a social post, a newsletter) takes that origin to the store instead of
 // the page's own web campaign, so the consoles tell the channels apart. Values are cut to [a-z0-9_-], 40 chars.
 const UTM_JS = `<script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
 document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
