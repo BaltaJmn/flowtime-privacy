@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowtime Technique: Free Online Timer and How It Works</title>
+<meta name="description" content="The Flowtime technique explained, with a free timer: work until your focus fades, then take a break that fits how long you worked. Flowtime vs Pomodoro.">
+<link rel="canonical" href="https://flowtime.baltajmn.dev/flowtime-technique/">
+<link rel="alternate" hreflang="en" href="https://flowtime.baltajmn.dev/flowtime-technique/">
+<link rel="alternate" hreflang="es" href="https://flowtime.baltajmn.dev/es/tecnica-flowtime/">
+<link rel="alternate" hreflang="x-default" href="https://flowtime.baltajmn.dev/flowtime-technique/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FlowTime">
+<meta property="og:title" content="Flowtime Technique: Free Online Timer and How It Works">
+<meta property="og:description" content="The Flowtime technique explained, with a free timer: work until your focus fades, then take a break that fits how long you worked. Flowtime vs Pomodoro.">
+<meta property="og:url" content="https://flowtime.baltajmn.dev/flowtime-technique/">
+<meta property="og:image" content="https://flowtime.baltajmn.dev/ft/og/technique-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15506A">
+<link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/ft/icon-180.png">
+<link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/ft/ft.css?v=7f371857">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"The Flowtime technique","url":"https://flowtime.baltajmn.dev/flowtime-technique/","inLanguage":"en","applicationCategory":"ProductivityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime"]},{"@type":"HowTo","name":"How to start","inLanguage":"en","step":[{"@type":"HowToStep","position":1,"text":"Pick one task and write it down."},{"@type":"HowToStep","position":2,"text":"Start the timer in FlowTime mode and work."},{"@type":"HowToStep","position":3,"text":"When your focus fades, press Start break."},{"@type":"HowToStep","position":4,"text":"Rest for the time shown, then pick the next task."}]}]}</script>
+<script src="/ft/timer.js?v=84581286" defer></script>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="/pomodoro/"><img src="/ft/icon.svg" alt="" width="30" height="30">FlowTime</a>
+<nav aria-label="FlowTime">
+<a href="/pomodoro/">Timer</a>
+<a href="/flowtime-technique/" aria-current="page">Flowtime technique</a>
+<a href="/finals-week/">Finals week</a>
+<a href="/exam-season/">Exam season</a>
+<span class="langs"><a href="/flowtime-technique/" hreflang="en" lang="en" aria-current="page"><span aria-hidden="true">EN</span><span class="sr">English</span></a><a href="/es/tecnica-flowtime/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="sr">Español</span></a></span>
+</nav>
+</header>
+<main>
+<section class="wrap tool">
+<div class="tool-title"><h1>The Flowtime technique</h1><p>Work for as long as your focus lasts, then take a break that fits. A free Flowtime timer, how it works and how it compares with Pomodoro.</p></div>
+<div class="timer" id="timer" data-mode="flow" data-phase="idle">
+<fieldset class="modes"><legend class="sr">Timer mode</legend>
+<label><input type="radio" name="mode" value="p25"><span>25 / 5</span></label><label><input type="radio" name="mode" value="p50"><span>50 / 10</span></label><label><input type="radio" name="mode" value="flow" checked><span>FlowTime</span></label>
+</fieldset>
+<div class="dial">
+<svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="88"/><circle class="prog" cx="100" cy="100" r="88" stroke-dasharray="552.92" stroke-dashoffset="552.92"/></svg>
+<div class="read"><span class="phase" id="phase">Ready</span><span class="time" id="time" role="timer">00:00</span><span class="hint" id="hint">Counts up. Your break depends on how long you work.</span></div>
+</div>
+<div class="ctrl">
+<figure><button class="round" id="stop" type="button" aria-label="Stop" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/></svg></button><figcaption aria-hidden="true">Stop</figcaption></figure>
+<figure><button class="round main" id="play" type="button" aria-label="Start"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg><svg style="display:none" class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2"/><rect x="13.5" y="5" width="4" height="14" rx="1.2"/></svg></button><figcaption id="playcap" aria-hidden="true">Start</figcaption></figure>
+<figure><button class="round" id="skip" type="button" aria-label="Start break" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg></button><figcaption id="skipcap" aria-hidden="true">Start break</figcaption></figure>
+</div>
+<p class="keys"><kbd>Space</kbd> starts or pauses</p>
+<p class="today" id="today"></p>
+<div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
+<p class="legend"><span><i></i>Focus</span><span><i class="b"></i>Break</span></p></div>
+<p class="sr" id="tlive" aria-live="polite"></p>
+</div>
+<script type="application/json" id="ft-t">{"lang":"en","start":"Start","pause":"Pause","resume":"Resume","stop":"Stop","startBreak":"Start break","skipBreak":"Skip break","ready":"Ready","focus":"Focus","break":"Break","pausedLabel":"Paused","idle":{"p25":"25 min focus, then a 5 min break","p50":"50 min focus, then a 10 min break","flow":"Counts up. Your break depends on how long you work."},"thenBreak":"Then a {b} break","hintAt":"At {a}, {b} break","hintMax":"{b} break when you stop","backAt":"Back to focus at {t}","breakNow":"Break: {b}","breakOver":"Break over. Press start when you're ready.","focusNow":"Focus started","paused":"Paused","resumed":"Resumed","stopped":"Stopped","confirmSwitch":"Stop the current timer and switch mode?","today":"Focus today: {t}. Sessions done: {n}","rulerEmpty":"Your focus and breaks will show up here as you go."}</script>
+<p class="offer" style="margin:22px auto 0">On your phone, FlowTime shows the timer in a notification and a widget, and Coop lets up to 8 people share one. <a href="#app">Get FlowTime</a></p>
+</section>
+<section class="band"><div class="wrap"><h2>What is the Flowtime technique?</h2><p>Flowtime is a way of timing your work without a fixed countdown. You start a timer, work on one task, and stop when your attention starts to drift or the task reaches a natural end. Then you rest for a time that depends on how long you worked: a short session earns a short break, a long one a longer break.</p><p>It suits work that takes a while to get into, like writing, coding or studying a hard topic, where a 25 minute bell can interrupt you at the worst moment.</p></div></section>
+<section class="band deep"><div class="wrap"><h2>How long should the break be?</h2><p>This timer uses the FlowTime app's default ranges:</p><div class="tablewrap"><table class="ranges"><thead><tr><th scope="col">Worked</th><th scope="col">Break</th></tr></thead><tbody>
+<tr><td>Up to 15 min</td><td>5 min</td></tr><tr><td>Over 15, up to 30 min</td><td>10 min</td></tr><tr><td>More than 30 min</td><td>15 min</td></tr></tbody></table></div><p class="note">In the app you can change these ranges or add your own.</p></div></section>
+<section class="band"><div class="wrap"><h2>Flowtime vs Pomodoro</h2><div class="tablewrap"><table class="vs"><thead><tr><th scope="col"></th><th scope="col">Pomodoro</th><th scope="col">Flowtime</th></tr></thead><tbody>
+<tr><th scope="row">Session length</th><td>Fixed, usually 25 minutes</td><td>As long as your focus lasts</td></tr>
+<tr><th scope="row">Breaks</th><td>Fixed, usually 5 minutes</td><td>Longer after longer work</td></tr>
+<tr><th scope="row">Best for</th><td>Getting started, review, tasks you've been putting off</td><td>Deep work: writing, coding, problem sets</td></tr>
+<tr><th scope="row">Watch out for</th><td>The bell cutting you off mid-thought</td><td>Forgetting to stop: notice when you start rereading the same line</td></tr></tbody></table></div><p style="margin-top:20px">You can use both: Pomodoro to get going in the morning, Flowtime once you are in the zone. The timer above switches between them.</p></div></section>
+<section class="band deep"><div class="wrap"><h2>How to start</h2><ol class="ticks-list"><li>Pick one task and write it down.</li><li>Start the timer in FlowTime mode and work.</li><li>When your focus fades, press Start break.</li><li>Rest for the time shown, then pick the next task.</li></ol></div></section>
+<section class="band deep" id="app"><div class="wrap split">
+<div>
+<h2>FlowTime on your phone</h2>
+<p>The same Pomodoro and FlowTime modes with your own times, plus a third one, Percentage, and what a browser tab can't do: the timer in a notification and a widget, today's tasks, 12 focus sounds, and your streak, goal and stats.</p>
+<p>Coop is a private room where up to 8 people share one timer: anyone can start, pause or skip the break, so you can study together from different places.</p>
+<p class="note">Free, with no ads and no account. Only Coop asks you to sign in.</p>
+<div class="stores">
+<a class="btn fill" data-store="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime&amp;referrer=utm_source%3Dflowtime.baltajmn.dev%26utm_medium%3Dweb%26utm_campaign%3Dft-technique-en">Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+<a class="btn" data-store="apple" href="https://apps.apple.com/app/apple-store/id6819302003?ct=ft-technique-en&amp;mt=8" hidden>App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+</div>
+<p class="note" id="ios-soon" hidden>FlowTime is coming to iPhone soon.</p>
+</div>
+<img src="/ft/img/app-en.webp" alt="FlowTime on Android: a focus session counting up, at 42:10" width="640" height="1134" loading="lazy">
+</div></section>
+</main>
+<footer><div class="wrap"><span>FlowTime: Pomodoro Focus Timer, by Baltasar Jiménez.</span><nav aria-label="Privacy">
+<a href="/pomodoro/">Timer</a><a href="/flowtime-technique/">Flowtime technique</a><a href="/finals-week/">Finals week</a><a href="/exam-season/">Exam season</a><a href="/">Privacy</a></nav></div></footer>
+<script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
+document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
+document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>
+<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
+var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
+if(i)P.forEach(function(e){e.hidden=true});if(a)return;
+fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
+if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+</body>
+</html>

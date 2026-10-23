@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temporizador Pomodoro online: 25/5, 50/10 y FlowTime, gratis</title>
+<meta name="description" content="Temporizador Pomodoro gratis en el navegador: 25/5, 50/10 o FlowTime, que cuenta hacia arriba y ajusta el descanso a lo trabajado. Sin registro ni anuncios.">
+<link rel="canonical" href="https://flowtime.baltajmn.dev/es/pomodoro/">
+<link rel="alternate" hreflang="en" href="https://flowtime.baltajmn.dev/pomodoro/">
+<link rel="alternate" hreflang="es" href="https://flowtime.baltajmn.dev/es/pomodoro/">
+<link rel="alternate" hreflang="x-default" href="https://flowtime.baltajmn.dev/pomodoro/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FlowTime">
+<meta property="og:title" content="Temporizador Pomodoro online: 25/5, 50/10 y FlowTime, gratis">
+<meta property="og:description" content="Temporizador Pomodoro gratis en el navegador: 25/5, 50/10 o FlowTime, que cuenta hacia arriba y ajusta el descanso a lo trabajado. Sin registro ni anuncios.">
+<meta property="og:url" content="https://flowtime.baltajmn.dev/es/pomodoro/">
+<meta property="og:image" content="https://flowtime.baltajmn.dev/ft/og/timer-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15506A">
+<link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/ft/icon-180.png">
+<link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/ft/ft.css?v=7f371857">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Temporizador Pomodoro","url":"https://flowtime.baltajmn.dev/es/pomodoro/","inLanguage":"es","applicationCategory":"ProductivityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime"]}]}</script>
+<script src="/ft/timer.js?v=84581286" defer></script>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="/es/pomodoro/"><img src="/ft/icon.svg" alt="" width="30" height="30">FlowTime</a>
+<nav aria-label="FlowTime">
+<a href="/es/pomodoro/" aria-current="page">Temporizador</a>
+<a href="/es/tecnica-flowtime/">Técnica Flowtime</a>
+<a href="/es/epoca-de-examenes/">Exámenes</a>
+<span class="langs"><a href="/pomodoro/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr">English</span></a><a href="/es/pomodoro/" hreflang="es" lang="es" aria-current="page"><span aria-hidden="true">ES</span><span class="sr">Español</span></a></span>
+</nav>
+</header>
+<main>
+<section class="wrap tool">
+<div class="tool-title"><h1>Temporizador Pomodoro</h1><p>La técnica Pomodoro en tu navegador: 25/5, 50/10 o FlowTime. Sigue contando en una pestaña de fondo y suena al acabar cada fase.</p></div>
+<div class="timer" id="timer" data-mode="p25" data-phase="idle">
+<fieldset class="modes"><legend class="sr">Modo del temporizador</legend>
+<label><input type="radio" name="mode" value="p25" checked><span>25 / 5</span></label><label><input type="radio" name="mode" value="p50"><span>50 / 10</span></label><label><input type="radio" name="mode" value="flow"><span>FlowTime</span></label>
+</fieldset>
+<div class="dial">
+<svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="88"/><circle class="prog" cx="100" cy="100" r="88" stroke-dasharray="552.92" stroke-dashoffset="552.92"/></svg>
+<div class="read"><span class="phase" id="phase">Listo</span><span class="time" id="time" role="timer">25:00</span><span class="hint" id="hint">25 min de concentración y 5 de descanso</span></div>
+</div>
+<div class="ctrl">
+<figure><button class="round" id="stop" type="button" aria-label="Parar" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/></svg></button><figcaption aria-hidden="true">Parar</figcaption></figure>
+<figure><button class="round main" id="play" type="button" aria-label="Empezar"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg><svg style="display:none" class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2"/><rect x="13.5" y="5" width="4" height="14" rx="1.2"/></svg></button><figcaption id="playcap" aria-hidden="true">Empezar</figcaption></figure>
+<figure><button class="round" id="skip" type="button" aria-label="Empezar descanso" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg></button><figcaption id="skipcap" aria-hidden="true">Empezar descanso</figcaption></figure>
+</div>
+<p class="keys"><kbd>Espacio</kbd> empieza o pausa</p>
+<p class="today" id="today"></p>
+<div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
+<p class="legend"><span><i></i>Concentración</span><span><i class="b"></i>Descanso</span></p></div>
+<p class="sr" id="tlive" aria-live="polite"></p>
+</div>
+<script type="application/json" id="ft-t">{"lang":"es","start":"Empezar","pause":"Pausar","resume":"Seguir","stop":"Parar","startBreak":"Empezar descanso","skipBreak":"Saltar descanso","ready":"Listo","focus":"Concentración","break":"Descanso","pausedLabel":"En pausa","idle":{"p25":"25 min de concentración y 5 de descanso","p50":"50 min de concentración y 10 de descanso","flow":"Cuenta hacia arriba. El descanso depende de cuánto trabajes."},"thenBreak":"Después, {b} de descanso","hintAt":"A los {a}, {b} de descanso","hintMax":"{b} de descanso al parar","backAt":"Vuelves a concentrarte a las {t}","breakNow":"Descanso: {b}","breakOver":"Se acabó el descanso. Dale a empezar cuando quieras.","focusNow":"Empieza la concentración","paused":"En pausa","resumed":"Seguimos","stopped":"Parado","confirmSwitch":"¿Parar el temporizador y cambiar de modo?","today":"Hoy: {t} de concentración. Sesiones completas: {n}","rulerEmpty":"Aquí irán apareciendo tus bloques de concentración y descanso."}</script>
+<p class="offer" style="margin:22px auto 0">En el móvil, FlowTime muestra el temporizador en una notificación y en un widget, y con Coop hasta 8 personas comparten uno. <a href="#app">Consigue FlowTime</a></p>
+</section>
+<section class="band"><div class="wrap"><h2>Cómo usar este temporizador Pomodoro</h2><div class="cols"><div><h3>Elige un ritmo</h3><p>25/5 es el Pomodoro clásico: 25 minutos de concentración y 5 de descanso. 50/10 va mejor para estudiar a fondo, leer o hacer problemas: a los 25 minutos apenas estás cogiendo ritmo.</p></div><div><h3>Dale a empezar y deja la pestaña</h3><p>El temporizador va con el reloj, así que no se desajusta en una pestaña de fondo. Suena un aviso suave al acabar la concentración y otro al acabar el descanso.</p></div><div><h3>Descansa de verdad</h3><p>Levántate, aparta la vista de la pantalla, bebe agua. Cuando suene el segundo aviso, dale a empezar para el siguiente bloque.</p></div></div></div></section>
+<section class="band deep"><div class="wrap"><h2>Qué ritmo elegir</h2><div class="cols"><div><h3>25/5</h3><p>Cuando lo difícil es empezar, cuando vas con poca energía o para repasar y hacer tareas pequeñas.</p></div><div><h3>50/10</h3><p>Para lo que necesita calentar: escribir, programar, un tema entero, una hoja de problemas.</p></div><div><h3>FlowTime</h3><p>Cuando no quieres que un aviso te corte. Trabaja hasta que pares; el descanso se ajusta a lo que has trabajado.</p></div></div></div></section>
+<section class="band"><div class="wrap"><h2>El modo FlowTime</h2><p>FlowTime cuenta hacia arriba en vez de hacia abajo. Trabaja hasta una pausa natural y dale a Empezar descanso: el descanso depende de lo que hayas trabajado.</p><div class="tablewrap"><table class="ranges"><thead><tr><th scope="col">Trabajado</th><th scope="col">Descanso</th></tr></thead><tbody>
+<tr><td>Hasta 15 min</td><td>5 min</td></tr><tr><td>Más de 15, hasta 30 min</td><td>10 min</td></tr><tr><td>Más de 30 min</td><td>15 min</td></tr></tbody></table></div><p><a href="/es/tecnica-flowtime/">Más sobre la técnica Flowtime</a></p></div></section>
+<section class="band deep" id="app"><div class="wrap split">
+<div>
+<h2>FlowTime en el móvil</h2>
+<p>Los mismos modos Pomodoro y FlowTime con tus propios tiempos, un tercero (Porcentaje) y lo que una pestaña del navegador no puede hacer: el temporizador en una notificación y en un widget, las tareas del día, 12 sonidos para concentrarte, tu racha, tu objetivo y tus estadísticas.</p>
+<p>Coop es una sala privada donde hasta 8 personas comparten un temporizador: cualquiera puede empezar, pausar o saltar el descanso, así que podéis estudiar juntos desde sitios distintos.</p>
+<p class="note">Gratis, sin anuncios y sin cuenta. Solo Coop te pide iniciar sesión.</p>
+<div class="stores">
+<a class="btn fill" data-store="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime&amp;referrer=utm_source%3Dflowtime.baltajmn.dev%26utm_medium%3Dweb%26utm_campaign%3Dft-timer-es">Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+<a class="btn" data-store="apple" href="https://apps.apple.com/app/apple-store/id6819302003?ct=ft-timer-es&amp;mt=8" hidden>App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+</div>
+<p class="note" id="ios-soon" hidden>FlowTime llega pronto al iPhone.</p>
+</div>
+<img src="/ft/img/app-es.webp" alt="FlowTime en Android: una sesión de concentración contando hacia arriba, en 42:10" width="640" height="1134" loading="lazy">
+</div></section>
+</main>
+<footer><div class="wrap"><span>FlowTime: temporizador Pomodoro, de Baltasar Jiménez.</span><nav aria-label="Privacidad">
+<a href="/es/pomodoro/">Temporizador</a><a href="/es/tecnica-flowtime/">Técnica Flowtime</a><a href="/es/epoca-de-examenes/">Exámenes</a><a href="/">Privacidad</a></nav></div></footer>
+<script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
+document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
+document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>
+<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
+var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
+if(i)P.forEach(function(e){e.hidden=true});if(a)return;
+fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
+if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+</body>
+</html>

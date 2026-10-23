@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam Season Revision Plan: Day Timetable and Study Timer</title>
+<meta name="description" content="A revision timetable for one day of January exams, with a free Pomodoro and FlowTime timer built in: long blocks, past papers, recall.">
+<link rel="canonical" href="https://flowtime.baltajmn.dev/exam-season/">
+<link rel="alternate" hreflang="en" href="https://flowtime.baltajmn.dev/exam-season/">
+<link rel="alternate" hreflang="es" href="https://flowtime.baltajmn.dev/es/epoca-de-examenes/">
+<link rel="alternate" hreflang="x-default" href="https://flowtime.baltajmn.dev/exam-season/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FlowTime">
+<meta property="og:title" content="Exam Season Revision Plan: Day Timetable and Study Timer">
+<meta property="og:description" content="A revision timetable for one day of January exams, with a free Pomodoro and FlowTime timer built in: long blocks, past papers, recall.">
+<meta property="og:url" content="https://flowtime.baltajmn.dev/exam-season/">
+<meta property="og:image" content="https://flowtime.baltajmn.dev/ft/og/exams-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15506A">
+<link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/ft/icon-180.png">
+<link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/ft/ft.css?v=7f371857">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Exam season revision timetable, block by block","url":"https://flowtime.baltajmn.dev/exam-season/","inLanguage":"en","applicationCategory":"ProductivityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime"]},{"@type":"HowTo","name":"A revision day","inLanguage":"en","step":[{"@type":"HowToStep","position":1,"name":"08:30 Warm up","text":"Look over yesterday's mistakes and pick today's topics."},{"@type":"HowToStep","position":2,"name":"09:00 Your weakest topic","text":"Three 50-minute blocks while your head is fresh."},{"@type":"HowToStep","position":3,"name":"12:00 Lunch, away from your desk","text":"Lunch, away from your desk"},{"@type":"HowToStep","position":4,"name":"13:00 Past papers, timed","text":"Do a paper under exam conditions in 25-minute rounds, then mark it."},{"@type":"HowToStep","position":5,"name":"15:00 Get outside while it's light","text":"Get outside while it's light"},{"@type":"HowToStep","position":6,"name":"15:30 Second subject","text":"FlowTime: work until your focus fades, then take the break it gives you."},{"@type":"HowToStep","position":7,"name":"17:30 Dinner","text":"Dinner"},{"@type":"HowToStep","position":8,"name":"19:00 Recall","text":"Flashcards and blurting: write down everything you remember, then check what you missed."},{"@type":"HowToStep","position":9,"name":"20:30 Plan tomorrow, then stop","text":"Plan tomorrow, then stop"}]}]}</script>
+<script src="/ft/timer.js?v=84581286" defer></script>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="/pomodoro/"><img src="/ft/icon.svg" alt="" width="30" height="30">FlowTime</a>
+<nav aria-label="FlowTime">
+<a href="/pomodoro/">Timer</a>
+<a href="/flowtime-technique/">Flowtime technique</a>
+<a href="/finals-week/">Finals week</a>
+<a href="/exam-season/" aria-current="page">Exam season</a>
+<span class="langs"><a href="/exam-season/" hreflang="en" lang="en" aria-current="page"><span aria-hidden="true">EN</span><span class="sr">English</span></a><a href="/es/epoca-de-examenes/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="sr">Español</span></a></span>
+</nav>
+</header>
+<main>
+<section class="wrap season">
+<div><h1>Exam season revision timetable, block by block</h1><p class="lede">A revision timetable for one day of January exams, with the timer built in. Press start on any block and keep the tab open.</p>
+<div class="season-cta"><a class="btn" href="#day">A revision day <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a></div></div>
+<div class="timer" id="timer" data-mode="p50" data-phase="idle">
+<fieldset class="modes"><legend class="sr">Timer mode</legend>
+<label><input type="radio" name="mode" value="p25"><span>25 / 5</span></label><label><input type="radio" name="mode" value="p50" checked><span>50 / 10</span></label><label><input type="radio" name="mode" value="flow"><span>FlowTime</span></label>
+</fieldset>
+<div class="dial">
+<svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="88"/><circle class="prog" cx="100" cy="100" r="88" stroke-dasharray="552.92" stroke-dashoffset="552.92"/></svg>
+<div class="read"><span class="phase" id="phase">Ready</span><span class="time" id="time" role="timer">50:00</span><span class="hint" id="hint">50 min focus, then a 10 min break</span></div>
+</div>
+<div class="ctrl">
+<figure><button class="round" id="stop" type="button" aria-label="Stop" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/></svg></button><figcaption aria-hidden="true">Stop</figcaption></figure>
+<figure><button class="round main" id="play" type="button" aria-label="Start"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg><svg style="display:none" class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2"/><rect x="13.5" y="5" width="4" height="14" rx="1.2"/></svg></button><figcaption id="playcap" aria-hidden="true">Start</figcaption></figure>
+<figure><button class="round" id="skip" type="button" aria-label="Start break" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg></button><figcaption id="skipcap" aria-hidden="true">Start break</figcaption></figure>
+</div>
+<p class="keys"><kbd>Space</kbd> starts or pauses</p>
+<p class="today" id="today"></p>
+<div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
+<p class="legend"><span><i></i>Focus</span><span><i class="b"></i>Break</span></p></div>
+<p class="sr" id="tlive" aria-live="polite"></p>
+</div>
+<script type="application/json" id="ft-t">{"lang":"en","start":"Start","pause":"Pause","resume":"Resume","stop":"Stop","startBreak":"Start break","skipBreak":"Skip break","ready":"Ready","focus":"Focus","break":"Break","pausedLabel":"Paused","idle":{"p25":"25 min focus, then a 5 min break","p50":"50 min focus, then a 10 min break","flow":"Counts up. Your break depends on how long you work."},"thenBreak":"Then a {b} break","hintAt":"At {a}, {b} break","hintMax":"{b} break when you stop","backAt":"Back to focus at {t}","breakNow":"Break: {b}","breakOver":"Break over. Press start when you're ready.","focusNow":"Focus started","paused":"Paused","resumed":"Resumed","stopped":"Stopped","confirmSwitch":"Stop the current timer and switch mode?","today":"Focus today: {t}. Sessions done: {n}","rulerEmpty":"Your focus and breaks will show up here as you go."}</script>
+</section>
+<section class="band" id="day"><div class="wrap"><h2>A revision day</h2><p>Long blocks in the morning, past papers after lunch, recall in the evening. Move the times to fit your exams; keep the order.</p><ol class="day">
+<li><time>08:30</time><span class="bar" aria-hidden="true"></span><div><h3>Warm up</h3><p>Look over yesterday's mistakes and pick today's topics.</p><span class="mode">1 x 25/5</span></div><button class="btn" type="button" data-start="p25" aria-label="Start: Warm up, 1 x 25/5">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></button></li>
+<li><time>09:00</time><span class="bar" aria-hidden="true"></span><div><h3>Your weakest topic</h3><p>Three 50-minute blocks while your head is fresh.</p><span class="mode">3 x 50/10</span></div><button class="btn" type="button" data-start="p50" aria-label="Start: Your weakest topic, 3 x 50/10">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></button></li>
+<li class="rest"><time>12:00</time><span class="bar" aria-hidden="true"></span><div><h3>Lunch, away from your desk</h3></div></li>
+<li><time>13:00</time><span class="bar" aria-hidden="true"></span><div><h3>Past papers, timed</h3><p>Do a paper under exam conditions in 25-minute rounds, then mark it.</p><span class="mode">4 x 25/5</span></div><button class="btn" type="button" data-start="p25" aria-label="Start: Past papers, timed, 4 x 25/5">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></button></li>
+<li class="rest"><time>15:00</time><span class="bar" aria-hidden="true"></span><div><h3>Get outside while it's light</h3></div></li>
+<li><time>15:30</time><span class="bar" aria-hidden="true"></span><div><h3>Second subject</h3><p>FlowTime: work until your focus fades, then take the break it gives you.</p><span class="mode">FlowTime</span></div><button class="btn" type="button" data-start="flow" aria-label="Start: Second subject, FlowTime">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></button></li>
+<li class="rest"><time>17:30</time><span class="bar" aria-hidden="true"></span><div><h3>Dinner</h3></div></li>
+<li><time>19:00</time><span class="bar" aria-hidden="true"></span><div><h3>Recall</h3><p>Flashcards and blurting: write down everything you remember, then check what you missed.</p><span class="mode">3 x 25/5</span></div><button class="btn" type="button" data-start="p25" aria-label="Start: Recall, 3 x 25/5">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></button></li>
+<li class="rest"><time>20:30</time><span class="bar" aria-hidden="true"></span><div><h3>Plan tomorrow, then stop</h3></div></li>
+</ol></div></section>
+<section class="band deep"><div class="wrap"><h2>Building your revision timetable</h2><div class="cols"><div><h3>Work back from exam dates</h3><p>Put each exam in the calendar, then give the nearest and the hardest ones the most mornings.</p></div><div><h3>One subject per long block</h3><p>Switching subjects every hour feels productive, but each switch costs you time to get back in. Keep each morning for one.</p></div><div><h3>Leave one evening off a week</h3><p>A planned night off is easier to keep than an unplanned collapse.</p></div></div></div></section>
+<section class="band deep" id="app"><div class="wrap split">
+<div>
+<h2>FlowTime on your phone</h2>
+<p>The same Pomodoro and FlowTime modes with your own times, plus a third one, Percentage, and what a browser tab can't do: the timer in a notification and a widget, today's tasks, 12 focus sounds, and your streak, goal and stats.</p>
+<p>Coop is a private room where up to 8 people share one timer: anyone can start, pause or skip the break, so you can study together from different places.</p>
+<p class="note">Free, with no ads and no account. Only Coop asks you to sign in.</p>
+<div class="stores">
+<a class="btn fill" data-store="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime&amp;referrer=utm_source%3Dflowtime.baltajmn.dev%26utm_medium%3Dweb%26utm_campaign%3Dft-exams-en">Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+<a class="btn" data-store="apple" href="https://apps.apple.com/app/apple-store/id6819302003?ct=ft-exams-en&amp;mt=8" hidden>App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+</div>
+<p class="note" id="ios-soon" hidden>FlowTime is coming to iPhone soon.</p>
+</div>
+<img src="/ft/img/app-en.webp" alt="FlowTime on Android: a focus session counting up, at 42:10" width="640" height="1134" loading="lazy">
+</div></section>
+</main>
+<footer><div class="wrap"><span>FlowTime: Pomodoro Focus Timer, by Baltasar Jiménez.</span><nav aria-label="Privacy">
+<a href="/pomodoro/">Timer</a><a href="/flowtime-technique/">Flowtime technique</a><a href="/finals-week/">Finals week</a><a href="/exam-season/">Exam season</a><a href="/">Privacy</a></nav></div></footer>
+<script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
+document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
+document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>
+<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
+var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
+if(i)P.forEach(function(e){e.hidden=true});if(a)return;
+fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
+if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+</body>
+</html>
