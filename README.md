@@ -42,7 +42,7 @@ pt and de were looked at and left out.
   analytics: Play `referrer=utm_source=flowtime.baltajmn.dev&utm_medium=web&utm_campaign=ft-<page>-<lang>`
   (Play Console, Acquisition, once Google shows UTM data for that volume) and App Store
   `ct=ft-<page>-<lang>` (App Analytics, Campaigns). The App Store counts `ct` only with the provider
-  token `pt`: set `APPLE_PT` in `tools/build.mjs` and rebuild. Android sees only Play, iPhone only
+  token `pt` (`APPLE_PT` in `tools/build.mjs`, 129564006, the same for both apps). Android sees only Play, iPhone only
   the App Store (or "coming soon" while the iTunes lookup does not find the app).
 - **No cookies, no analytics scripts.** Cloudflare's own traffic numbers (no script) are the only web
   measure.
