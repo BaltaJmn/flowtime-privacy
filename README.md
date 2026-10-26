@@ -15,6 +15,8 @@ behind Cloudflare.
 | `flowtime-technique/`, `es/tecnica-flowtime/` | The Flowtime technique explained, with the timer in FlowTime mode |
 | `finals-week/` | December finals (US and UK): a study day whose blocks start the timer |
 | `exam-season/`, `es/epoca-de-examenes/` | January exams (UK revision; Spain), same idea |
+| `alternatives/`, `es/alternativas/` | Index of the comparisons: FlowTime, Forest, Pomofocus, Focus To-Do, Study Bunny and Focus Friend in one table |
+| `forest-alternative/`, `pomofocus-alternative/` and the other `*-alternative/` pages, with their `es/alternativa-a-*` | One comparison per app, with sources and the date they were checked |
 | `ft/` | Shared CSS, `timer.js`, Mulish (subset woff2, OFL), icon, app screenshots, OG cards |
 | `sitemap.xml`, `robots.txt` | For Google; the sitemap lists the pages with their language alternates |
 | `tools/` | `build.mjs` writes the pages, sitemap and robots; `og.mjs` the OG cards; `check.mjs` checks them |
@@ -44,6 +46,12 @@ pt and de were looked at and left out.
   `ct=ft-<page>-<lang>` (App Analytics, Campaigns). The App Store counts `ct` only with the provider
   token `pt` (`APPLE_PT` in `tools/build.mjs`, 129564006, the same for both apps). Android sees only Play, iPhone only
   the App Store (or "coming soon" while the iTunes lookup does not find the app).
+- **Comparison pages (from 26-10-2026):** texts and sources in `tools/compare.mjs`. Every fact about
+  another app comes from its store pages, site or FAQ on `CHECKED`, listed on each page; before
+  changing a line about another app, check it again and move `CHECKED`. Never print a Pomofocus
+  price, and don't call the third-party store apps named Pomofocus fake. `%platforms%` is filled at
+  build time: "iPhone coming soon" until the iTunes lookup finds FlowTime, then "Android, iPhone", so
+  rebuild once the iPhone app is out. Campaigns: `ft-vs-<id>-<lang>` and `ft-hub-<lang>`.
 - **No cookies, no analytics scripts.** Cloudflare's own traffic numbers (no script) are the only web
   measure.
 - CSS and JS URLs carry `?v=<hash>` so a change reaches visitors past the Cloudflare cache.

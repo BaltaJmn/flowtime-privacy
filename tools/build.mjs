@@ -1,11 +1,12 @@
-// Builds the FlowTime web pages (timer, Flowtime technique, finals week, exam season) in en and es,
-// sitemap.xml and robots.txt. Run after changing a text here; the output is committed as plain files.
+// Builds the FlowTime web pages (timer, Flowtime technique, finals week, exam season, and the comparisons
+// with other focus apps from compare.mjs) in en and es, sitemap.xml and robots.txt. Run after changing a text here; the output is committed as plain files.
 //
 //   node tools/build.mjs && node tools/og.mjs
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { COMPARE, CHECKED, HUB } from './compare.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const SITE = 'https://flowtime.baltajmn.dev'
@@ -25,6 +26,7 @@ export const PAGES = {
   technique: { en: '/flowtime-technique/', es: '/es/tecnica-flowtime/' },
   finals: { en: '/finals-week/' },
   exams: { en: '/exam-season/', es: '/es/epoca-de-examenes/' },
+  hub: { en: '/alternatives/', es: '/es/alternativas/' },
 }
 const LOCALE = { en: 'en_US', es: 'es_ES' }
 const LANG_NAME = { en: 'English', es: 'Español' }
@@ -54,7 +56,7 @@ const UI = {
 
 const COMMON = {
   en: {
-    nav: { timer: 'Timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', privacy: 'Privacy' },
+    nav: { timer: 'Timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', privacy: 'Privacy' },
     modes: 'Timer mode',
     legendFocus: 'Focus', legendBreak: 'Break',
     keys: '<kbd>Space</kbd> starts or pauses',
@@ -71,7 +73,7 @@ const COMMON = {
     ranges: [['Up to 15 min', '5 min'], ['Over 15, up to 30 min', '10 min'], ['More than 30 min', '15 min']],
   },
   es: {
-    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', privacy: 'Privacidad' },
+    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', hub: 'Alternativas', privacy: 'Privacidad' },
     modes: 'Modo del temporizador',
     legendFocus: 'Concentración', legendBreak: 'Descanso',
     keys: '<kbd>Espacio</kbd> empieza o pausa',
@@ -290,10 +292,10 @@ const ICON = {
   skip: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg>',
 }
 
-function head(kind, lang, t) {
-  const url = SITE + PAGES[kind][lang]
-  const langs = Object.keys(PAGES[kind])
-  const alts = langs.length > 1 ? langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE + PAGES[kind][l]}">`).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${SITE + PAGES[kind].en}">` : ''
+function head(kind, lang, t, paths = PAGES[kind]) {
+  const url = SITE + paths[lang]
+  const langs = Object.keys(paths)
+  const alts = langs.length > 1 ? langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE + paths[l]}">`).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${SITE + paths.en}">` : ''
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -320,15 +322,16 @@ ${alts}
 <link rel="stylesheet" href="${v('/ft/ft.css')}">`
 }
 
-function header(kind, lang) {
+function header(kind, lang, paths = PAGES[kind]) {
   const c = COMMON[lang]
   const links = Object.keys(PAGES).filter((k) => PAGES[k][lang])
-  const other = (l) => PAGES[kind][l] || PAGES.timer[l]
+  const other = (l) => paths[l] || PAGES.timer[l]
+  const on = (k) => k === kind || (k === 'hub' && kind.startsWith('vs-'))
   const langs = Object.keys(LOCALE).map((l) => `<a href="${other(l)}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="page"' : ''}><span aria-hidden="true">${l.toUpperCase()}</span><span class="sr">${LANG_NAME[l]}</span></a>`).join('')
   return `<header class="wrap top">
 <a class="brand" href="${PAGES.timer[lang]}"><img src="/ft/icon.svg" alt="" width="30" height="30">FlowTime</a>
 <nav aria-label="FlowTime">
-${links.map((k) => `<a href="${PAGES[k][lang]}"${k === kind ? ' aria-current="page"' : ''}>${esc(c.nav[k])}</a>`).join('\n')}
+${links.map((k) => `<a href="${PAGES[k][lang]}"${on(k) ? ' aria-current="page"' : ''}>${esc(c.nav[k])}</a>`).join('\n')}
 <span class="langs">${langs}</span>
 </nav>
 </header>`
@@ -487,16 +490,222 @@ ${STORE_JS}
 `
 }
 
+
+// --- Comparison pages (texts and sources in compare.mjs) ------------------------------------------
+const CMP = {
+  en: {
+    checked: (d) => `Checked on ${d}`,
+    fitUs: 'FlowTime fits if', fitThem: (n) => `${n} fits if`,
+    exH: 'An afternoon in FlowTime mode',
+    exP: 'You stop when your focus fades; the break fits how long you worked. An example.',
+    sourcesH: 'How this was checked',
+    sourcesP: (d) => `Everything said here about other apps comes from their own store pages, websites and FAQs, read on ${d}. Prices change by country and over time; the store shows the current one.`,
+    tm: (n) => `${n} ${n.includes(' and ') || n.includes(', ') ? 'are trademarks of their owners' : 'is a trademark of its owner'}. FlowTime is not affiliated with ${n.includes(' and ') || n.includes(', ') ? 'them' : 'it'}.`,
+    fix: (m) => `Spotted something out of date? Write to <a href="mailto:${m}">${m}</a> and it gets fixed.`,
+    more: 'More comparisons', timer: 'Or try the free Pomodoro timer in your browser',
+    and: ' and ', app: 'App', line: 'What it is', price: 'Price', ads: 'Ads', platforms: 'Platforms',
+    platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone coming soon',
+    flowtime: {
+      line: 'A Pomodoro timer with three modes (Pomodoro, FlowTime and Percentage), Coop rooms for up to 8 and no ads; it suits people who want a plain timer that fits the break to the work.',
+      price: 'Free. Pro: $1.99 once, or a monthly plan',
+      ads: 'None',
+    },
+  },
+  es: {
+    checked: (d) => `Comprobado el ${d}`,
+    fitUs: 'FlowTime te encaja si', fitThem: (n) => `${n} te encaja si`,
+    exH: 'Una tarde en modo FlowTime',
+    exP: 'Paras cuando se te va la concentración y el descanso se ajusta a lo trabajado. Es un ejemplo.',
+    sourcesH: 'Cómo se ha comprobado',
+    sourcesP: (d) => `Todo lo que se dice aquí de otras apps sale de sus fichas en las tiendas, sus webs y sus FAQ, leídas el ${d}. Los precios cambian según el país y con el tiempo; la tienda enseña el actual.`,
+    tm: (n) => `${n} ${n.includes(' y ') || n.includes(', ') ? 'son marcas de sus dueños' : 'es una marca de su dueño'}. FlowTime no tiene relación con ${n.includes(' y ') || n.includes(', ') ? 'ellas' : 'ella'}.`,
+    fix: (m) => `¿Ves algo desactualizado? Escribe a <a href="mailto:${m}">${m}</a> y se corrige.`,
+    more: 'Más comparativas', timer: 'O prueba el temporizador Pomodoro gratis en el navegador',
+    and: ' y ', app: 'App', line: 'Qué es', price: 'Precio', ads: 'Anuncios', platforms: 'Plataformas',
+    platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone muy pronto',
+    flowtime: {
+      line: 'Un temporizador Pomodoro con tres modos (Pomodoro, FlowTime y Porcentaje), salas Coop para hasta 8 y sin anuncios; te va si quieres un temporizador sencillo que ajusta el descanso a lo trabajado.',
+      price: 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes',
+      ads: 'Ninguno',
+    },
+  },
+}
+const CONTACT = 'baltajmn@gmail.com'
+const fmtDate = (lang) => new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(CHECKED + 'T12:00:00Z'))
+const MARK = {
+  yes: '<svg class="mk" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 10.5 3.5 3.5 7.5-8"/></svg>',
+  no: '<svg class="mk no" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5.5 10h9"/></svg>',
+}
+let IOS = false // set from the App Store before the pages are written
+const fill = (c, lang) => c.replace('%platforms%', CMP[lang].platformsNow(IOS))
+const cell = (c, lang) => {
+  const x = fill(c, lang)
+  return x.startsWith('+ ') ? `${MARK.yes}<span>${esc(x.slice(2))}</span>` : x.startsWith('- ') ? `${MARK.no}<span>${esc(x.slice(2))}</span>` : `<span>${esc(x)}</span>`
+}
+
+// The example beside each comparison: an afternoon of FlowTime sessions on the timer's own ruler, breaks
+// from the app's default ranges (up to 15 min worked: 5; up to 30: 10; more: 15).
+const AFTERNOON = [38, 52, 22, 12]
+function example(lang) {
+  const c = CMP[lang]
+  const start = 15 * 60
+  const span = 180
+  const blocks = []
+  let t = 0
+  for (const w of AFTERNOON) {
+    const b = w <= 15 ? 5 : w <= 30 ? 10 : 15
+    blocks.push(`<span class="blk" style="left:${(t / span) * 100}%;width:${(w / span) * 100}%"><i>${w}</i></span>`)
+    t += w
+    blocks.push(`<span class="blk b" style="left:${(t / span) * 100}%;width:${(b / span) * 100}%"></span>`)
+    t += b
+  }
+  const ticks = [0, 30, 60, 90, 120, 150, 180].map((m) => `<span style="left:${(m / span) * 100}%">${Math.floor((start + m) / 60)}:${String((start + m) % 60).padStart(2, '0')}</span>`).join('')
+  return `<figure class="ruler example">
+<h2>${esc(c.exH)}</h2>
+<p>${esc(c.exP)}</p>
+<div class="rail" aria-hidden="true">${blocks.join('')}</div><div class="ticks" aria-hidden="true">${ticks}</div>
+<p class="legend"><span><i></i>${esc(COMMON[lang].legendFocus)}</span><span><i class="b"></i>${esc(COMMON[lang].legendBreak)}</span></p>
+</figure>`
+}
+
+function sourcesBand(lang, sources, names, others) {
+  const c = CMP[lang]
+  return `<section class="band" id="sources"><div class="wrap sources">
+<h2>${esc(c.sourcesH)}</h2>
+<p>${esc(c.sourcesP(fmtDate(lang)))}</p>
+<ul>${sources.map(([label, href]) => `<li><a href="${esc(href)}" rel="nofollow noopener">${esc(label)}</a></li>`).join('')}</ul>
+<p class="note">${esc(c.tm(names))} ${c.fix(CONTACT)}</p>
+${others.length ? `<h3>${esc(c.more)}</h3>
+<ul class="more">${others.map(([href, label]) => `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ul>` : ''}
+<p><a href="${PAGES.timer[lang]}">${esc(c.timer)}</a></p>
+</div></section>`
+}
+
+function hero(lang, t, campaign) {
+  const camp = esc(play(campaign))
+  return `<section class="wrap cmp-hero">
+<div>
+<h1>${esc(t.h1)}</h1>
+<p class="lede">${esc(t.lede)}</p>
+<div class="stores">
+<a class="btn fill" data-store="play" href="${camp}">Google Play ${ICON.arrow}</a>
+<a class="btn" data-store="apple" href="${esc(apple(campaign))}" hidden>App Store ${ICON.arrow}</a>
+</div>
+<p class="note checked"><a href="#sources">${esc(CMP[lang].checked(fmtDate(lang)))}</a></p>
+</div>
+${example(lang)}
+</section>`
+}
+
+function comparePage(id, lang) {
+  const P = COMPARE[id]
+  const t = P[lang]
+  const c = CMP[lang]
+  const kind = `vs-${id}`
+  const cols = ['FlowTime', ...P.others]
+  const graph = [appLd(), { '@type': 'WebPage', name: t.title, url: SITE + P.path[lang], inLanguage: lang, dateModified: CHECKED, about: appLd().name }]
+  const others = [[PAGES.hub[lang], HUB[lang].h1], ...Object.keys(COMPARE).filter((k) => k !== id && COMPARE[k].path[lang]).map((k) => [COMPARE[k].path[lang], COMPARE[k][lang].h1])]
+  return `${head(kind, lang, t, P.path)}
+${ld(graph)}
+</head>
+<body>
+${header(kind, lang, P.path)}
+<main>
+${hero(lang, t, `ft-${kind}-${lang}`)}
+
+<section class="band"><div class="wrap fit">
+<div class="card ours"><h2>${esc(c.fitUs)}</h2><ul>${t.fitUs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+<div class="card"><h2>${esc(c.fitThem(P.others[0]))}</h2><ul>${t.fitThem.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+</div></section>
+
+<section class="band deep" id="table"><div class="wrap">
+<h2>${esc(t.tableH)}</h2>
+<div class="tablewrap"><table class="vs cmp"><thead><tr><td></td>${cols.map((n, i) => `<th scope="col"${i === 0 ? ' class="ours"' : ''}>${i === 0 ? '<img src="/ft/icon.svg" alt="" width="22" height="22">' : ''}${esc(n)}</th>`).join('')}</tr></thead>
+<tbody>
+${t.rows.map(([what, ...cells]) => `<tr><th scope="row">${esc(what)}</th>${cells.map((x, i) => `<td data-app="${esc(cols[i])}"${i === 0 ? ' class="ours"' : ''}>${cell(x, lang)}</td>`).join('')}</tr>`).join('\n')}
+</tbody></table></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>${esc(t.betterH)}</h2>
+<div class="cols">${t.better.map(([h, p]) => `<div><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('')}</div>
+</div></section>
+
+<section class="band deep"><div class="wrap faq">
+<h2>${esc(t.faqH)}</h2>
+${t.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n')}
+</div></section>
+
+${app(kind, lang)}
+
+${sourcesBand(lang, t.sources, P.others.join(c.and), others)}
+</main>
+${footer(lang)}
+${UTM_JS}
+${STORE_JS}
+</body>
+</html>
+`
+}
+
+function hubPage(lang) {
+  const H = HUB[lang]
+  const c = CMP[lang]
+  const ids = Object.keys(COMPARE).filter((k) => COMPARE[k].path[lang])
+  const names = ids.map((k) => COMPARE[k].others[0])
+  const list = `${names.slice(0, -1).join(', ')}${c.and}${names.at(-1)}`
+  const sources = [...new Map(ids.flatMap((k) => COMPARE[k][lang].sources).map((x) => [x[1], x])).values()]
+  const row = (name, h, link) => `<tr><th scope="row">${link ? `<a href="${link}">${esc(name)}</a>` : `<img src="/ft/icon.svg" alt="" width="22" height="22">${esc(name)}`}</th>
+${[['line', h.line], ['price', h.price], ['ads', h.ads], ['platforms', fill(h.platforms || '%platforms%', lang)]].map(([k, v]) => `<td data-app="${esc(c[k])}"${link ? '' : ' class="ours"'}><span>${esc(v)}</span></td>`).join('')}</tr>`
+  return `${head('hub', lang, H)}
+${ld([appLd(), { '@type': 'WebPage', name: H.title, url: SITE + PAGES.hub[lang], inLanguage: lang, dateModified: CHECKED }])}
+</head>
+<body>
+${header('hub', lang)}
+<main>
+${hero(lang, H, `ft-hub-${lang}`)}
+
+<section class="band deep" id="table"><div class="wrap">
+<h2>${esc(H.tableH)}</h2>
+<div class="tablewrap"><table class="vs cmp hub"><thead><tr><th scope="col">${esc(c.app)}</th><th scope="col">${esc(c.line)}</th><th scope="col">${esc(c.price)}</th><th scope="col">${esc(c.ads)}</th><th scope="col">${esc(c.platforms)}</th></tr></thead>
+<tbody>
+${row('FlowTime', c.flowtime)}
+${ids.map((k) => row(COMPARE[k].others[0], COMPARE[k][lang].hub, COMPARE[k].path[lang])).join('\n')}
+</tbody></table></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>${esc(c.more)}</h2>
+<div class="cols">${ids.map((k) => `<div><h3><a href="${COMPARE[k].path[lang]}">${esc(COMPARE[k][lang].h1)}</a></h3><p>${esc(COMPARE[k][lang].hub.line)}</p></div>`).join('')}</div>
+</div></section>
+
+${app('hub', lang)}
+
+${sourcesBand(lang, sources, list, [])}
+</main>
+${footer(lang)}
+${UTM_JS}
+${STORE_JS}
+</body>
+</html>
+`
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  // The iPhone app is live once the App Store finds it; until then the pages say it is coming.
+  IOS = await fetch('https://itunes.apple.com/lookup?id=6819302003').then((r) => r.json()).then((j) => j.resultCount > 0).catch(() => false)
+  const write = (path, html) => {
+    mkdirSync(join(ROOT, path), { recursive: true })
+    writeFileSync(join(ROOT, path, 'index.html'), html)
+  }
+  for (const kind of Object.keys(PAGES)) for (const lang of Object.keys(PAGES[kind])) write(PAGES[kind][lang], kind === 'hub' ? hubPage(lang) : page(kind, lang))
+  for (const id of Object.keys(COMPARE)) for (const lang of Object.keys(COMPARE[id].path)) write(COMPARE[id].path[lang], comparePage(id, lang))
   const urls = []
-  for (const kind of Object.keys(PAGES)) {
-    for (const lang of Object.keys(PAGES[kind])) {
-      const dir = join(ROOT, PAGES[kind][lang])
-      mkdirSync(dir, { recursive: true })
-      writeFileSync(join(dir, 'index.html'), page(kind, lang))
-      const langs = Object.keys(PAGES[kind])
-      const alts = langs.length > 1 ? langs.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${SITE + PAGES[kind][l]}"/>`).join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${SITE + PAGES[kind].en}"/>` : ''
-      urls.push(`<url><loc>${SITE + PAGES[kind][lang]}</loc><lastmod>${TODAY}</lastmod>${alts}</url>`)
+  for (const paths of [...Object.values(PAGES), ...Object.values(COMPARE).map((c) => c.path)]) {
+    for (const lang of Object.keys(paths)) {
+      const langs = Object.keys(paths)
+      const alts = langs.length > 1 ? langs.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${SITE + paths[l]}"/>`).join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${SITE + paths.en}"/>` : ''
+      urls.push(`<url><loc>${SITE + paths[lang]}</loc><lastmod>${TODAY}</lastmod>${alts}</url>`)
     }
   }
   for (const p of ['/', '/terms.html', '/delete.html']) urls.push(`<url><loc>${SITE + p}</loc></url>`)

@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { PAGES } from './build.mjs'
+import { COMPARE } from './compare.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -13,11 +14,17 @@ const CARD = {
   technique: { en: ['The Flowtime technique', 'Work until you stop. Break by how long you worked.', '42:10', 0.81], es: ['La técnica Flowtime', 'Trabaja hasta que pares. Descansa según lo trabajado.', '42:10', 0.81] },
   finals: { en: ['Finals week study plan', 'A study day you can press play on.', '50:00', 0.34] },
   exams: { en: ['Exam season revision', 'A revision day, block by block, with the timer built in.', '50:00', 0.34], es: ['Época de exámenes', 'Un día de estudio, bloque a bloque, con el temporizador dentro.', '50:00', 0.34] },
+  hub: { en: ['FlowTime and other focus apps', 'Forest, Pomofocus, Focus To-Do, Study Bunny, Focus Friend.', '38:00', 0.7], es: ['FlowTime y otras apps de concentración', 'Forest, Pomofocus, Focus To-Do, Study Bunny, Focus Friend.', '38:00', 0.7] },
 }
+for (const [id, c] of Object.entries(COMPARE)) {
+  const n = c.others[0]
+  CARD[`vs-${id}`] = Object.fromEntries(Object.keys(c.path).map((l) => [l, l === 'es' ? [`Alternativa a ${n}`, 'FlowTime, comparada con datos y fecha.', '38:00', 0.7] : [`${n} alternative`, 'FlowTime, compared honestly, with dates.', '38:00', 0.7]]))
+}
+const PATHS = { ...PAGES, ...Object.fromEntries(Object.entries(COMPARE).map(([id, c]) => [`vs-${id}`, c.path])) }
 mkdirSync(join(ROOT, 'ft/og'), { recursive: true })
 const tmp = mkdtempSync(join(tmpdir(), 'ft-og-'))
-for (const kind of Object.keys(PAGES)) {
-  for (const lang of Object.keys(PAGES[kind])) {
+for (const kind of Object.keys(PATHS)) {
+  for (const lang of Object.keys(PATHS[kind])) {
     const [title, sub, time, frac] = CARD[kind][lang]
     const C = 2 * Math.PI * 88
     const html = join(tmp, `${kind}-${lang}.html`)
