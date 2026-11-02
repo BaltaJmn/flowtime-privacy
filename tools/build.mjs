@@ -507,7 +507,7 @@ const CMP = {
     platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone coming soon',
     flowtime: {
       line: 'A Pomodoro timer with three modes (Pomodoro, FlowTime and Percentage), Coop rooms for up to 8 and no ads; it suits people who want a plain timer that fits the break to the work.',
-      price: 'Free. Pro: $1.99 once, or a monthly plan',
+      price: 'Free. Pro: $3.99 once, or a monthly plan',
       ads: 'None',
     },
   },
@@ -525,7 +525,7 @@ const CMP = {
     platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone muy pronto',
     flowtime: {
       line: 'Un temporizador Pomodoro con tres modos (Pomodoro, FlowTime y Porcentaje), salas Coop para hasta 8 y sin anuncios; te va si quieres un temporizador sencillo que ajusta el descanso a lo trabajado.',
-      price: 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes',
+      price: 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes',
       ads: 'Ninguno',
     },
   },

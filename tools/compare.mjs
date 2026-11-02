@@ -79,7 +79,7 @@ export const COMPARE = {
         ['Sounds', '+ 12 focus sounds generated on the phone, with mixes, all free', 'Ambient sounds; one soundscape in the free tier, and some tracks are bought with coins'],
         ['Ads', '+ None at all', 'The free tier shows occasional ads, never during a focus session, per its FAQ. Google Play marks it "Contains ads"'],
         ['Your data', '+ Stays on your phone; no analytics. Automatic backup and backup to a file', 'Its FAQ says session data is stored with your account'],
-        ['Price', 'Free. Pro: $1.99 once, or a monthly plan', 'Free core. Plus is a subscription: the US App Store list shows $5.99 a month and $32.49 or $35.99 a year, all labeled "Early Bird". The one-time Forest Pro is no longer sold'],
+        ['Price', 'Free. Pro: $3.99 once, or a monthly plan', 'Free core. Plus is a subscription: the US App Store list shows $5.99 a month and $32.49 or $35.99 a year, all labeled "Early Bird". The one-time Forest Pro is no longer sold'],
         ['Platforms', '%platforms%', 'Android, iPhone, iPad, plus Chrome and Firefox extensions'],
       ],
       betterH: 'Where Forest is the better pick',
@@ -130,7 +130,7 @@ export const COMPARE = {
         ['Sonidos', '+ 12 sonidos para concentrarte generados en el móvil, con mezclas, todos gratis', 'Sonidos ambiente; un paisaje sonoro en el nivel gratis y algunas pistas se compran con monedas'],
         ['Anuncios', '+ Ninguno', 'El nivel gratis muestra anuncios ocasionales, nunca durante una sesión, según su FAQ. Google Play la marca con "Contiene anuncios"'],
         ['Tus datos', '+ Se quedan en el móvil; sin analítica. Copia automática y copia en un archivo', 'Su FAQ dice que los datos de las sesiones se guardan con tu cuenta'],
-        ['Precio', 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes', 'Núcleo gratis. Plus es una suscripción: la lista de la App Store de España muestra 4,69 € al mes y 25,00 € o 27,95 € al año, todos con la etiqueta "anticipado" (Early Bird). El Forest Pro de pago único ya no se vende'],
+        ['Precio', 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes', 'Núcleo gratis. Plus es una suscripción: la lista de la App Store de España muestra 4,69 € al mes y 25,00 € o 27,95 € al año, todos con la etiqueta "anticipado" (Early Bird). El Forest Pro de pago único ya no se vende'],
         ['Plataformas', '%platforms%', 'Android, iPhone, iPad y extensiones de Chrome y Firefox'],
       ],
       betterH: 'Cuándo es mejor Forest',
@@ -187,7 +187,7 @@ export const COMPARE = {
         ['Sounds', '+ 12 focus sounds generated on the phone, with mixes', '+ Alarm and background sounds'],
         ['Account', '+ Not needed for the timer. Only Coop asks you to sign in with Google', '+ The timer and task list are available without signing in'],
         ['Ads', '+ None at all', 'Its Premium plan lists "No Ads", and its page loads Google AdSense'],
-        ['Price', 'Free. Pro: $1.99 once, or a monthly plan', 'Free, with a paid Premium plan billed monthly or yearly'],
+        ['Price', 'Free. Pro: $3.99 once, or a monthly plan', 'Free, with a paid Premium plan billed monthly or yearly'],
       ],
       betterH: 'Where Pomofocus is the better pick',
       better: [
@@ -238,7 +238,7 @@ export const COMPARE = {
         ['Sonidos', '+ 12 sonidos para concentrarte generados en el móvil, con mezclas', '+ Sonidos de alarma y de fondo'],
         ['Cuenta', '+ No hace falta para el temporizador. Solo Coop pide iniciar sesión con Google', '+ El temporizador y la lista de tareas funcionan sin iniciar sesión'],
         ['Anuncios', '+ Ninguno', 'Su plan Premium lista "No Ads" y su página carga Google AdSense'],
-        ['Precio', 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes', 'Gratis, con un plan Premium de pago que se cobra al mes o al año'],
+        ['Precio', 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes', 'Gratis, con un plan Premium de pago que se cobra al mes o al año'],
       ],
       betterH: 'Cuándo es mejor Pomofocus',
       better: [
@@ -269,13 +269,13 @@ export const COMPARE = {
     en: {
       nav: 'Focus To-Do',
       title: 'Focus To-Do Alternative: FlowTime, a Simpler Pomodoro Timer',
-      desc: 'A Focus To-Do alternative for people who want the timer more than the task manager: FlowTime is free, with three modes and a $1.99 Pro. Compared honestly.',
+      desc: 'A Focus To-Do alternative for people who want the timer more than the task manager: FlowTime is free, with three modes and a $3.99 Pro. Compared honestly.',
       h1: 'A simpler alternative to Focus To-Do, with the timer first',
       lede: "Focus To-Do joins a Pomodoro timer to a full task manager on almost every device. FlowTime does less on purpose: a timer with three modes, today's tasks and tags. Here is how the two compare.",
       fitUs: [
         "You want the timer first and a task list that stays small: today's tasks and tags, not projects and sub-tasks.",
         'You want a count-up FlowTime mode, a Percentage mode or a private Coop room, none of which its store descriptions mention.',
-        'You want a small payment: Pro is $1.99 once, and all three modes, the widget and Coop are free.',
+        'You want a small payment: Pro is $3.99 once, and all three modes, the widget and Coop are free.',
       ],
       fitThem: [
         'You plan with projects, sub-tasks, recurring tasks, reminders and priorities.',
@@ -295,7 +295,7 @@ export const COMPARE = {
         ['Sounds', '+ 12 focus sounds generated on the phone, with mixes', '+ White noise sounds'],
         ['Sync and your data', 'Data stays on the phone, with automatic backup and backup to a file', 'Syncs across your devices'],
         ['Ads', '+ None at all', 'No "Contains ads" label on Google Play'],
-        ['Price', 'Free. Pro: $1.99 once, or a monthly plan', 'Free download. US App Store in-app list: Lifetime $11.99, 3 Months $3.99 and an item named "Focus To-Do Premium" at $1.99'],
+        ['Price', 'Free. Pro: $3.99 once, or a monthly plan', 'Free download. US App Store in-app list: Lifetime $11.99, 3 Months $3.99 and an item named "Focus To-Do Premium" at $1.99'],
       ],
       betterH: 'Where Focus To-Do is the better pick',
       better: [
@@ -306,7 +306,7 @@ export const COMPARE = {
       faqH: 'Questions',
       faq: [
         ['How much is Focus To-Do Premium?', 'Focus To-Do is a free download with in-app purchases. As of October 26, 2026, the US App Store list shows Lifetime $11.99, 3 Months $3.99 and an item named "Focus To-Do Premium" at $1.99. The list does not say what each one unlocks. Google Play shows in-app items from $1.99 to $11.99.'],
-        ['Is there a free alternative to Focus To-Do?', 'FlowTime is free: all three modes, the notification timer, the widget, the quick settings tile, up to 15 pending tasks, 4 tags, all 12 sounds with 3 saved mixes, streak, daily goal, stats for day, week and month, backups and Coop. Pro is optional: $1.99 once, or a monthly plan.'],
+        ['Is there a free alternative to Focus To-Do?', 'FlowTime is free: all three modes, the notification timer, the widget, the quick settings tile, up to 15 pending tasks, 4 tags, all 12 sounds with 3 saved mixes, streak, daily goal, stats for day, week and month, backups and Coop. Pro is optional: $3.99 once, or a monthly plan.'],
         ['Does FlowTime have projects and sub-tasks?', "No. FlowTime works from today's tasks: unfinished ones carry over and you pick a task for each session. Tags group your work, and Pro removes the limit on tags and tasks. If you plan with projects, Focus To-Do fits better."],
         ['Can I move my Focus To-Do tasks to FlowTime?', 'No. FlowTime cannot import data from other apps, so you would start with an empty list and history.'],
       ],
@@ -321,7 +321,7 @@ export const COMPARE = {
     es: {
       nav: 'Focus To-Do',
       title: 'Alternativa a Focus To-Do: FlowTime, un Pomodoro más sencillo',
-      desc: 'Una alternativa a Focus To-Do para quien quiere el temporizador antes que el gestor de tareas: FlowTime es gratis, con tres modos y un Pro de 1,99 €. Con datos.',
+      desc: 'Una alternativa a Focus To-Do para quien quiere el temporizador antes que el gestor de tareas: FlowTime es gratis, con tres modos y un Pro de 4,99 €. Con datos.',
       h1: 'Una alternativa más sencilla a Focus To-Do, con el temporizador primero',
       lede: 'Focus To-Do une un temporizador Pomodoro con un gestor de tareas completo en casi todos los dispositivos. FlowTime hace menos a propósito: un temporizador con tres modos, las tareas de hoy y etiquetas. Así se comparan.',
       fitUs: [
@@ -347,7 +347,7 @@ export const COMPARE = {
         ['Sonidos', '+ 12 sonidos para concentrarte generados en el móvil, con mezclas', '+ Sonidos de ruido blanco'],
         ['Sincronización y datos', 'Los datos se quedan en el móvil, con copia automática y copia en un archivo', 'Sincroniza entre tus dispositivos'],
         ['Anuncios', '+ Ninguno', 'Sin la etiqueta "Contiene anuncios" en Google Play'],
-        ['Precio', 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes', 'Descarga gratis. Compras dentro de la app en la App Store de España: Permanente 12,99 €, 3 meses 3,99 € y otro elemento con "Premium" en el nombre por 1,99 €'],
+        ['Precio', 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes', 'Descarga gratis. Compras dentro de la app en la App Store de España: Permanente 12,99 €, 3 meses 3,99 € y otro elemento con "Premium" en el nombre por 1,99 €'],
       ],
       betterH: 'Cuándo es mejor Focus To-Do',
       better: [
@@ -358,7 +358,7 @@ export const COMPARE = {
       faqH: 'Preguntas',
       faq: [
         ['¿Cuánto cuesta Focus To-Do Premium?', 'Focus To-Do se descarga gratis y tiene compras dentro de la app. A 26 de octubre de 2026, la lista de la App Store de España muestra Permanente 12,99 €, 3 meses 3,99 € y otro elemento con "Premium" en el nombre por 1,99 €. La lista no dice qué desbloquea cada uno. Google Play muestra elementos de 1,99 € a 12,99 €.'],
-        ['¿Hay una alternativa gratis a Focus To-Do?', 'FlowTime es gratis: los tres modos, el temporizador en la notificación, el widget, el botón de ajustes rápidos, hasta 15 tareas pendientes, 4 etiquetas, los 12 sonidos con 3 mezclas guardadas, racha, meta diaria, estadísticas de día, semana y mes, copias de seguridad y Coop. Pro es opcional: 1,99 € una vez o 0,99 € al mes.'],
+        ['¿Hay una alternativa gratis a Focus To-Do?', 'FlowTime es gratis: los tres modos, el temporizador en la notificación, el widget, el botón de ajustes rápidos, hasta 15 tareas pendientes, 4 etiquetas, los 12 sonidos con 3 mezclas guardadas, racha, meta diaria, estadísticas de día, semana y mes, copias de seguridad y Coop. Pro es opcional: 4,99 € una vez o 2,49 € al mes.'],
         ['¿FlowTime tiene proyectos y subtareas?', 'No. FlowTime trabaja con las tareas de hoy: las que no terminas pasan al día siguiente y eliges una tarea para cada sesión. Las etiquetas agrupan tu trabajo, y Pro quita el límite de etiquetas y tareas. Si planificas con proyectos, Focus To-Do encaja mejor.'],
         ['¿Puedo pasar mis tareas de Focus To-Do a FlowTime?', 'No. FlowTime no puede importar datos de otras apps, así que empezarías con la lista y el historial vacíos.'],
       ],
@@ -396,7 +396,7 @@ export const COMPARE = {
         ['Pomodoro mode', '+ Pomodoro mode with your own times', '- None, per its own FAQ. It offers a break timer mode, and a countdown or stopwatch'],
         ['Count-up timer', '+ FlowTime mode counts up; when you stop, the break comes from how long you worked', '+ A stopwatch, next to the countdown'],
         ['Ads', '+ None at all', 'Yes in the free version, per its FAQ: video ads are opt-in and forced ads can be removed with a purchase. Google Play marks it "Contains ads"'],
-        ['Price', 'Free. Pro: $1.99 once, or a monthly plan', 'Free. One-time packs that remove forced ads: $14.99 and $19.99 on the US App Store list; coin packs from $0.99'],
+        ['Price', 'Free. Pro: $3.99 once, or a monthly plan', 'Free. One-time packs that remove forced ads: $14.99 and $19.99 on the US App Store list; coin packs from $0.99'],
         ['Internet and data', '+ Data stays on the phone, with automatic backup and backup to a file', 'Per its FAQ an internet connection is required unless you buy a package. Login is optional, for cloud save and load'],
         ['App blocking', '- No', '- No, per its FAQ. It has an optional Honesty Mode instead (lose coins or watch an ad)'],
         ['Tasks and study tools', "+ Today's tasks and tags", '+ A to-do list, flashcards and a study tracker with 15 subject colors'],
@@ -447,7 +447,7 @@ export const COMPARE = {
         ['Modo Pomodoro', '+ Modo Pomodoro con tus tiempos', '- No, según su propia FAQ. Ofrece un modo de temporizador de descanso, y cuenta atrás o cronómetro'],
         ['Cuenta hacia arriba', '+ El modo FlowTime cuenta hacia arriba; al parar, el descanso sale de lo que has trabajado', '+ Un cronómetro, junto a la cuenta atrás'],
         ['Anuncios', '+ Ninguno', 'Sí en la versión gratis, según su FAQ: los anuncios de vídeo son opcionales y los forzados se quitan con una compra. Google Play la marca con "Contiene anuncios"'],
-        ['Precio', 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes', 'Gratis. Paquetes de pago único que quitan los anuncios forzados: 17,99 € y 22,99 € en la lista de la App Store de España'],
+        ['Precio', 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes', 'Gratis. Paquetes de pago único que quitan los anuncios forzados: 17,99 € y 22,99 € en la lista de la App Store de España'],
         ['Internet y datos', '+ Los datos se quedan en el móvil, con copia automática y copia en un archivo', 'Según su FAQ hace falta conexión a internet salvo que compres un paquete. Iniciar sesión es opcional, para guardar y cargar en la nube'],
         ['Bloqueo de apps', '- No', '- No, según su FAQ. Tiene en su lugar un modo opcional, "Honesty Mode" (pierdes monedas o ves un anuncio)'],
         ['Tareas y herramientas de estudio', '+ Tareas de hoy y etiquetas', '+ Una lista de tareas, tarjetas de estudio y un registro de estudio con 15 colores por asignatura'],
@@ -491,7 +491,7 @@ export const COMPARE = {
       fitUs: [
         'You want a plain timer with three modes: Pomodoro, FlowTime (counts up) and Percentage.',
         'You want to focus with others: a private Coop room for up to 8 people sharing one timer, with no chat.',
-        'You would rather pay once: Pro is $1.99 once, and there is a monthly plan if you prefer it.',
+        'You would rather pay once: Pro is $3.99 once, and there is a monthly plan if you prefer it.',
       ],
       fitThem: [
         'You want something that locks distracting apps: Deep Focus Mode has an allow list and is available on Android.',
@@ -508,7 +508,7 @@ export const COMPARE = {
         ['Sounds', '+ 12 focus sounds generated on the phone, with mixes', '+ A background music option'],
         ['Ads', '+ None', '+ None. Its FAQ ties the subscription to keeping the app ad-free and privacy-first'],
         ['Privacy labels', 'No analytics; data stays on the phone', 'Google Play: "No data shared with third parties" and "No data collected". App Store label "Data Not Linked to You": Usage Data and Diagnostics'],
-        ['Price', 'Free. Pro: $1.99 once, or a monthly plan', 'Free. Focus Friend Pro: $3.99 a month, $19.99 a year or $39.99 lifetime on the US App Store list; a lifetime offer and a welcome offer at $29.99 each are also listed'],
+        ['Price', 'Free. Pro: $3.99 once, or a monthly plan', 'Free. Focus Friend Pro: $3.99 a month, $19.99 a year or $39.99 lifetime on the US App Store list; a lifetime offer and a welcome offer at $29.99 each are also listed'],
         ['Platforms', '%platforms%', 'Android, iPhone'],
       ],
       betterH: 'Where Focus Friend is the better pick',
@@ -519,7 +519,7 @@ export const COMPARE = {
       ],
       faqH: 'Questions',
       faq: [
-        ['Does Focus Friend have a subscription?', 'Yes, it has Focus Friend Pro, and the app is a free download. As of October 26, 2026, the US App Store list shows Pro Monthly $3.99, Pro Yearly $19.99 and Lifetime $39.99, plus a lifetime offer and a welcome offer at $29.99 each. FlowTime Pro is $1.99 once, or a monthly plan, and adds advanced stats, CSV export, unlimited tags, tasks and mixes, 6 more sounds, 6 themes, 6 icons and automatic Do Not Disturb while you work.'],
+        ['Does Focus Friend have a subscription?', 'Yes, it has Focus Friend Pro, and the app is a free download. As of October 26, 2026, the US App Store list shows Pro Monthly $3.99, Pro Yearly $19.99 and Lifetime $39.99, plus a lifetime offer and a welcome offer at $29.99 each. FlowTime Pro is $3.99 once, or a monthly plan, and adds advanced stats, CSV export, unlimited tags, tasks and mixes, 6 more sounds, 6 themes, 6 icons and automatic Do Not Disturb while you work.'],
         ['Does Focus Friend have ads?', 'No. Its FAQ says the subscription exists so the app can be ad-free and privacy-first, and Google Play does not mark it "Contains ads". FlowTime has no ads either, so ads are not a reason to pick one over the other.'],
         ['Does Focus Friend block apps?', 'Yes. Deep Focus Mode locks distracting apps and has an allow list, and it is available on Android. FlowTime does not block apps.'],
         ['Can I move my Focus Friend data to FlowTime?', 'No. FlowTime cannot import data from other apps, so you would start with an empty history.'],
@@ -558,7 +558,7 @@ export const COMPARE = {
         ['Sonidos', '+ 12 sonidos para concentrarte generados en el móvil, con mezclas', '+ Una opción de música de fondo'],
         ['Anuncios', '+ Ninguno', '+ Ninguno. Su FAQ vincula la suscripción con mantener la app sin anuncios y con la privacidad por delante'],
         ['Etiquetas de privacidad', 'Sin analítica; los datos se quedan en el móvil', 'Google Play indica que no comparte datos con terceros y que no recopila datos. En la App Store figuran como datos no vinculados contigo los datos de uso y los diagnósticos'],
-        ['Precio', 'Gratis. Pro: 1,99 € una vez o 0,99 € al mes', 'Gratis. Focus Friend Pro: 3,99 € al mes, 22,99 € al año o 44,99 € de por vida en la lista de la App Store de España; también figuran una oferta de por vida y una de bienvenida a 34,99 € cada una'],
+        ['Precio', 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes', 'Gratis. Focus Friend Pro: 3,99 € al mes, 22,99 € al año o 44,99 € de por vida en la lista de la App Store de España; también figuran una oferta de por vida y una de bienvenida a 34,99 € cada una'],
         ['Plataformas', '%platforms%', 'Android e iPhone'],
       ],
       betterH: 'Cuándo es mejor Focus Friend',
@@ -569,7 +569,7 @@ export const COMPARE = {
       ],
       faqH: 'Preguntas',
       faq: [
-        ['¿Focus Friend tiene suscripción?', 'Sí, tiene Focus Friend Pro, y la app se descarga gratis. A 26 de octubre de 2026, la lista de la App Store de España muestra Pro mensual 3,99 €, Pro anual 22,99 € y de por vida 44,99 €, además de una oferta de por vida y una de bienvenida a 34,99 € cada una. FlowTime Pro cuesta 1,99 € una vez o 0,99 € al mes, y añade estadísticas avanzadas, exportar a CSV, etiquetas, tareas y mezclas sin límite, 6 sonidos más, 6 temas, 6 iconos y No molestar automático mientras trabajas.'],
+        ['¿Focus Friend tiene suscripción?', 'Sí, tiene Focus Friend Pro, y la app se descarga gratis. A 26 de octubre de 2026, la lista de la App Store de España muestra Pro mensual 3,99 €, Pro anual 22,99 € y de por vida 44,99 €, además de una oferta de por vida y una de bienvenida a 34,99 € cada una. FlowTime Pro cuesta 4,99 € una vez o 2,49 € al mes, y añade estadísticas avanzadas, exportar a CSV, etiquetas, tareas y mezclas sin límite, 6 sonidos más, 6 temas, 6 iconos y No molestar automático mientras trabajas.'],
         ['¿Focus Friend tiene anuncios?', 'No. Su FAQ dice que la suscripción existe para que la app pueda ir sin anuncios y con la privacidad por delante, y Google Play no la marca con "Contiene anuncios". FlowTime tampoco tiene anuncios, así que los anuncios no son motivo para elegir una u otra.'],
         ['¿Focus Friend bloquea apps?', 'Sí. Deep Focus Mode bloquea las apps que distraen y tiene una lista de apps permitidas, y está disponible en Android. FlowTime no bloquea apps.'],
         ['¿Puedo pasar mis datos de Focus Friend a FlowTime?', 'No. FlowTime no puede importar datos de otras apps, así que empezarías con el historial vacío.'],
