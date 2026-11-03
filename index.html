@@ -47,6 +47,8 @@
   hr { border: 0; border-top: 1px solid var(--line); margin: 64px 0 40px; }
   .wrap { overflow-x: auto; }
   .note { color: var(--muted); font-size: 0.9rem; }
+  footer { color: var(--muted); font-size: 0.88rem; margin-top: 48px; }
+  footer p { margin: 0; }
 </style>
 </head>
 <body>
@@ -56,21 +58,24 @@
 <section id="en">
 
 <h1>FlowTime Privacy Policy</h1>
-<p class="lede">Last updated: 20 October 2026</p>
-<p class="nav"><strong>English</strong> - <a href="#es">Español</a></p>
+<p class="lede">Last updated: 3 November 2026</p>
+<p class="nav"><strong>English</strong> - <a href="#es">Español</a> - <a href="/terms.html">Terms of use</a> - <a href="/legal.html">Legal notice</a></p>
 
 <div class="box">
   <p><strong>The short version.</strong> FlowTime is a focus timer. Your sessions, tasks, tags,
   goals and settings are stored only on your phone and are never uploaded to us. There is no account
-  unless you choose Coop (optional, described below), and no advertising, no analytics and no tracking.
-  Apart from Coop, the only data that leaves your phone is what is needed to know whether you have
-  bought FlowTime Pro or left a tip.</p>
+  unless you choose Coop (optional, described below), and no analytics of our own. The free version
+  shows ads from Google AdMob, which receive some data from your device (see "Ads (free version)"
+  below); FlowTime Pro removes them. On iPhone, if you see ads, iOS asks whether FlowTime may track
+  you, and you can say no. Apart from Coop and the ads, the only data that leaves your phone is what is needed to know whether
+  you have bought FlowTime Pro or left a tip.</p>
 </div>
 
 <h2>Who is responsible</h2>
 <p>FlowTime ("the app") is published by <strong>Baltasar Jiménez</strong> ("we", "us"), an individual
 developer based in Spain, who acts as data controller for the limited processing described below.</p>
-<p>Contact for anything in this policy: <a href="mailto:baltax.75@gmail.com">baltax.75@gmail.com</a>.</p>
+<p>Contact for anything in this policy: <a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a>. The
+full details of the publisher are in the <a href="/legal.html">legal notice</a>.</p>
 
 <h2>What stays on your device</h2>
 <p>Everything you create in FlowTime is stored locally, in the app's private storage:</p>
@@ -113,7 +118,7 @@ payment information.</p>
 identifier and stores, on our behalf, that identifier, the purchase history associated with it, and
 technical information such as the app version, the operating system version and the store country. This
 identifier is never linked to your name or your email address, and nothing about your sessions,
-tasks or tags is ever sent to RevenueCat. FlowTime does not use the advertising identifier. See
+tasks or tags is ever sent to RevenueCat. FlowTime does not send the advertising identifier to RevenueCat. See
 <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat's privacy policy</a>.</p>
 <p>RevenueCat processes data in the United States. Transfers outside the European Economic Area are
 covered by the European Commission's Standard Contractual Clauses.</p>
@@ -123,18 +128,24 @@ covered by the European Commission's Standard Contractual Clauses.</p>
 people, asks you to sign in, with <strong>Sign in with Apple</strong> or <strong>Google</strong>. If you
 never open Coop, nothing in this section applies to you.</p>
 <p>When you use Coop we store, on our server: the identifier and the email address that Apple or Google
-give us when you sign in (with Apple you may choose a private relay address), the <strong>name you choose
-to show</strong>, your invitation code, your friends and friend requests, the people you block, the room
-you are in and its timer (when it started, whether it is paused, its durations), and the reports you
-send. Other people only ever see your chosen name: your friends, people with a friend request open with
-you, and the people in your room. Your study history, tasks, tags and goals stay on your phone; Coop
-never sends them.</p>
+give us when you sign in (with Apple you may choose a private relay address), the <strong>name you
+show</strong> (new profiles start with an anonymous default name, not the name of your Apple or Google
+account, and you can change it at any time), your invitation code, your friends and friend requests, the
+people you block, the room you are in and its timer (when it started, whether it is paused, its
+durations), and the reports you send. Other people only ever see your name: your friends, people with a
+friend request open with you, and the people in your room. Your study history, tasks, tags and goals stay
+on your phone; Coop never sends them. An automatic word filter stops offensive names from being saved.</p>
+<!-- CONFIRMAR: the anonymous default name and the word filter ship with the Coop build of branch coop-vista-previa (the server half is migration 20261103110000_nombres_ofensivos.sql). Publish this page together with that build. -->
+
 <p>The server is run by <strong>Supabase, Inc.</strong> as a processor, in the European Union (Frankfurt,
-Germany). The same account system is shared with Chroma, another app by the same developer: if you sign
-in to both apps with the same Apple or Google account, it is one account, but each app keeps its own
-name, friends and data, and neither app can see the other's.</p>
+Germany). The sign-in system is shared with the developer's other apps, Chroma, Quilt and MoodTraker: if
+you sign in to more than one of them with the same Apple or Google account, it is one sign-in identity
+(your email address and your Apple or Google ID), but each app keeps its own name, friends and data, and
+no app can see another's.</p>
 <p>A report sends us an email with the names of the two people involved so that we can act within 24
 hours; it is delivered by <strong>Resend, Inc.</strong> as a processor.</p>
+<!-- DECIDIR: how long report emails are kept (Resend keeps sent emails according to its own plan; nothing on our side deletes them) and how long report rows stay in the server (flowtime.reports: today until the reporter or the reported person deletes the account). No period is promised above. -->
+
 <p>So that Coop can tell you when someone sends you a friend request, accepts yours or invites you to
 their room, also with the app closed, we store a <strong>notification token</strong> for your phone with
 your Coop account. It is handed to <strong>Google</strong> (Firebase Cloud Messaging, on Android) or
@@ -142,18 +153,122 @@ your Coop account. It is handed to <strong>Google</strong> (Firebase Cloud Messa
 with its text, which includes the chosen name of the person who caused it. The token is deleted when you
 sign out or delete your Coop account. If you turn notifications off for FlowTime, nothing is shown.</p>
 <p>You can change your name, block and unblock people, sign out and <strong>delete your Coop account at
-any time from the app</strong> (Settings, Coop account, Delete account; also at <a href="delete.html">flowtime.baltajmn.dev/delete.html</a>). Deleting it removes your name, friends,
-blocks and room membership from the server at once; if you also use Chroma with the same account, the
-Chroma account is kept until you delete it there.</p>
+any time from the app</strong> (Settings, Coop account, Delete account; also at <a href="delete.html">flowtime.baltajmn.dev/delete.html</a>). Deleting it removes from the server, at
+once, everything FlowTime keeps about you in Coop: your name, invitation code, friends and friend
+requests, blocks, room membership, notification tokens, and the reports you made or that were made about
+you. If you also use Chroma, Quilt or MoodTraker with the same Apple or Google account, your sign-in
+identity (your email address and your Apple or Google ID) stays while one of those apps still uses it,
+and is deleted when you delete your account in the last one; each of those apps keeps its own data until
+you delete it there.</p>
+
+<h3>Ads (free version)</h3>
+<p>The free version of FlowTime shows ads from <strong>Google AdMob</strong>: a banner on the Focus
+screen and at most one full-screen ad a day, after you finish a session. <strong>FlowTime Pro removes all
+ads.</strong> If you have Pro, or you were already using FlowTime before ads were added, the app does not
+show you ads and does not ask you for ad consent (so on iPhone it does not show the tracking prompt
+either). FlowTime asks Google to show only ads that are suitable for all ages (content rating G).</p>
+<p>When ads are shown, Google's ads software on your phone collects and receives the following, to
+choose, show and measure ads, for analytics and to prevent fraud:</p>
+<ul>
+  <li>your IP address, which Google can use to estimate your approximate location;</li>
+  <li>identifiers of your device: on Android, the advertising ID and the app set ID; on iPhone,
+  the advertising identifier (IDFA) only if you allow tracking, and otherwise identifiers that are
+  limited to the app or to its developer on your device (see "Tracking permission on iPhone" below);</li>
+  <li>how you interact with the ads and the app, such as app launches, taps and video views;</li>
+  <li>diagnostic information about how the app and the ads software perform, such as launch time, hang
+  rate and energy use and, on iPhone, crash logs and which ads you have seen.</li>
+</ul>
+<p>This data is encrypted in transit. FlowTime does not give the ads software your sessions, tasks,
+tags, goals or settings. Google handles what it receives under its own policies: see
+<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses
+information from sites or apps that use our services</a>. Google is the only ad network FlowTime
+uses.</p>
+<p><strong>Consent in the European Economic Area, the United Kingdom and Switzerland.</strong> There,
+FlowTime shows Google's consent form (Google User Messaging Platform) when you open the app and does not
+request ads until you have answered it. You can change your choice at any time in <strong>Settings, Ad
+privacy options</strong>, which appears only where a form or message applies.</p>
+<p><strong>Google is contacted when the app starts.</strong> For people who see ads, the consent software
+contacts Google every time the app starts, to find out whether a form applies to you and to keep your
+choice up to date. Like any request to Google, this reveals your IP address and the app's details to
+Google, also where no form is shown.</p>
+<p><strong>US states.</strong> In US states with privacy laws, FlowTime shows Google's US states message,
+where you can opt out of the sale or sharing of your personal data and of targeted advertising. You can
+change that choice at any time in <strong>Settings, Ad privacy options</strong>.</p>
+<!-- CONFIRMAR: the GDPR message and the "US states" message have to be created and published in AdMob > Privacy & messaging (docs/revision-legal.md, item 3); until then UMP shows nothing and the two paragraphs above are not true. Check which states Google's message covers before naming any. -->
+<p><strong>Tracking permission on iPhone.</strong> On iPhone, after the consent form (where it applies)
+and before the first ad, iOS shows Apple's App Tracking Transparency prompt, which asks whether FlowTime
+may track you across other companies' apps and websites. If you allow it, the advertising identifier
+(IDFA) is available to Google's ads software, to show and measure ads and to prevent fraud. If you choose
+Ask App Not to Track, the identifier is not available and you still see ads, without it; Google's
+software may still use identifiers that are limited to the app or to its developer on your device. You
+can change your choice at any time in iOS Settings, Privacy &amp; Security, Tracking. If you have Pro, or
+you were using FlowTime before ads were added, you are not asked.</p>
+<p><strong>Android advertising ID.</strong> Google's ads software reads your advertising ID, which is why
+FlowTime declares the normal permission "AD_ID". You can reset or delete the ID at any time in your
+phone's Android settings; apps then get a string of zeros instead of the ID.</p>
 
 <h3>Ratings</h3>
 <p>FlowTime may show the store's own rating dialog, from Google Play or the App Store. Your rating goes
 to that store, under its own policy; the app is not told what you rated or whether you rated at all.</p>
 
 <h3>Nothing else</h3>
-<p>FlowTime contains no advertising SDK, no analytics SDK and no crash-reporting SDK. We do not build
-profiles, we do not use remarketing, and we do not sell or share personal information with anyone.
-The app needs an internet connection only for purchases and, if you use it, for Coop.</p>
+<p>FlowTime contains no analytics SDK and no crash-reporting SDK of our own. The other software that
+collects data is the purchases library (RevenueCat), the connection to Coop if you use it, and Google's
+ads software in the free version, all described above; the ads software also uses what it collects for
+its own analytics and fraud prevention. We do not build profiles, we do not use remarketing, and apart
+from the ads and the services listed in "Who receives your data" below we do not share personal
+information with anyone. The app needs an internet connection only for purchases, for the ads in the
+free version and, if you use it, for Coop.</p>
+
+<h2>Who receives your data</h2>
+<p>Everyone who receives data because of FlowTime or this website, what for, and what protects it when it
+leaves the European Economic Area, the United Kingdom or Switzerland:</p>
+<div class="wrap">
+<table>
+  <tr><th>Who</th><th>What it receives, and why</th><th>Safeguard for transfers</th></tr>
+  <tr><td><strong>Google</strong> (Google LLC, Google Ireland Limited): ads and consent (AdMob, Google User Messaging Platform)<br><span class="note">Independent controller</span></td><td>Free version with ads only: your IP address, device identifiers, how you interact with the ads and the app, and diagnostics, to choose, show and measure ads, to prevent fraud and to keep your consent choice. The consent software contacts Google each time the app starts. On iPhone, the advertising identifier only if you allow tracking.</td><td>Google LLC is certified under the EU-US Data Privacy Framework (with its UK Extension and the Swiss-US framework); Google's terms add Standard Contractual Clauses where that does not apply.</td></tr>
+  <tr><td><strong>Google</strong>: push notifications (Firebase Cloud Messaging), Android, Coop only</td><td>The notification token of your phone and the text of each notification, to deliver it.</td><td>The same as above.</td></tr>
+  <tr><td><strong>Google</strong>: Sign in with Google, Coop only</td><td>Your sign-in request. It gives us your Google account ID and email address.</td><td>The same as above.</td></tr>
+  <tr><td><strong>Apple</strong>: Sign in with Apple and push notifications (APNs), Coop only</td><td>Your sign-in request, which gives us your Apple ID identifier and your email or private relay address; on iPhone, the notification token of your phone and the text of each notification, to deliver it.<br><span class="note">Independent controller</span></td><td>Standard Contractual Clauses, as Apple's privacy policy states.</td></tr>
+  <tr><td><strong>Apple</strong>: tracking prompt (App Tracking Transparency), iPhone with ads only</td><td>The prompt is shown and kept by iOS. Your answer decides whether the advertising identifier is available to the ads software.</td><td>Not applicable: the answer stays in iOS on your phone.</td></tr>
+  <tr><td><strong>Google Play</strong> or <strong>App Store</strong>: the store you installed from</td><td>Your payment, billing details and order records, which we never receive, and your store rating. Only the purchase itself reaches RevenueCat.<br><span class="note">Independent controller</span></td><td>The store's own terms (see Google and Apple above).</td></tr>
+  <tr><td><strong>RevenueCat, Inc.</strong> (USA)<br><span class="note">Processor</span></td><td>An anonymous installation identifier, your purchase history, the app version, the operating system version and the store country, to know whether you have Pro or left a tip.</td><td>Standard Contractual Clauses, with the UK Addendum and the Swiss adjustments, in RevenueCat's data processing agreement.</td></tr>
+  <tr><td><strong>Supabase, Inc.</strong>: Coop server and room link page, project in the EU (Frankfurt)<br><span class="note">Processor</span></td><td>Coop only: the data listed in the Coop section above and, when you open a room link on the website, the room code and your IP address.</td><td>The data is stored in the EU. Where Supabase or its sub-processors reach it from outside the EEA, the UK or Switzerland: Standard Contractual Clauses, with the UK Addendum, in Supabase's data processing agreement.</td></tr>
+  <tr><td><strong>Resend, Inc.</strong> (USA): report emails<br><span class="note">Processor</span></td><td>Coop reports only: an email with the names and IDs of the two people involved.</td><td>Standard Contractual Clauses; Resend also states that it complies with the EU-US Data Privacy Framework.</td></tr>
+  <tr><td><strong>GitHub, Inc.</strong> (GitHub Pages): website hosting<br><span class="note">Independent controller for its server logs</span></td><td>Website visitors: your IP address and the details of your request, to deliver the page. GitHub delivers Pages through a content delivery network.</td><td>EU-US Data Privacy Framework and Standard Contractual Clauses, as GitHub's data protection agreement states.</td></tr>
+  <tr><td><strong>Cloudflare, Inc.</strong>: website protection and delivery<br><span class="note">Processor for the website</span></td><td>Website visitors: your IP address and the details of your request, to deliver the page and protect it from attacks.</td><td>EU-US Data Privacy Framework and Standard Contractual Clauses, as Cloudflare's data processing addendum states.</td></tr>
+  <tr><td><strong>Apple</strong> (itunes.apple.com): website pages with store buttons</td><td>Your IP address, when the page asks whether the iPhone app is on sale.</td><td>Standard Contractual Clauses, as Apple's privacy policy states.</td></tr>
+</table>
+</div>
+<!-- CONFIRMAR: Supabase's public DPA (supabase.com/legal/dpa) names Supabase Pte. Ltd. (Singapore) as the data importer, not Supabase, Inc. Check which entity bills you and use its exact name here and in the Coop section. -->
+<!-- CONFIRMAR: Resend's public DPA names Plus Five Five, Inc. as the company behind Resend; the text says Resend, Inc. Use the exact legal name. -->
+<!-- CONFIRMAR: RevenueCat's DPA lists Standard Contractual Clauses, the UK Addendum and Swiss terms but does not mention the Data Privacy Framework, so only the clauses are claimed. Check that you have accepted the DPA in the RevenueCat dashboard. -->
+<!-- CONFIRMAR: the Google rows follow Google's public pages (policies.google.com/privacy/frameworks and the business.safety.google controller terms). Check which agreement covers AdMob and which covers Firebase Cloud Messaging (Firebase data processing terms; Google as processor) in your own accounts, and accept them in the consoles. -->
+<!-- CONFIRMAR: GitHub Pages sits behind Fastly (response headers x-served-by and x-fastly-request-id) and then Cloudflare; GitHub's sub-processor list names Fastly. Check, and add Fastly if you want it named. -->
+<!-- CONFIRMAR: GitHub's agreement does not mention GitHub Pages visitors; "independent controller for its server logs" follows GitHub's privacy statement. Check it, and whether you want the Cloudflare line to say "processor" (you are its customer) or "controller". -->
+<!-- CONFIRMAR: Apple's role for Sign in with Apple and APNs, and the transfer mechanism, are taken from Apple's public privacy policy (apple.com/legal/privacy/en-ww); the Developer Program License Agreement sections 3.3.3, 3.3.5 and 3.3.7 say more and were not read in full. -->
+
+<h2>This website</h2>
+<p>This policy, the web timer and the guides live at flowtime.baltajmn.dev. The website sets no cookies
+and has no analytics or advertising scripts.</p>
+<p>The website is hosted on GitHub Pages (GitHub, Inc.) behind Cloudflare. Like any website, they receive
+your IP address and the details of your request (the page, your browser and language) to deliver the page
+and protect it from attacks, and they keep logs for that under their own policies. We do not read those
+logs; Cloudflare gives us only anonymous traffic totals. The legal basis is our legitimate interest in
+keeping the website running and secure.</p>
+<p>The web timer keeps its state and today's blocks in your browser (local storage). They never leave your
+browser, and clearing the site data in your browser erases them.</p>
+<p>Pages with store buttons ask Apple (itunes.apple.com), from your browser, whether the iPhone app is on
+sale, which gives Apple your IP address. The store links carry a campaign tag (for example
+utm_source=flowtime.baltajmn.dev) so that Google Play and the App Store can count the installs that came
+from the website; we receive no personal data from that.</p>
+<p>The page that opens a Coop room link (flowtime.baltajmn.dev/r/ followed by the room code) works without
+an account. When you open such a link, your browser asks our Supabase server (Frankfurt) for the state of
+that room (its phase, its timer and how many people are in it), which sends it the room code from the
+link and your IP address. The page shows no names.</p>
+<!-- CONFIRMAR: the room preview on /r/<code> is in the branch sala-en-la-web (404.html calls flowtime.room_preview), not in this branch. Publish this paragraph together with that page, or remove it. Also check that room_preview returns only phase, timer and member count. -->
+<!-- CONFIRMAR: the response headers of the live site carry no Set-Cookie (checked 3-11-2026 with curl); re-check after any Cloudflare change, because "no cookies" is a claim. -->
+
 
 <h2>Permissions the app asks for</h2>
 <div class="wrap">
@@ -165,12 +280,21 @@ The app needs an internet connection only for purchases and, if you use it, for 
   <tr><td>Media playback in the background</td><td>To keep the ambient sounds playing when you leave the app.</td></tr>
   <tr><td>Do Not Disturb access</td><td>Only if you turn on automatic Do Not Disturb (FlowTime Pro): to turn it on while you work and off afterwards. You grant it in the system settings.</td></tr>
   <tr><td>Vibration</td><td>To vibrate when a phase changes.</td></tr>
-  <tr><td>Internet / network state</td><td>To check your purchases with the store and RevenueCat, and for Coop if you use it.</td></tr>
+  <tr><td>Internet / network state</td><td>To check your purchases with the store and RevenueCat, to load the ads in the free version, and for Coop if you use it.</td></tr>
   <tr><td>In-app billing</td><td>To offer FlowTime Pro and tips through Google Play or the App Store.</td></tr>
+  <tr><td>Advertising ID</td><td>So that the ads in the free version can be chosen and measured: Google's ads software reads your advertising ID. It is a normal permission, granted when you install, and you can reset or delete the ID in your phone's settings.</td></tr>
+  <tr><td>Ad services: advertising ID</td><td>The newer Android permission to read the advertising ID, for the same purpose as the one above. Added by the ads software; only used if you see ads.</td></tr>
+  <tr><td>Ad services: attribution</td><td>So that the ads software can measure whether an ad led to an install or an action, without following you across apps. Only used if you see ads.</td></tr>
+  <tr><td>Ad services: topics</td><td>So that the ads software can read the interest topics that Android keeps on your phone (Topics API) to choose ads. Only used if you see ads.</td></tr>
+  <tr><td>Receive push messages</td><td>So that Coop can notify you, through Google, when someone sends you a friend request or invites you to a room. Only used if you use Coop.</td></tr>
+  <tr><td>Wake lock</td><td>To keep the phone awake for a moment while it handles an alert, the ambient sounds or a push notification. Added by the notifications software.</td></tr>
+  <tr><td>Fingerprint and biometrics</td><td>Declared by a software library that FlowTime includes. FlowTime does not use your fingerprint or your face.</td></tr>
 </table>
 </div>
-<p class="note">The table lists the Android permissions. On iOS the app only ever asks for
-notifications: the ambient sounds keep playing in the background without any extra permission, and
+<!-- CONFIRMAR: USE_BIOMETRIC and USE_FINGERPRINT come from androidx.biometric:biometric:1.1.0, a library pulled in by a dependency (manifest-merger report). FlowTime has no biometric code. Better to remove both with tools:node="remove" in app/src/main/AndroidManifest.xml and then delete this row. -->
+<!-- CONFIRMAR: the merged manifest of the anuncios worktree (checked 3-11-2026, version 2.9.0) also declares com.baltajmn.flowtime.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION, an internal permission that only FlowTime itself can hold; it is not listed here on purpose. The push and wake lock rows come from firebase-messaging 26.0.0; the three ad services rows from play-services-ads-api 25.5.0. Re-check this table against the merged manifest of the release build. -->
+<p class="note">The table lists the Android permissions. On iOS the app asks for notifications and, if you
+see ads, for the tracking permission (App Tracking Transparency): the ambient sounds keep playing in the background without any extra permission, and
 automatic Do Not Disturb is not available on iPhone.</p>
 <p>FlowTime does not request access to your location, your contacts, your camera, your microphone or
 your files.</p>
@@ -180,40 +304,62 @@ your files.</p>
 held by RevenueCat and by the store are kept for as long as those services require in order to honour
 restores and to meet their own legal and tax obligations. Coop data is kept until you delete your
 account; a room is deleted as soon as the last person leaves it, and failed invitation attempts are
-kept for one hour.</p>
+kept for one hour. Data that Google's ads software receives is kept by Google under its own policies.</p>
+<!-- DECIDIR: Coop has no inactivity purge. Profiles of people who stop using the app stay until they delete the account; a rule such as "deleted after N months without opening Coop" needs a job in Supabase and then a sentence here. Nothing is promised above. -->
+<!-- CONFIRMAR: "failed invitation attempts are kept for one hour": rows older than an hour are only deleted the next time the same person tries again (supabase/migrations/20261019120000_amigos.sql, line 119), so some stay longer. Reword ("are counted for one hour") or add a purge job. -->
+<!-- DECIDIR: the retention of report rows and report emails (see the DECIDIR in the Coop section); and the time that RevenueCat keeps purchase records, which today is "as long as those services require". -->
+
 
 <h2>Children</h2>
 <p>FlowTime is not directed at children under 13 and we do not knowingly collect information from
 them. Coop asks you to confirm that you are 16 or older before you choose a name.</p>
 
 <h2>Your rights under the GDPR</h2>
-<p>If you are in the European Economic Area or the United Kingdom, you have the right to access,
-rectify, erase, restrict and object to the processing of your personal data, and the right to data
-portability.</p>
+<p>If you are in the European Economic Area, the United Kingdom or Switzerland, you have the right to
+access, rectify, erase, restrict and object to the processing of your personal data, and the right to
+data portability.</p>
 <p>Most of these you can exercise yourself: the data is on your phone. Deleting a task, or a session when
 you edit a day's history, erases it, uninstalling the app erases everything, and the backup file is data portability. For the
 purchase data held by RevenueCat, including a request to delete it, write to
-<a href="mailto:baltax.75@gmail.com">baltax.75@gmail.com</a> with your Google Play or App Store order number, which is
+<a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a> with your Google Play or App Store order number, which is
 the only way we can find your records, precisely because we hold nothing that identifies you. Your Coop
-data you can see, correct (your name) and delete (your account) in the app.</p>
+data you can see, correct (your name) and delete (your account) in the app. What Google receives
+through the ads is handled by Google; you can stop it by buying Pro, by withdrawing your consent in
+Settings, Ad privacy options (EEA, UK and Switzerland), by resetting the advertising ID on Android, or by
+turning off tracking for FlowTime in iOS Settings.</p>
 <p>Legal bases: performance of a contract (delivering the purchase you made, and providing Coop when
-you choose to use it) and our legitimate interest in preventing fraudulent restores and in acting on
-reports to keep Coop safe. You also have the right to lodge a complaint with your
+you choose to use it), your consent for the ads in the free version (asked through Google's consent
+form and, on iPhone, Apple's tracking prompt, and withdrawable at any time in Settings, Ad privacy
+options) and our legitimate interest in preventing fraudulent restores, in acting on reports to keep
+Coop safe and in keeping the website running and secure. You also have the right to lodge a complaint with your
 supervisory authority. In Spain, the
 <a href="https://www.aepd.es" rel="noopener">Agencia Española de Protección de Datos</a>.</p>
 
 <h2>Your rights under the CCPA / CPRA</h2>
 <p>If you are a California resident: in the last twelve months we have collected the categories
 "identifiers" (an anonymous installation identifier and, only if you use Coop, your account identifier,
-email address and chosen name) and "commercial information" (your purchase history), for the sole
-purpose of delivering the purchase you made and, if you use it, Coop. We have <strong>not</strong> sold
-or shared personal information, and we do not use it for cross-context behavioural advertising. You
-have the right to know, to delete, to correct and to non-discrimination for exercising those rights;
-write to <a href="mailto:baltax.75@gmail.com">baltax.75@gmail.com</a>.</p>
+email address and chosen name) and "commercial information" (your purchase history), to deliver the
+purchase you made and, if you use it, Coop. We have <strong>not</strong> sold personal information for
+money. In the free version, Google's ads software also receives identifiers (such as the Android
+advertising ID, the iPhone advertising identifier if you allow tracking, and your IP address), information about how you interact with the ads and the app, and
+approximate location derived from your IP address, so that ads can be shown and measured. California law
+may treat that as "sharing" for cross-context behavioural advertising, so we do not say that nothing is
+shared in the free version. FlowTime Pro removes the ads and with them this flow of data; resetting or
+deleting the advertising ID in Android settings limits it too. You have the right to know, to delete, to
+correct, to opt out of sharing and to non-discrimination for exercising those rights; write to <a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a>.</p>
+<h3>Other US states</h3>
+<p>Residents of other US states with privacy laws have similar rights. Where Google's US states message
+applies, you can opt out there of the sale or sharing of your personal data and of targeted advertising,
+and change your choice at any time in Settings, Ad privacy options. You can also write to
+<a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a>.</p>
 
 <h2>Changes to this policy</h2>
 <p>If this policy changes, the new version will be published at this address with a new date at the
 top, and material changes will also be described in the app's release notes in the store.</p>
+
+<footer>
+<p><a href="/">Privacy policy</a> - <a href="/terms.html">Terms of use</a> - <a href="/delete.html">Delete your Coop account</a> - <a href="/legal.html">Legal notice</a></p>
+</footer>
 
 </section>
 
@@ -223,15 +369,17 @@ top, and material changes will also be described in the app's release notes in t
 <section id="es" lang="es">
 
 <h1>FlowTime, política de privacidad</h1>
-<p class="lede">Última actualización: 20 de octubre de 2026</p>
-<p class="nav"><a href="#en">English</a> - <strong>Español</strong></p>
+<p class="lede">Última actualización: 3 de noviembre de 2026</p>
+<p class="nav"><a href="#en">English</a> - <strong>Español</strong> - <a href="/terms.html#es">Términos de uso</a> - <a href="/legal.html#es">Aviso legal</a></p>
 
 <div class="box">
   <p><strong>En corto.</strong> FlowTime es un temporizador de concentración. Tus sesiones, tareas,
   etiquetas, objetivos y ajustes se guardan solo en tu móvil y no se nos envían nunca. No hay cuenta
-  salvo que elijas Coop (opcional, se describe más abajo), ni publicidad, ni analítica, ni seguimiento.
-  Aparte de Coop, lo único que sale de tu móvil es lo necesario para saber si has comprado FlowTime Pro
-  o has dejado una propina.</p>
+  salvo que elijas Coop (opcional, se describe más abajo), ni analítica propia. La versión gratis
+  muestra anuncios de Google AdMob, que reciben algunos datos de tu dispositivo (ver "Anuncios (versión
+  gratis)" más abajo); FlowTime Pro los quita. En el iPhone, si ves anuncios, iOS te pregunta si FlowTime
+  puede seguirte, y puedes decir que no. Aparte de Coop y los anuncios, lo único que sale de tu móvil es lo necesario
+  para saber si has comprado FlowTime Pro o has dejado una propina.</p>
 </div>
 
 <h2>Quién es el responsable</h2>
@@ -239,7 +387,8 @@ top, and material changes will also be described in the app's release notes in t
 desarrollador individual con residencia en España, que actúa como responsable del tratamiento
 limitado que se describe abajo.</p>
 <p>Contacto para cualquier asunto de esta política:
-<a href="mailto:baltax.75@gmail.com">baltax.75@gmail.com</a>.</p>
+<a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a>. Los datos completos del titular están en el
+<a href="/legal.html#es">aviso legal</a>.</p>
 
 <h2>Lo que se queda en tu dispositivo</h2>
 <p>Todo lo que creas en FlowTime se guarda en local, en el almacenamiento privado de la app:</p>
@@ -283,7 +432,7 @@ facturación ni ningún otro dato de pago.</p>
 un identificador anónimo y guarda, por cuenta nuestra, ese identificador, el historial de compras
 asociado y datos técnicos como la versión de la app, la versión del sistema operativo y el país de la tienda. Ese
 identificador nunca se vincula a tu nombre ni a tu correo, y nada de tus sesiones, tareas o etiquetas
-se envía nunca a RevenueCat. FlowTime no usa el identificador de publicidad. Consulta la
+se envía nunca a RevenueCat. FlowTime no envía el identificador de publicidad a RevenueCat. Consulta la
 <a href="https://www.revenuecat.com/privacy" rel="noopener">política de privacidad de RevenueCat</a>.</p>
 <p>RevenueCat trata los datos en Estados Unidos. Las transferencias fuera del Espacio Económico
 Europeo están amparadas por las Cláusulas Contractuales Tipo de la Comisión Europea.</p>
@@ -294,15 +443,18 @@ personas, te pide iniciar sesión, con <strong>Iniciar sesión con Apple</strong
 <strong>Google</strong>. Si nunca abres Coop, nada de esta sección te afecta.</p>
 <p>Cuando usas Coop guardamos en nuestro servidor: el identificador y el correo que Apple o Google nos
 dan al iniciar sesión (con Apple puedes elegir una dirección privada de reenvío), el <strong>nombre que
-eliges mostrar</strong>, tu código de invitación, tus amigos y solicitudes de amistad, las personas que
-bloqueas, la sala en la que estás y su temporizador (cuándo empezó, si está en pausa, sus duraciones) y
-los reportes que envías. Los demás solo ven el nombre que elegiste: tus amigos, quien tenga una
-solicitud abierta contigo y quien esté en tu sala. Tu historial de estudio, tareas, etiquetas y
-objetivos se quedan en tu móvil; Coop nunca los envía.</p>
+muestras</strong> (los perfiles nuevos empiezan con un nombre anónimo por defecto, no con el nombre de tu
+cuenta de Apple o de Google, y puedes cambiarlo cuando quieras), tu código de invitación, tus amigos y
+solicitudes de amistad, las personas que bloqueas, la sala en la que estás y su temporizador (cuándo
+empezó, si está en pausa, sus duraciones) y los reportes que envías. Los demás solo ven tu nombre: tus
+amigos, quien tenga una solicitud abierta contigo y quien esté en tu sala. Tu historial de estudio,
+tareas, etiquetas y objetivos se quedan en tu móvil; Coop nunca los envía. Un filtro automático de
+palabras impide guardar nombres ofensivos.</p>
 <p>El servidor lo presta <strong>Supabase, Inc.</strong> como encargado del tratamiento, en la Unión
-Europea (Fráncfort, Alemania). El sistema de cuentas se comparte con Chroma, otra app del mismo
-desarrollador: si inicias sesión en las dos con la misma cuenta de Apple o Google, es una sola cuenta,
-pero cada app guarda su propio nombre, amigos y datos, y ninguna puede ver los de la otra.</p>
+Europea (Fráncfort, Alemania). El sistema de inicio de sesión se comparte con las otras apps del
+desarrollador, Chroma, Quilt y MoodTraker: si inicias sesión en más de una con la misma cuenta de Apple o
+Google, es una sola identidad de acceso (tu correo y tu ID de Apple o de Google), pero cada app guarda su
+propio nombre, amigos y datos, y ninguna puede ver los de otra.</p>
 <p>Un reporte nos llega por correo con los nombres de las dos personas, para poder actuar en 24 horas;
 lo entrega <strong>Resend, Inc.</strong> como encargado del tratamiento.</p>
 <p>Para que Coop te avise cuando alguien te envía una solicitud de amistad, acepta la tuya o te invita a
@@ -313,18 +465,118 @@ llegar cada aviso, junto con su texto, que incluye el nombre elegido de quien lo
 cerrar sesión o al borrar tu cuenta de Coop. Si desactivas las notificaciones de FlowTime, no se muestra
 nada.</p>
 <p>Puedes cambiar tu nombre, bloquear y desbloquear, cerrar sesión y <strong>borrar tu cuenta de Coop
-cuando quieras desde la app</strong> (Ajustes, Cuenta de Coop, Borrar cuenta; también en <a href="delete.html#es">flowtime.baltajmn.dev/delete.html</a>). Al borrarla se eliminan al momento
-del servidor tu nombre, tus amigos, tus bloqueos y tu sala; si también usas Chroma con la misma cuenta,
-la de Chroma se conserva hasta que la borres allí.</p>
+cuando quieras desde la app</strong> (Ajustes, Cuenta de Coop, Borrar cuenta; también en <a href="delete.html#es">flowtime.baltajmn.dev/delete.html</a>). Al borrarla se elimina al momento
+del servidor todo lo que FlowTime guarda de ti en Coop: tu nombre, tu código de invitación, tus amigos y
+solicitudes de amistad, tus bloqueos, tu sala, los identificadores de notificaciones y los reportes que
+hiciste o que se hicieron sobre ti. Si también usas Chroma, Quilt o MoodTraker con la misma cuenta de
+Apple o Google, tu identidad de acceso (tu correo y tu ID de Apple o de Google) se conserva mientras una
+de esas apps la siga usando, y se borra cuando borras tu cuenta en la última; cada una de esas apps
+guarda sus propios datos hasta que los borres allí.</p>
+
+<h3>Anuncios (versión gratis)</h3>
+<p>La versión gratis de FlowTime muestra anuncios de <strong>Google AdMob</strong>: un banner en la
+pantalla de Concentración y, como mucho, un anuncio a pantalla completa al día, al acabar una sesión.
+<strong>FlowTime Pro quita todos los anuncios.</strong> Si tienes Pro, o ya usabas FlowTime antes de que
+existieran los anuncios, la app no te muestra anuncios y no te pide el consentimiento para anuncios (así
+que en el iPhone tampoco muestra la petición de seguimiento). FlowTime pide a Google que solo muestre
+anuncios aptos para todos los públicos (clasificación de contenido G).</p>
+<p>Cuando se muestran anuncios, el software de anuncios de Google en tu móvil recoge y recibe lo
+siguiente, para elegir, mostrar y medir anuncios, para analítica y para prevenir el fraude:</p>
+<ul>
+  <li>tu dirección IP, con la que Google puede estimar tu ubicación aproximada;</li>
+  <li>identificadores de tu dispositivo: en Android, el ID de publicidad y el ID del conjunto de apps;
+  en el iPhone, el identificador de publicidad (IDFA) solo si permites el seguimiento, y si no,
+  identificadores limitados a la app o a su desarrollador en tu dispositivo (ver "Permiso de seguimiento
+  en el iPhone" más abajo);</li>
+  <li>cómo interactúas con los anuncios y con la app, como aperturas, toques y reproducciones de vídeo;</li>
+  <li>información de diagnóstico sobre el rendimiento de la app y del software de anuncios, como el
+  tiempo de arranque, la tasa de bloqueos y el consumo de energía y, en el iPhone, los registros de
+  fallos y los anuncios que has visto.</li>
+</ul>
+<p>Estos datos viajan cifrados. FlowTime no le da al software de anuncios tus sesiones, tareas,
+etiquetas, objetivos ni ajustes. Google trata lo que recibe con sus propias políticas: consulta
+<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">cómo usa Google la
+información de sitios o apps que usan sus servicios</a> (How Google uses information from sites or apps
+that use our services). Google es la única red de anuncios que usa FlowTime.</p>
+<p><strong>Consentimiento en el Espacio Económico Europeo, el Reino Unido y Suiza.</strong> Allí, FlowTime
+muestra el formulario de consentimiento de Google (Google User Messaging Platform) al abrir la app y no
+pide anuncios hasta que lo has respondido. Puedes cambiar tu elección cuando quieras en
+<strong>Ajustes, Privacidad de los anuncios</strong>, que solo aparece donde se aplica un formulario o
+mensaje.</p>
+<p><strong>Se contacta con Google al arrancar la app.</strong> A quien ve anuncios, el software de
+consentimiento contacta con Google cada vez que arranca la app, para saber si te corresponde un
+formulario y mantener al día tu elección. Como cualquier petición a Google, eso le revela tu dirección IP
+y los datos de la app, también donde no se muestra ningún formulario.</p>
+<p><strong>Estados de EE. UU.</strong> En los estados de EE. UU. con ley de privacidad, FlowTime muestra el
+mensaje de Google para esos estados, donde puedes rechazar la venta o el uso compartido de tus datos
+personales y la publicidad dirigida. Puedes cambiar esa elección cuando quieras en <strong>Ajustes,
+Privacidad de los anuncios</strong>.</p>
+<p><strong>Permiso de seguimiento en el iPhone.</strong> En el iPhone, tras el formulario de
+consentimiento (donde se aplica) y antes del primer anuncio, iOS muestra la petición de transparencia de
+seguimiento de apps de Apple, que pregunta si FlowTime puede seguirte por las apps y webs de otras
+empresas. Si lo permites, el identificador de publicidad (IDFA) queda a disposición del software de
+anuncios de Google, para mostrar y medir anuncios y prevenir el fraude. Si eliges "Pedir a la app que no
+me siga", el identificador no está disponible y sigues viendo anuncios, sin él; el software de Google aún
+puede usar identificadores limitados a la app o a su desarrollador en tu dispositivo. Puedes cambiar tu
+elección cuando quieras en Ajustes de iOS, Privacidad y seguridad, Seguimiento. Si tienes Pro, o usabas
+FlowTime antes de que existieran los anuncios, no se te pregunta.</p>
+<p><strong>ID de publicidad de Android.</strong> El software de anuncios de Google lee tu ID de
+publicidad, por eso FlowTime declara el permiso normal "AD_ID". Puedes restablecer o borrar el ID cuando
+quieras en los ajustes de Android de tu móvil; las apps reciben entonces una cadena de ceros en vez del
+ID.</p>
 
 <h3>Valoraciones</h3>
 <p>FlowTime puede mostrar el diálogo de valoración de la propia tienda, Google Play o la App Store. Tu
 valoración va a esa tienda y se rige por su política; la app no sabe qué nota pusiste ni si valoraste.</p>
 
 <h3>Nada más</h3>
-<p>FlowTime no incluye ningún SDK de publicidad, de analítica ni de informes de fallos. No elaboramos
-perfiles, no usamos remarketing y no vendemos ni compartimos información personal con nadie. La app
-necesita conexión a internet solo para las compras y, si lo usas, para Coop.</p>
+<p>FlowTime no incluye ningún SDK de analítica ni de informes de fallos propio. El otro software que
+recoge datos es la biblioteca de compras (RevenueCat), la conexión a Coop si lo usas y el software de
+anuncios de Google en la versión gratis, todo descrito arriba; el de anuncios también usa lo que recoge
+para su propia analítica y para prevenir el fraude. No elaboramos perfiles, no usamos remarketing y,
+salvo por los anuncios y los servicios de "Quién recibe tus datos" más abajo, no compartimos información
+personal con nadie. La app necesita conexión a internet solo para las compras, para los anuncios de la
+versión gratis y, si lo usas, para Coop.</p>
+
+<h2>Quién recibe tus datos</h2>
+<p>Quién recibe datos por FlowTime o por esta web, para qué, y qué los protege cuando salen del Espacio
+Económico Europeo, del Reino Unido o de Suiza:</p>
+<div class="wrap">
+<table>
+  <tr><th>Quién</th><th>Qué recibe, y para qué</th><th>Garantía de las transferencias</th></tr>
+  <tr><td><strong>Google</strong> (Google LLC, Google Ireland Limited): anuncios y consentimiento (AdMob, Google User Messaging Platform)<br><span class="note">Responsable independiente</span></td><td>Solo en la versión gratis con anuncios: tu dirección IP, identificadores del dispositivo, cómo interactúas con los anuncios y con la app, y diagnóstico, para elegir, mostrar y medir anuncios, prevenir el fraude y guardar tu elección de consentimiento. El software de consentimiento contacta con Google cada vez que arranca la app. En el iPhone, el identificador de publicidad solo si permites el seguimiento.</td><td>Google LLC está certificada en el Marco de Privacidad de Datos UE-EE. UU. (con su extensión para el Reino Unido y el marco Suiza-EE. UU.); los términos de Google añaden Cláusulas Contractuales Tipo donde eso no se aplica.</td></tr>
+  <tr><td><strong>Google</strong>: notificaciones push (Firebase Cloud Messaging), Android, solo Coop</td><td>El identificador de notificaciones de tu móvil y el texto de cada aviso, para entregarlo.</td><td>Lo mismo que arriba.</td></tr>
+  <tr><td><strong>Google</strong>: Iniciar sesión con Google, solo Coop</td><td>Tu petición de inicio de sesión. Nos da el ID y el correo de tu cuenta de Google.</td><td>Lo mismo que arriba.</td></tr>
+  <tr><td><strong>Apple</strong>: Iniciar sesión con Apple y notificaciones push (APNs), solo Coop</td><td>Tu petición de inicio de sesión, que nos da tu identificador de Apple y tu correo o dirección privada de reenvío; en el iPhone, el identificador de notificaciones de tu móvil y el texto de cada aviso, para entregarlo.<br><span class="note">Responsable independiente</span></td><td>Cláusulas Contractuales Tipo, como dice la política de privacidad de Apple.</td></tr>
+  <tr><td><strong>Apple</strong>: petición de seguimiento (App Tracking Transparency), solo iPhone con anuncios</td><td>La petición la muestra y la guarda iOS. Tu respuesta decide si el identificador de publicidad está a disposición del software de anuncios.</td><td>No se aplica: la respuesta se queda en iOS, en tu móvil.</td></tr>
+  <tr><td><strong>Google Play</strong> o <strong>App Store</strong>: la tienda desde la que instalaste</td><td>Tu pago, tus datos de facturación y los registros de pedido, que nosotros nunca recibimos, y tu valoración en la tienda. A RevenueCat solo llega la compra en sí.<br><span class="note">Responsable independiente</span></td><td>Los términos propios de la tienda (ver Google y Apple arriba).</td></tr>
+  <tr><td><strong>RevenueCat, Inc.</strong> (EE. UU.)<br><span class="note">Encargado del tratamiento</span></td><td>Un identificador anónimo de la instalación, tu historial de compras, la versión de la app, la versión del sistema operativo y el país de la tienda, para saber si tienes Pro o dejaste una propina.</td><td>Cláusulas Contractuales Tipo, con la adenda del Reino Unido y las adaptaciones para Suiza, en el contrato de encargo de RevenueCat.</td></tr>
+  <tr><td><strong>Supabase, Inc.</strong>: servidor de Coop y página del enlace de sala, proyecto en la UE (Fráncfort)<br><span class="note">Encargado del tratamiento</span></td><td>Solo Coop: los datos de la sección de Coop de arriba y, cuando abres un enlace de sala en la web, el código de la sala y tu dirección IP.</td><td>Los datos se guardan en la UE. Cuando Supabase o sus subencargados acceden desde fuera del EEE, del Reino Unido o de Suiza: Cláusulas Contractuales Tipo, con la adenda del Reino Unido, en el contrato de encargo de Supabase.</td></tr>
+  <tr><td><strong>Resend, Inc.</strong> (EE. UU.): correos de reportes<br><span class="note">Encargado del tratamiento</span></td><td>Solo reportes de Coop: un correo con los nombres y los ID de las dos personas.</td><td>Cláusulas Contractuales Tipo; Resend afirma además que cumple el Marco de Privacidad de Datos UE-EE. UU.</td></tr>
+  <tr><td><strong>GitHub, Inc.</strong> (GitHub Pages): alojamiento de la web<br><span class="note">Responsable independiente de sus registros del servidor</span></td><td>Quien visita la web: tu dirección IP y los datos de tu petición, para entregar la página. GitHub entrega Pages a través de una red de distribución de contenido.</td><td>Marco de Privacidad de Datos UE-EE. UU. y Cláusulas Contractuales Tipo, como dice el acuerdo de protección de datos de GitHub.</td></tr>
+  <tr><td><strong>Cloudflare, Inc.</strong>: protección y entrega de la web<br><span class="note">Encargado del tratamiento para la web</span></td><td>Quien visita la web: tu dirección IP y los datos de tu petición, para entregar la página y protegerla de ataques.</td><td>Marco de Privacidad de Datos UE-EE. UU. y Cláusulas Contractuales Tipo, como dice la adenda de tratamiento de datos de Cloudflare.</td></tr>
+  <tr><td><strong>Apple</strong> (itunes.apple.com): páginas de la web con botones de tienda</td><td>Tu dirección IP, cuando la página pregunta si la app del iPhone está a la venta.</td><td>Cláusulas Contractuales Tipo, como dice la política de privacidad de Apple.</td></tr>
+</table>
+</div>
+
+<h2>Esta web</h2>
+<p>Esta política, el temporizador web y las guías están en flowtime.baltajmn.dev. La web no usa cookies y
+no tiene scripts de analítica ni de publicidad.</p>
+<p>La web está alojada en GitHub Pages (GitHub, Inc.) detrás de Cloudflare. Como cualquier web, reciben tu
+dirección IP y los datos de tu petición (la página, tu navegador y tu idioma) para entregar la página y
+protegerla de ataques, y guardan registros para eso con sus propias políticas. Nosotros no leemos esos
+registros; Cloudflare solo nos da totales anónimos de tráfico. La base legal es nuestro interés legítimo
+en mantener la web en marcha y segura.</p>
+<p>El temporizador web guarda su estado y los bloques de hoy en tu navegador (almacenamiento local). No
+salen nunca de tu navegador, y borrar los datos del sitio en el navegador los elimina.</p>
+<p>Las páginas con botones de tienda preguntan a Apple (itunes.apple.com), desde tu navegador, si la app
+del iPhone está a la venta, lo que le da a Apple tu dirección IP. Los enlaces a las tiendas llevan una
+etiqueta de campaña (por ejemplo utm_source=flowtime.baltajmn.dev) para que Google Play y la App Store
+puedan contar las instalaciones que vienen de la web; de eso no recibimos ningún dato personal.</p>
+<p>La página que abre un enlace de sala de Coop (flowtime.baltajmn.dev/r/ seguido del código de la sala)
+funciona sin cuenta. Cuando abres un enlace así, tu navegador pregunta a nuestro servidor de Supabase
+(Fráncfort) por el estado de esa sala (su fase, su temporizador y cuánta gente hay), y le envía el código
+de la sala del enlace y tu dirección IP. La página no muestra nombres.</p>
 
 <h2>Permisos que pide la app</h2>
 <div class="wrap">
@@ -336,11 +588,19 @@ necesita conexión a internet solo para las compras y, si lo usas, para Coop.</p
   <tr><td>Reproducción en segundo plano</td><td>Para que los sonidos ambientales sigan sonando al salir de la app.</td></tr>
   <tr><td>Acceso a No molestar</td><td>Solo si activas No molestar automático (FlowTime Pro): para activarlo mientras trabajas y quitarlo después. Lo concedes tú en los ajustes del sistema.</td></tr>
   <tr><td>Vibración</td><td>Para vibrar al cambiar de fase.</td></tr>
-  <tr><td>Internet y estado de la red</td><td>Para comprobar tus compras con la tienda y RevenueCat, y para Coop si lo usas.</td></tr>
+  <tr><td>Internet y estado de la red</td><td>Para comprobar tus compras con la tienda y RevenueCat, para cargar los anuncios de la versión gratis, y para Coop si lo usas.</td></tr>
   <tr><td>Facturación en la aplicación</td><td>Para ofrecer FlowTime Pro y las propinas a través de Google Play o la App Store.</td></tr>
+  <tr><td>ID de publicidad</td><td>Para que se puedan elegir y medir los anuncios de la versión gratis: el software de anuncios de Google lee tu ID de publicidad. Es un permiso normal, que se concede al instalar, y puedes restablecer o borrar el ID en los ajustes del móvil.</td></tr>
+  <tr><td>Servicios de anuncios: ID de publicidad</td><td>El permiso más nuevo de Android para leer el ID de publicidad, con el mismo fin que el anterior. Lo añade el software de anuncios; solo se usa si ves anuncios.</td></tr>
+  <tr><td>Servicios de anuncios: atribución</td><td>Para que el software de anuncios pueda medir si un anuncio llevó a una instalación o a una acción, sin seguirte entre apps. Solo se usa si ves anuncios.</td></tr>
+  <tr><td>Servicios de anuncios: temas</td><td>Para que el software de anuncios pueda leer los temas de interés que Android guarda en tu móvil (API Topics) y elegir anuncios. Solo se usa si ves anuncios.</td></tr>
+  <tr><td>Recibir mensajes push</td><td>Para que Coop te avise, a través de Google, cuando alguien te envía una solicitud de amistad o te invita a una sala. Solo se usa si usas Coop.</td></tr>
+  <tr><td>Mantener el móvil despierto</td><td>Para mantener el móvil despierto un momento mientras gestiona un aviso, los sonidos ambientales o una notificación push. Lo añade el software de notificaciones.</td></tr>
+  <tr><td>Huella y biometría</td><td>Lo declara una biblioteca de software que incluye FlowTime. FlowTime no usa tu huella ni tu cara.</td></tr>
 </table>
 </div>
-<p class="note">La tabla recoge los permisos de Android. En iOS la app solo pide notificaciones: los
+<p class="note">La tabla recoge los permisos de Android. En iOS la app pide notificaciones y, si ves
+anuncios, el permiso de seguimiento (App Tracking Transparency): los
 sonidos ambientales siguen sonando en segundo plano sin ningún permiso más, y el No molestar automático
 no existe en el iPhone.</p>
 <p>FlowTime no pide acceso a tu ubicación, tus contactos, tu cámara, tu micrófono ni tus
@@ -351,39 +611,62 @@ ficheros.</p>
 registros de compra que guardan RevenueCat y la tienda se conservan el tiempo que esos servicios
 necesiten para poder restaurar compras y para cumplir sus propias obligaciones legales y
 fiscales. Los datos de Coop se conservan hasta que borras tu cuenta; una sala se borra en cuanto sale
-la última persona, y los intentos de invitación fallidos se guardan una hora.</p>
+la última persona, y los intentos de invitación fallidos se guardan una hora. Los datos que recibe el
+software de anuncios de Google los conserva Google con sus propias políticas.</p>
 
 <h2>Menores</h2>
 <p>FlowTime no está dirigida a menores de 13 años y no recogemos conscientemente información de
 ellos. Coop te pide confirmar que tienes 16 años o más antes de elegir un nombre.</p>
 
 <h2>Tus derechos según el RGPD</h2>
-<p>Si estás en el Espacio Económico Europeo o en el Reino Unido, tienes derecho a acceder, rectificar,
-suprimir, limitar y oponerte al tratamiento de tus datos personales, y derecho a la portabilidad.</p>
+<p>Si estás en el Espacio Económico Europeo, en el Reino Unido o en Suiza, tienes derecho a acceder,
+rectificar, suprimir, limitar y oponerte al tratamiento de tus datos personales, y derecho a la
+portabilidad.</p>
 <p>La mayoría los puedes ejercer tú: los datos están en tu móvil. Borrar una tarea, o una sesión al
 editar el historial de un día, la elimina, desinstalar la app lo borra todo y el fichero de copia es la portabilidad. Para los datos de
 compra que guarda RevenueCat, también para pedir que se borren, escribe a
-<a href="mailto:baltax.75@gmail.com">baltax.75@gmail.com</a> con el número de pedido de Google Play o de la App Store: es la
+<a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a> con el número de pedido de Google Play o de la App Store: es la
 única forma de encontrar tus registros, precisamente porque no guardamos nada que te identifique. Tus
-datos de Coop los ves, corriges (tu nombre) y borras (tu cuenta) en la app.</p>
+datos de Coop los ves, corriges (tu nombre) y borras (tu cuenta) en la app. Lo que Google recibe por
+los anuncios lo trata Google; puedes pararlo comprando Pro, retirando tu consentimiento en Ajustes,
+Privacidad de los anuncios (EEE, Reino Unido y Suiza), restableciendo el ID de publicidad en Android o
+desactivando el seguimiento de FlowTime en los ajustes de iOS.</p>
 <p>Bases legales: la ejecución de un contrato (entregarte la compra que hiciste, y prestarte Coop
-cuando eliges usarlo) y nuestro interés legítimo en evitar restauraciones fraudulentas y en atender
-los reportes para que Coop sea seguro. También tienes derecho a reclamar ante la autoridad de
+cuando eliges usarlo), tu consentimiento para los anuncios de la versión gratis (que se pide con el
+formulario de consentimiento de Google y, en el iPhone, con la petición de seguimiento de Apple, y se
+puede retirar cuando quieras en Ajustes, Privacidad de los anuncios) y nuestro interés legítimo en evitar
+restauraciones fraudulentas, en atender los reportes para que Coop sea seguro y en mantener la web en
+marcha y segura. También tienes derecho a reclamar ante la autoridad de
 control. En España, la
 <a href="https://www.aepd.es" rel="noopener">Agencia Española de Protección de Datos</a>.</p>
 
 <h2>Tus derechos según la CCPA / CPRA</h2>
 <p>Si resides en California: en los últimos doce meses hemos recogido las categorías
 "identificadores" (un identificador anónimo de la instalación y, solo si usas Coop, el identificador de
-tu cuenta, tu correo y el nombre que elegiste) e "información comercial" (tu historial de compras), con
-el único fin de entregarte la compra que hiciste y, si lo usas, prestarte Coop. <strong>No</strong> hemos vendido ni
-compartido información personal, y no la usamos para publicidad conductual entre contextos. Tienes
-derecho a saber, a borrar, a corregir y a no ser discriminado por ejercer esos derechos; escribe a
-<a href="mailto:baltax.75@gmail.com">baltax.75@gmail.com</a>.</p>
+tu cuenta, tu correo y el nombre que elegiste) e "información comercial" (tu historial de compras), para
+entregarte la compra que hiciste y, si lo usas, prestarte Coop. <strong>No</strong> hemos vendido información
+personal a cambio de dinero. En la versión gratis, el software de anuncios de Google también recibe
+identificadores (como el ID de publicidad de Android, el identificador de publicidad del iPhone si permites el seguimiento y tu dirección IP), información sobre cómo
+interactúas con los anuncios y con la app, y la ubicación aproximada que se deduce de tu IP, para poder
+mostrar y medir anuncios. La ley de California puede tratar eso como "compartir" para publicidad
+conductual entre contextos, así que no decimos que en la versión gratis no se comparta nada. FlowTime Pro
+quita los anuncios y con ellos este flujo de datos; restablecer o borrar el ID de publicidad en los
+ajustes de Android también lo limita. Tienes derecho a saber, a borrar, a corregir, a oponerte a que se
+comparta y a no ser discriminado por ejercer esos derechos; escribe a
+<a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a>.</p>
+<h3>Otros estados de EE. UU.</h3>
+<p>Quien resida en otros estados de EE. UU. con ley de privacidad tiene derechos parecidos. Donde se aplica
+el mensaje de Google para esos estados, puedes rechazar allí la venta o el uso compartido de tus datos
+personales y la publicidad dirigida, y cambiar tu elección cuando quieras en Ajustes, Privacidad de los
+anuncios. También puedes escribir a <a href="mailto:baltajmn@gmail.com">baltajmn@gmail.com</a>.</p>
 
 <h2>Cambios en esta política</h2>
 <p>Si esta política cambia, la versión nueva se publicará en esta misma dirección con una fecha nueva
 arriba, y los cambios importantes se contarán también en las notas de la versión de la tienda.</p>
+
+<footer>
+<p><a href="/#es">Política de privacidad</a> - <a href="/terms.html#es">Términos de uso</a> - <a href="/delete.html#es">Borrar tu cuenta de Coop</a> - <a href="/legal.html#es">Aviso legal</a></p>
+</footer>
 
 </section>
 

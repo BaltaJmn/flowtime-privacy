@@ -22,6 +22,7 @@ for (const url of locs) {
   const og = get(/<meta property="og:image" content="([^"]+)"/)
   if (!og || !existsSync(join(root, og.replace(site, '')))) fail.push(`${url}: og image`)
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) fail.push(`${url}: one h1`)
+  if (!html.includes('href="/legal.html')) fail.push(`${url}: no link to the legal notice`)
   if (/[—–“”‘’…→•× ]/.test(html)) fail.push(`${url}: non-ASCII punctuation`)
   pages[url] = Object.fromEntries([...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)].map((m) => [m[1], m[2]]))
   for (const m of html.matchAll(/(?:href|src)="(\/[^"?#]*)/g)) {
@@ -36,6 +37,26 @@ for (const [url, alts] of Object.entries(pages)) {
     else if (!Object.values(pages[href]).includes(url)) fail.push(`${url}: hreflang ${lang} not reciprocal`)
   }
 }
+// The pages written by hand (policy, terms, delete, legal notice): they exist, the sitemap lists them, they use
+// ASCII punctuation, every local link resolves and each one links to the legal notice. The legal notice keeps
+// [[PLACEHOLDERS]] until the owner fills them in: that is a warning, not a failure, but it must not go live.
+const warnings = []
+for (const f of ['index.html', 'terms.html', 'delete.html', 'legal.html']) {
+  const file = join(root, f)
+  if (!existsSync(file)) { fail.push(`${f}: no file`); continue }
+  const html = readFileSync(file, 'utf8')
+  const loc = f === 'index.html' ? site + '/' : `${site}/${f}`
+  if (!sitemap.includes(`<loc>${loc}</loc>`)) fail.push(`${f}: not in the sitemap`)
+  if (/[—–“”‘’…→•× ]/.test(html)) fail.push(`${f}: non-ASCII punctuation`)
+  if (f !== 'legal.html' && !html.includes('href="/legal.html')) fail.push(`${f}: no link to the legal notice`)
+  for (const m of html.matchAll(/(?:href|src)="(\/[^"?#]*)/g)) {
+    const p = m[1].endsWith('/') ? m[1] + 'index.html' : m[1]
+    if (!existsSync(join(root, p))) fail.push(`${f}: broken ${m[1]}`)
+  }
+  const left = [...new Set(html.match(/\[\[[A-Z ]+\]\]/g) || [])]
+  if (left.length) warnings.push(`warning: ${f} still has placeholders (${left.join(', ')}); do not publish it yet`)
+}
+if (warnings.length) console.log(warnings.join('\n'))
 const days = (y) => Array.from({ length: 12 }, (_, m) => new Date(Date.UTC(y, m + 1, 0)).getUTCDate()).reduce((a, b) => a + b)
 if (existsSync(join(root, 'yip/sheets/en-classic-a4.svg'))) {
   const cells = (readFileSync(join(root, 'yip/sheets/en-classic-a4.svg'), 'utf8').match(/class="c"/g) || []).length

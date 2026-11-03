@@ -14,7 +14,7 @@ const TODAY = new Date().toISOString().slice(0, 10)
 // Cloudflare and browsers keep CSS and JS for a while: the URL changes when the file does.
 const v = (p) => `${p}?v=${createHash('md5').update(readFileSync(join(ROOT, p))).digest('hex').slice(0, 8)}`
 
-// Campaign tokens: the app has no analytics, so the stores are the only place a web install shows up.
+// Campaign tokens: the app has no analytics of its own, so the stores are the only place a web install shows up.
 // App Store: `pt` is the provider token (App Store Connect > App Analytics > Campaigns); without it Apple
 // ignores `ct`, so it is left out until it is known.
 const APPLE_PT = '129564006' // provider ID of the developer account, as App Store Connect puts it in its campaign links
@@ -56,7 +56,7 @@ const UI = {
 
 const COMMON = {
   en: {
-    nav: { timer: 'Timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', privacy: 'Privacy' },
+    nav: { timer: 'Timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', privacy: 'Privacy', legal: 'Legal notice' },
     modes: 'Timer mode',
     legendFocus: 'Focus', legendBreak: 'Break',
     keys: '<kbd>Space</kbd> starts or pauses',
@@ -64,7 +64,7 @@ const COMMON = {
     appH: 'FlowTime on your phone',
     appP1: "The same Pomodoro and FlowTime modes with your own times, plus a third one, Percentage, and what a browser tab can't do: the timer in a notification and a widget, today's tasks, 12 focus sounds, and your streak, goal and stats.",
     appP2: 'Coop is a private room where up to 8 people share one timer: anyone can start, pause or skip the break, so you can study together from different places.',
-    appP3: 'Free, with no ads and no account. Only Coop asks you to sign in.',
+    appP3: 'Free, with ads that Pro removes. No account: only Coop asks you to sign in.',
     appAlt: 'FlowTime on Android: a focus session counting up, at 42:10',
     iosSoon: 'FlowTime is coming to iPhone soon.',
     footer: 'FlowTime: Pomodoro Focus Timer, by Baltasar Jiménez.',
@@ -73,7 +73,7 @@ const COMMON = {
     ranges: [['Up to 15 min', '5 min'], ['Over 15, up to 30 min', '10 min'], ['More than 30 min', '15 min']],
   },
   es: {
-    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', hub: 'Alternativas', privacy: 'Privacidad' },
+    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', hub: 'Alternativas', privacy: 'Privacidad', legal: 'Aviso legal' },
     modes: 'Modo del temporizador',
     legendFocus: 'Concentración', legendBreak: 'Descanso',
     keys: '<kbd>Espacio</kbd> empieza o pausa',
@@ -81,7 +81,7 @@ const COMMON = {
     appH: 'FlowTime en el móvil',
     appP1: 'Los mismos modos Pomodoro y FlowTime con tus propios tiempos, un tercero (Porcentaje) y lo que una pestaña del navegador no puede hacer: el temporizador en una notificación y en un widget, las tareas del día, 12 sonidos para concentrarte, tu racha, tu objetivo y tus estadísticas.',
     appP2: 'Coop es una sala privada donde hasta 8 personas comparten un temporizador: cualquiera puede empezar, pausar o saltar el descanso, así que podéis estudiar juntos desde sitios distintos.',
-    appP3: 'Gratis, sin anuncios y sin cuenta. Solo Coop te pide iniciar sesión.',
+    appP3: 'Gratis, con anuncios que Pro quita. Sin cuenta: solo Coop te pide iniciar sesión.',
     appAlt: 'FlowTime en Android: una sesión de concentración contando hacia arriba, en 42:10',
     iosSoon: 'FlowTime llega pronto al iPhone.',
     footer: 'FlowTime: temporizador Pomodoro, de Baltasar Jiménez.',
@@ -132,7 +132,7 @@ const P = {
   timer: {
     en: {
       title: 'Free Pomodoro Timer Online: 25/5, 50/10 and FlowTime',
-      desc: 'Free Pomodoro timer in your browser: 25/5, 50/10 or FlowTime, which counts up and gives you a break that fits how long you worked. No sign-up, no ads.',
+      desc: 'Free Pomodoro timer in your browser: 25/5, 50/10 or FlowTime, which counts up and gives you a break that fits how long you worked. No sign-up needed.',
       h1: 'Pomodoro timer',
       sub: '25/5, 50/10 or FlowTime. It keeps time in a background tab and chimes when each phase ends.',
       mode: 'p25',
@@ -154,7 +154,7 @@ const P = {
     },
     es: {
       title: 'Temporizador Pomodoro online: 25/5, 50/10 y FlowTime, gratis',
-      desc: 'Temporizador Pomodoro gratis en el navegador: 25/5, 50/10 o FlowTime, que cuenta hacia arriba y ajusta el descanso a lo trabajado. Sin registro ni anuncios.',
+      desc: 'Temporizador Pomodoro gratis en el navegador: 25/5, 50/10 o FlowTime, que cuenta hacia arriba y ajusta el descanso a lo trabajado. Sin registro.',
       h1: 'Temporizador Pomodoro',
       sub: 'La técnica Pomodoro en tu navegador: 25/5, 50/10 o FlowTime. Sigue contando en una pestaña de fondo y suena al acabar cada fase.',
       mode: 'p25',
@@ -401,7 +401,7 @@ function footer(lang) {
   const c = COMMON[lang]
   const links = Object.keys(PAGES).filter((k) => PAGES[k][lang])
   return `<footer><div class="wrap"><span>${esc(c.footer)}</span><nav aria-label="${esc(c.nav.privacy)}">
-${links.map((k) => `<a href="${PAGES[k][lang]}">${esc(c.nav[k])}</a>`).join('')}<a href="/">${esc(c.nav.privacy)}</a></nav></div></footer>`
+${links.map((k) => `<a href="${PAGES[k][lang]}">${esc(c.nav[k])}</a>`).join('')}<a href="/">${esc(c.nav.privacy)}</a><a href="/legal.html${lang === 'es' ? '#es' : ''}">${esc(c.nav.legal)}</a></nav></div></footer>`
 }
 
 const appLd = () => ({
@@ -506,9 +506,9 @@ const CMP = {
     and: ' and ', app: 'App', line: 'What it is', price: 'Price', ads: 'Ads', platforms: 'Platforms',
     platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone coming soon',
     flowtime: {
-      line: 'A Pomodoro timer with three modes (Pomodoro, FlowTime and Percentage), Coop rooms for up to 8 and no ads; it suits people who want a plain timer that fits the break to the work.',
+      line: 'A Pomodoro timer with three modes (Pomodoro, FlowTime and Percentage), Coop rooms for up to 8; it suits people who want a plain timer that fits the break to the work.',
       price: 'Free. Pro: $3.99 once, or a monthly plan',
-      ads: 'None',
+      ads: 'Free with ads; Pro removes them',
     },
   },
   es: {
@@ -524,9 +524,9 @@ const CMP = {
     and: ' y ', app: 'App', line: 'Qué es', price: 'Precio', ads: 'Anuncios', platforms: 'Plataformas',
     platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone muy pronto',
     flowtime: {
-      line: 'Un temporizador Pomodoro con tres modos (Pomodoro, FlowTime y Porcentaje), salas Coop para hasta 8 y sin anuncios; te va si quieres un temporizador sencillo que ajusta el descanso a lo trabajado.',
+      line: 'Un temporizador Pomodoro con tres modos (Pomodoro, FlowTime y Porcentaje), salas Coop para hasta 8; te va si quieres un temporizador sencillo que ajusta el descanso a lo trabajado.',
       price: 'Gratis. Pro: 4,99 € una vez o 2,49 € al mes',
-      ads: 'Ninguno',
+      ads: 'Gratis con anuncios; Pro los quita',
     },
   },
 }
@@ -708,7 +708,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       urls.push(`<url><loc>${SITE + paths[lang]}</loc><lastmod>${TODAY}</lastmod>${alts}</url>`)
     }
   }
-  for (const p of ['/', '/terms.html', '/delete.html']) urls.push(`<url><loc>${SITE + p}</loc></url>`)
+  for (const p of ['/', '/terms.html', '/delete.html', '/legal.html']) urls.push(`<url><loc>${SITE + p}</loc></url>`)
   writeFileSync(join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join('\n')}

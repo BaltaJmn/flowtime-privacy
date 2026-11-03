@@ -31,7 +31,7 @@ campaign token, and a timer people come back to.
 
 FlowTime is a focus timer whose breaks adapt to how long you worked: Pomodoro when you want fixed blocks,
 FlowTime when you do not want a countdown cutting you off, and Coop to study with up to 8 friends on one
-shared timer. No ads, no account except for Coop.
+shared timer. Free with ads that Pro removes (a banner and at most one full-screen ad a day), no account except for Coop.
 
 ## Operating Context
 
@@ -39,7 +39,7 @@ shared timer. No ads, no account except for Coop.
   between pages. Sessions last 25 minutes to several hours.
 - The browser throttles background tabs: the timer must keep time from the clock, not from ticks.
 - Store links carry a campaign token (`ct=` on the App Store, `referrer=utm_...` on Play) because the app
-  has no analytics by contract; the stores are the only measure.
+  has no analytics of its own by contract; the stores are the only measure.
 
 ## Capabilities and Constraints
 
@@ -47,7 +47,7 @@ shared timer. No ads, no account except for Coop.
 - `404.html` is the Coop invite page (`/f/<code>`, `/r/<code>`); it must keep working.
 - The app: `com.baltajmn.flowtime`, App Store id 6819302003, which is not on sale yet (2.4.0 in review on
   23-10-2026). Store buttons on iPhone check the iTunes lookup, like `404.html`.
-- Free with no ads; Pro is a one-time payment or monthly, never needed for the timer.
+- Free with ads that Pro removes (Google AdMob, from the app version that adds them; people who used the app before that version never see them); Pro is a one-time payment or monthly, never needed for the timer. The web pages themselves carry no ads.
 - Languages of the web pages: en and es (search data of 23-10-2026). The app has 14.
 
 ## Brand Commitments

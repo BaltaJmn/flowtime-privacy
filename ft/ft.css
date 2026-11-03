@@ -1,4 +1,5 @@
 /* FlowTime web pages: the deep blue of the icon, the light blue ring, Mulish. */
+/* Mulish (mulish.woff2, a subset) is under the SIL Open Font License 1.1: copyright and licence in /ft/OFL.txt. */
 @font-face {
   font-family: Mulish;
   src: url("/ft/mulish.woff2") format("woff2");

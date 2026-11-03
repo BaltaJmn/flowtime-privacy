@@ -8,6 +8,8 @@ behind Cloudflare.
 |---|---|
 | `index.html` | Privacy policy, English and Spanish. The URL in the app, Play and the App Store |
 | `terms.html`, `delete.html` | Terms of use, and how to delete the Coop account |
+| `legal.html` | Legal notice (LSSI art. 10), English and Spanish, linked from every page's footer. Filled in with the owner's details on 3-11-2026; one email for the whole site (baltajmn@gmail.com). |
+| `ft/OFL.txt` | Copyright and SIL Open Font License 1.1 for Mulish, pointed to from `ft/ft.css` and `legal.html` |
 | `404.html` | Any unknown path. For Coop links (`/f/<code>`, `/r/<code>`) without the app: Android goes to Play, iPhone to the App Store once FlowTime is on sale there (iTunes lookup), a computer sees both |
 | `.well-known/` | `assetlinks.json` and `apple-app-site-association`: Coop links open the app |
 | `.nojekyll` | Without it Pages runs Jekyll, which drops `.well-known` |
