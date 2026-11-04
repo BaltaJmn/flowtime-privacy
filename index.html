@@ -140,13 +140,12 @@ people, asks you to sign in, with <strong>Sign in with Apple</strong> or <strong
 never open Coop, nothing in this section applies to you.</p>
 <p>When you use Coop we store, on our server: the identifier and the email address that Apple or Google
 give us when you sign in (with Apple you may choose a private relay address), the <strong>name you
-show</strong> (new profiles start with an anonymous default name, not the name of your Apple or Google
-account, and you can change it at any time), your invitation code, your friends and friend requests, the
+show</strong> (we suggest the first name on your Apple or Google account, or a name such as Focus1234 if
+it has none, and you can change it at any time), your invitation code, your friends and friend requests, the
 people you block, the room you are in and its timer (when it started, whether it is paused, its
 durations), and the reports you send. Other people only ever see your name: your friends, people with a
 friend request open with you, and the people in your room. Your study history, tasks, tags and goals stay
-on your phone; Coop never sends them. An automatic word filter stops offensive names from being saved.</p>
-<!-- CONFIRMAR: the anonymous default name and the word filter ship with the Coop build of branch coop-vista-previa (the server half is migration 20261103110000_nombres_ofensivos.sql). Publish this page together with that build. -->
+on your phone; Coop never sends them.</p>
 
 <p>The server is run by <strong>Supabase, Inc.</strong> as a processor, in the European Union (Frankfurt,
 Germany). The sign-in system is shared with the developer's other apps, Chroma, Quilt and MoodTraker: if
@@ -155,7 +154,6 @@ you sign in to more than one of them with the same Apple or Google account, it i
 no app can see another's.</p>
 <p>A report sends us an email with the names of the two people involved so that we can act within 24
 hours; it is delivered by <strong>Resend, Inc.</strong> as a processor.</p>
-<!-- DECIDIR: how long report emails are kept (Resend keeps sent emails according to its own plan; nothing on our side deletes them) and how long report rows stay in the server (flowtime.reports: today until the reporter or the reported person deletes the account). No period is promised above. -->
 
 <p>So that Coop can tell you when someone sends you a friend request, accepts yours or invites you to
 their room, also with the app closed, we store a <strong>notification token</strong> for your phone with
@@ -213,6 +211,8 @@ you were using FlowTime before ads were added, you are not asked.</p>
 <p><strong>Android advertising ID.</strong> Google's ads software reads your advertising ID, which is why
 FlowTime declares the normal permission "AD_ID". You can reset or delete the ID at any time in your
 phone's Android settings; apps then get a string of zeros instead of the ID.</p>
+<p><strong>An ad that should not be there.</strong> You can report it in <strong>Settings, Report an
+inappropriate ad</strong>.</p>
 
 <h3>Ratings</h3>
 <p>FlowTime may show the store's own rating dialog, from Google Play or the App Store. Your rating goes
@@ -247,13 +247,6 @@ leaves the European Economic Area, the United Kingdom or Switzerland:</p>
   <tr><td><strong>Apple</strong> (itunes.apple.com): website pages with store buttons</td><td>Your IP address, when the page asks whether the iPhone app is on sale.</td><td>Standard Contractual Clauses, as Apple's privacy policy states.</td></tr>
 </table>
 </div>
-<!-- CONFIRMAR: Supabase's public DPA (supabase.com/legal/dpa) names Supabase Pte. Ltd. (Singapore) as the data importer, not Supabase, Inc. Check which entity bills you and use its exact name here and in the Coop section. -->
-<!-- CONFIRMAR: Resend's public DPA names Plus Five Five, Inc. as the company behind Resend; the text says Resend, Inc. Use the exact legal name. -->
-<!-- CONFIRMAR: RevenueCat's DPA lists Standard Contractual Clauses, the UK Addendum and Swiss terms but does not mention the Data Privacy Framework, so only the clauses are claimed. Check that you have accepted the DPA in the RevenueCat dashboard. -->
-<!-- CONFIRMAR: the Google rows follow Google's public pages (policies.google.com/privacy/frameworks and the business.safety.google controller terms). Check which agreement covers AdMob and which covers Firebase Cloud Messaging (Firebase data processing terms; Google as processor) in your own accounts, and accept them in the consoles. -->
-<!-- CONFIRMAR: GitHub Pages sits behind Fastly (response headers x-served-by and x-fastly-request-id) and then Cloudflare; GitHub's sub-processor list names Fastly. Check, and add Fastly if you want it named. -->
-<!-- CONFIRMAR: GitHub's agreement does not mention GitHub Pages visitors; "independent controller for its server logs" follows GitHub's privacy statement. Check it, and whether you want the Cloudflare line to say "processor" (you are its customer) or "controller". -->
-<!-- CONFIRMAR: Apple's role for Sign in with Apple and APNs, and the transfer mechanism, are taken from Apple's public privacy policy (apple.com/legal/privacy/en-ww); the Developer Program License Agreement sections 3.3.3, 3.3.5 and 3.3.7 say more and were not read in full. -->
 
 <h2>This website</h2>
 <p>This policy, the web timer and the guides live at flowtime.baltajmn.dev. The website sets no cookies
@@ -269,12 +262,6 @@ browser, and clearing the site data in your browser erases them.</p>
 sale, which gives Apple your IP address. The store links carry a campaign tag (for example
 utm_source=flowtime.baltajmn.dev) so that Google Play and the App Store can count the installs that came
 from the website; we receive no personal data from that.</p>
-<p>The page that opens a Coop room link (flowtime.baltajmn.dev/r/ followed by the room code) works without
-an account. When you open such a link, your browser asks our Supabase server (Frankfurt) for the state of
-that room (its phase, its timer and how many people are in it), which sends it the room code from the
-link and your IP address. The page shows no names.</p>
-<!-- CONFIRMAR: the room preview on /r/<code> is in the branch sala-en-la-web (404.html calls flowtime.room_preview), not in this branch. Publish this paragraph together with that page, or remove it. Also check that room_preview returns only phase, timer and member count. -->
-<!-- CONFIRMAR: the response headers of the live site carry no Set-Cookie (checked 3-11-2026 with curl); re-check after any Cloudflare change, because "no cookies" is a claim. -->
 
 
 <h2>Permissions the app asks for</h2>
@@ -298,8 +285,6 @@ link and your IP address. The page shows no names.</p>
   <tr><td>Fingerprint and biometrics</td><td>Declared by a software library that FlowTime includes. FlowTime does not use your fingerprint or your face.</td></tr>
 </table>
 </div>
-<!-- CONFIRMAR: USE_BIOMETRIC and USE_FINGERPRINT come from androidx.biometric:biometric:1.1.0, a library pulled in by a dependency (manifest-merger report). FlowTime has no biometric code. Better to remove both with tools:node="remove" in app/src/main/AndroidManifest.xml and then delete this row. -->
-<!-- CONFIRMAR: the merged manifest of the anuncios worktree (checked 3-11-2026, version 2.9.0) also declares com.baltajmn.flowtime.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION, an internal permission that only FlowTime itself can hold; it is not listed here on purpose. The push and wake lock rows come from firebase-messaging 26.0.0; the three ad services rows from play-services-ads-api 25.5.0. Re-check this table against the merged manifest of the release build. -->
 <p class="note">The table lists the Android permissions. On iOS the app asks for notifications and, if you
 see ads, for the tracking permission (App Tracking Transparency): the ambient sounds keep playing in the background without any extra permission, and
 automatic Do Not Disturb is not available on iPhone.</p>
@@ -310,11 +295,8 @@ your files.</p>
 <p>Data on your device is kept until you delete it in the app or uninstall the app. Purchase records
 held by RevenueCat and by the store are kept for as long as those services require in order to honour
 restores and to meet their own legal and tax obligations. Coop data is kept until you delete your
-account; a room is deleted as soon as the last person leaves it, and failed invitation attempts are
-kept for one hour. Data that Google's ads software receives is kept by Google under its own policies.</p>
-<!-- DECIDIR: Coop has no inactivity purge. Profiles of people who stop using the app stay until they delete the account; a rule such as "deleted after N months without opening Coop" needs a job in Supabase and then a sentence here. Nothing is promised above. -->
-<!-- CONFIRMAR: "failed invitation attempts are kept for one hour": rows older than an hour are only deleted the next time the same person tries again (supabase/migrations/20261019120000_amigos.sql, line 119), so some stay longer. Reword ("are counted for one hour") or add a purge job. -->
-<!-- DECIDIR: the retention of report rows and report emails (see the DECIDIR in the Coop section); and the time that RevenueCat keeps purchase records, which today is "as long as those services require". -->
+account; a room is deleted as soon as the last person leaves it, and failed invitation attempts count
+for one hour and are deleted the next time you enter a code. Data that Google's ads software receives is kept by Google under its own policies.</p>
 
 
 <h2>Children</h2>
@@ -445,13 +427,12 @@ personas, te pide iniciar sesión, con <strong>Iniciar sesión con Apple</strong
 <strong>Google</strong>. Si nunca abres Coop, nada de esta sección te afecta.</p>
 <p>Cuando usas Coop guardamos en nuestro servidor: el identificador y el correo que Apple o Google nos
 dan al iniciar sesión (con Apple puedes elegir una dirección privada de reenvío), el <strong>nombre que
-muestras</strong> (los perfiles nuevos empiezan con un nombre anónimo por defecto, no con el nombre de tu
-cuenta de Apple o de Google, y puedes cambiarlo cuando quieras), tu código de invitación, tus amigos y
+muestras</strong> (te proponemos el nombre de pila de tu cuenta de Apple o de Google, o uno como
+Focus1234 si no lo tiene, y puedes cambiarlo cuando quieras), tu código de invitación, tus amigos y
 solicitudes de amistad, las personas que bloqueas, la sala en la que estás y su temporizador (cuándo
 empezó, si está en pausa, sus duraciones) y los reportes que envías. Los demás solo ven tu nombre: tus
 amigos, quien tenga una solicitud abierta contigo y quien esté en tu sala. Tu historial de estudio,
-tareas, etiquetas y objetivos se quedan en tu móvil; Coop nunca los envía. Un filtro automático de
-palabras impide guardar nombres ofensivos.</p>
+tareas, etiquetas y objetivos se quedan en tu móvil; Coop nunca los envía.</p>
 <p>El servidor lo presta <strong>Supabase, Inc.</strong> como encargado del tratamiento, en la Unión
 Europea (Fráncfort, Alemania). El sistema de inicio de sesión se comparte con las otras apps del
 desarrollador, Chroma, Quilt y MoodTraker: si inicias sesión en más de una con la misma cuenta de Apple o
@@ -521,6 +502,8 @@ FlowTime antes de que existieran los anuncios, no se te pregunta.</p>
 publicidad, por eso FlowTime declara el permiso normal "AD_ID". Puedes restablecer o borrar el ID cuando
 quieras en los ajustes de Android de tu móvil; las apps reciben entonces una cadena de ceros en vez del
 ID.</p>
+<p><strong>Un anuncio que no debería estar.</strong> Puedes denunciarlo en <strong>Ajustes, Denunciar un
+anuncio inapropiado</strong>.</p>
 
 <h3>Valoraciones</h3>
 <p>FlowTime puede mostrar el diálogo de valoración de la propia tienda, Google Play o la App Store. Tu
@@ -570,10 +553,6 @@ salen nunca de tu navegador, y borrar los datos del sitio en el navegador los el
 del iPhone está a la venta, lo que le da a Apple tu dirección IP. Los enlaces a las tiendas llevan una
 etiqueta de campaña (por ejemplo utm_source=flowtime.baltajmn.dev) para que Google Play y la App Store
 puedan contar las instalaciones que vienen de la web; de eso no recibimos ningún dato personal.</p>
-<p>La página que abre un enlace de sala de Coop (flowtime.baltajmn.dev/r/ seguido del código de la sala)
-funciona sin cuenta. Cuando abres un enlace así, tu navegador pregunta a nuestro servidor de Supabase
-(Fráncfort) por el estado de esa sala (su fase, su temporizador y cuánta gente hay), y le envía el código
-de la sala del enlace y tu dirección IP. La página no muestra nombres.</p>
 
 <h2>Permisos que pide la app</h2>
 <div class="wrap">
@@ -608,7 +587,8 @@ ficheros.</p>
 registros de compra que guardan RevenueCat y la tienda se conservan el tiempo que esos servicios
 necesiten para poder restaurar compras y para cumplir sus propias obligaciones legales y
 fiscales. Los datos de Coop se conservan hasta que borras tu cuenta; una sala se borra en cuanto sale
-la última persona, y los intentos de invitación fallidos se guardan una hora. Los datos que recibe el
+la última persona, y los intentos de invitación fallidos cuentan durante una hora y se borran la
+próxima vez que introduces un código. Los datos que recibe el
 software de anuncios de Google los conserva Google con sus propias políticas.</p>
 
 <h2>Menores</h2>
