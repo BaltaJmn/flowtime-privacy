@@ -15,6 +15,9 @@ const CARD = {
   finals: { en: ['Finals week study plan', 'A study day you can press play on.', '50:00', 0.34] },
   exams: { en: ['Exam season revision', 'A revision day, block by block, with the timer built in.', '50:00', 0.34], es: ['Época de exámenes', 'Un día de estudio, bloque a bloque, con el temporizador dentro.', '50:00', 0.34] },
   opos: { es: ['Pomodoro para oposiciones', 'Un día de opositor, bloque a bloque, con el temporizador dentro.', '50:00', 0.34] },
+  fifty: { en: ['The 50/10 study timer', '50 minutes of focus, 10 of rest. Free, in your browser.', '50:00', 0.34], es: ['Pomodoro 50/10', '50 minutos de estudio y 10 de descanso. Gratis, en el navegador.', '50:00', 0.34] },
+  adhd: { en: ['Pomodoro for ADHD', 'Short blocks, a visible clock, or no bell at all.', '25:00', 0.62], es: ['Pomodoro y TDAH', 'Bloques cortos, el tiempo a la vista o sin avisos.', '25:00', 0.62] },
+  breaks: { en: ['Study break calculator', 'How long to rest after 1, 2 or 3 hours of study.', '12:00', 0.2] },
   hub: { en: ['FlowTime and other focus apps', 'Forest, Pomofocus, Focus To-Do, Study Bunny, Focus Friend.', '38:00', 0.7], es: ['FlowTime y otras apps de concentración', 'Forest, Pomofocus, Focus To-Do, Study Bunny, Focus Friend.', '38:00', 0.7] },
 }
 for (const [id, c] of Object.entries(COMPARE)) {

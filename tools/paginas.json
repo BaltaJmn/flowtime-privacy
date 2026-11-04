@@ -1,0 +1,425 @@
+{
+ "fifty": {
+  "en": {
+   "title": "Pomodoro 50/10 Timer: The 50 10 Rule for Studying",
+   "desc": "Free 50/10 Pomodoro timer in your browser. Learn the 50 10 rule for studying, who it suits, how it compares with 25/5 and how many blocks fit in a day.",
+   "h1": "50/10 Pomodoro timer",
+   "sub": "Fifty minutes of focus, then ten minutes off. The timer below is already set to 50/10, so press start and keep the tab open.",
+   "sections": [
+    [
+     "The 50/10 rule in three steps",
+     [
+      [
+       "Work for 50",
+       "Pick one task and work on it for 50 minutes with your phone out of reach. A soft chime tells you when time is up, so you can stop watching the clock."
+      ],
+      [
+       "Rest for 10",
+       "Stand up and step away from the screen for the whole 10 minutes. Do not borrow time from the break to finish one more thought."
+      ],
+      [
+       "Repeat, then rest longer",
+       "Start the next block on a new task, or on a new part of the same one. After two or three blocks, take a longer break."
+      ]
+     ]
+    ],
+    [
+     "Is 50/10 right for you?",
+     [
+      [
+       "Choose 50/10 for deep work",
+       "Use it when you read, write, code or solve problems, and 25 minutes ends just as you get going."
+      ],
+      [
+       "Choose 25/5 to get started",
+       "Use it when you are tired, the job is small or you keep putting it off. A short block is easy to begin."
+      ],
+      [
+       "Not sure? Test both",
+       "Try each for one full day and keep the one you actually finish, not the one that sounds more serious."
+      ]
+     ]
+    ]
+   ],
+   "flowH": "No fixed bell",
+   "flowP": "Some days your focus ends at 35 minutes and some days it runs past 50. FlowTime mode counts up instead: you stop when your attention fades, and the break fits the time you worked. It is the same idea as 50/10 without the fixed bell: a long run of work, then a rest in proportion.",
+   "flowLink": [
+    "More on the Flowtime technique",
+    "technique"
+   ],
+   "extra": [
+    [
+     "What is the 50/10 rule for studying?",
+     [
+      "The 50/10 rule is a study method with blocks of 50 minutes of focused work followed by a 10 minute break. It is the longer version of the Pomodoro technique, which uses 25 minutes of work and a 5 minute break.",
+      "The ratio is the same, five to one, but each block lasts twice as long. That helps with tasks that take a while to warm up, such as following a proof, writing an essay or tracing a bug, where a 25 minute bell tends to ring right when you finally get in.",
+      "The rule suits students with long texts to read, essays to draft or problem sets to work through, and anyone whose work needs a long run, such as programming or design. It is also a good fit if you find 25 minutes too short and the constant restarts annoying."
+     ]
+    ],
+    [
+     "Is 50/10 better than 25/5?",
+     [
+      "Neither is better: 50/10 suits deep work, and 25/5 suits starting and low-energy days. Use 50/10 for a chapter, an essay, a problem set or code you have to hold in your head.",
+      "Use 25/5 when you are tired, stressed by a pile of work or putting something off, because 25 minutes feels easy to begin. Many people use both in one day: 50/10 in the morning while they are fresh, 25/5 after lunch when energy dips. In the FlowTime app you can set your own times, so 50/10 is only one option.",
+      "A simple test: at minute 40, do you still know what you are doing? If you are rereading the same line, the block is too long for today. Shorten it instead of forcing it."
+     ]
+    ],
+    [
+     "How many 50/10 blocks can you do in a day?",
+     [
+      "Four to six blocks is a solid day for most people. That is around three to five hours of real focus, since the breaks do not count. Start with three and add one more when you finish them without a fight.",
+      "Count only the blocks you finish with your phone away, and write the task for each one before you press start. When you reach your number, stop: being able to repeat tomorrow matters more than one heroic day.",
+      "A day could look like this: two blocks in the morning, a longer break, one or two after lunch and a last one in the evening if you still have energy. Put the hardest subject in the first block, while you are fresh."
+     ]
+    ],
+    [
+     "What should you do in the 10 minute break, and when do you need a longer one?",
+     [
+      "Move, drink some water and look at something far away; leave the phone alone. Walk around, stretch, refill your glass or look out of a window. Ten minutes is enough for a snack or a quick errand, but not for scrolling a feed and coming back on time.",
+      "Take a longer break of 20 to 30 minutes after two or three blocks, or sooner if you catch yourself rereading without taking anything in. Eat, go outside or lie down with your eyes closed, then start the next block on a different task.",
+      "Keep the end of the break firm. When the second chime plays, put the phone down and start; a break with no end tends to swallow the next hour."
+     ]
+    ]
+   ]
+  },
+  "es": {
+   "title": "Pomodoro 50 10: temporizador gratis y regla para estudiar",
+   "desc": "Temporizador Pomodoro 50 10 gratis: 50 minutos de estudio y 10 de descanso. Para quién es la regla 50/10, cómo se compara con 25/5 y cuántos bloques al día.",
+   "h1": "Temporizador Pomodoro 50/10",
+   "sub": "Cincuenta minutos de concentración y diez de descanso. El temporizador de abajo ya está en 50/10: dale a empezar y deja la pestaña abierta.",
+   "sections": [
+    [
+     "La regla 50/10 en tres pasos",
+     [
+      [
+       "Trabaja 50 minutos",
+       "Elige una sola tarea y trabaja en ella 50 minutos, con el móvil fuera de tu alcance. Un aviso suave te dice cuándo acaba, así que no hace falta vigilar el reloj."
+      ],
+      [
+       "Descansa 10",
+       "Levántate y aparta la vista de la pantalla durante los 10 minutos enteros. No le robes tiempo al descanso para terminar una idea más."
+      ],
+      [
+       "Repite y alarga la pausa",
+       "Empieza el siguiente bloque con otra tarea o con otra parte de la misma. Tras dos o tres bloques, haz un descanso más largo."
+      ]
+     ]
+    ],
+    [
+     "¿Es el 50/10 para ti?",
+     [
+      [
+       "Elige 50/10 para trabajo a fondo",
+       "Úsalo cuando lees, escribes, programas o haces problemas, y a los 25 minutos apenas estás cogiendo ritmo."
+      ],
+      [
+       "Elige 25/5 para arrancar",
+       "Úsalo cuando vas con poca energía, la tarea es pequeña o llevas días aplazándola. Un bloque corto cuesta poco empezarlo."
+      ],
+      [
+       "¿Dudas? Prueba los dos",
+       "Dedica un día entero a cada ritmo y quédate con el que de verdad terminas, no con el que suena más serio."
+      ]
+     ]
+    ]
+   ],
+   "flowH": "Sin aviso fijo",
+   "flowP": "Hay días en que la concentración se acaba a los 35 minutos y días en que pasa de los 50. El modo FlowTime cuenta hacia arriba: paras cuando se te va la atención y el descanso se ajusta a lo que has trabajado. Es la misma idea que el 50/10 sin el aviso fijo: una tirada larga de trabajo y un descanso proporcionado.",
+   "flowLink": [
+    "Más sobre la técnica Flowtime",
+    "technique"
+   ],
+   "extra": [
+    [
+     "¿Qué es la regla 50/10 para estudiar?",
+     [
+      "La regla 50/10 es un método de estudio con bloques de 50 minutos de trabajo concentrado y 10 minutos de descanso. Es la versión larga del método Pomodoro, que usa 25 minutos de trabajo y 5 de descanso.",
+      "La proporción es la misma, cinco a uno, pero cada bloque dura el doble. Eso ayuda en las tareas que tardan en arrancar, como seguir una demostración, escribir un trabajo o buscar un fallo en el código: con 25 minutos, el aviso suele sonar justo cuando por fin has entrado.",
+      "La regla va bien a quien tiene textos largos que leer, trabajos que redactar o hojas de problemas, y a cualquiera cuyo trabajo pide una tirada larga, como programar o diseñar. También encaja si 25 minutos se te quedan cortos y te molesta tener que arrancar de nuevo cada poco."
+     ]
+    ],
+    [
+     "¿Es mejor el Pomodoro 50/10 que el 25/5?",
+     [
+      "Ninguno es mejor: el 50/10 va bien para el trabajo a fondo y el 25/5 para empezar y para los días de poca energía. Usa 50/10 para un tema entero, un trabajo, una hoja de problemas o un código que tienes que tener en la cabeza.",
+      "Usa 25/5 cuando vas con poca energía, te agobia un montón de tareas o llevas días aplazando algo, porque 25 minutos cuesta poco empezarlos. Mucha gente combina los dos: 50/10 por la mañana, con la cabeza fresca, y 25/5 después de comer, cuando baja la energía. En la app FlowTime puedes poner tus propios tiempos, así que el 50/10 es solo una opción.",
+      "Una prueba sencilla: en el minuto 40, ¿sigues sabiendo qué estás haciendo? Si te pillas releyendo la misma línea, el bloque es demasiado largo para hoy. Acórtalo en vez de forzarlo."
+     ]
+    ],
+    [
+     "¿Cuántos bloques de 50/10 se pueden hacer al día?",
+     [
+      "Entre cuatro y seis bloques es un buen día para la mayoría de la gente, es decir, de tres a cinco horas de concentración real, porque los descansos no cuentan. Empieza con tres y añade uno cuando los termines sin pelea.",
+      "Cuenta solo los bloques que acabas con el móvil lejos y apunta la tarea de cada uno antes de empezar. Cuando llegues a tu cifra, para: poder repetir mañana importa más que un día heroico.",
+      "Un día podría ser así: dos bloques por la mañana, un descanso largo, uno o dos después de comer y otro por la tarde si te queda energía. Pon la asignatura más difícil en el primer bloque, mientras tienes la cabeza fresca."
+     ]
+    ],
+    [
+     "¿Qué hacer en los 10 minutos de descanso y cuándo hacer una pausa larga?",
+     [
+      "Muévete, bebe agua y mira algo lejano; deja el móvil en paz. Camina, estírate, rellena el vaso o asómate a la ventana. Diez minutos dan para un tentempié o un recado rápido, pero no para una tanda de redes y volver puntual.",
+      "Haz una pausa larga de 20 a 30 minutos tras dos o tres bloques, o antes si te pillas leyendo sin enterarte de nada. Come algo, sal a la calle o túmbate con los ojos cerrados, y empieza el siguiente bloque con otra tarea.",
+      "Mantén firme el final del descanso. Cuando suene el segundo aviso, deja el móvil y empieza; un descanso sin final se come la hora siguiente."
+     ]
+    ]
+   ]
+  }
+ },
+ "adhd": {
+  "en": {
+   "title": "Pomodoro for ADHD: Free Study Timer and Practical Tips",
+   "desc": "Free Pomodoro timer for ADHD study sessions: shorter blocks, counting up instead of a bell, body doubling and what to do when a block goes badly.",
+   "h1": "Pomodoro timer for ADHD",
+   "sub": "A free study timer that starts at 25/5 and can also count up instead of down. This page is practical advice, not medical advice, and it does not replace a professional.",
+   "sections": [
+    [
+     "Getting started with a timer",
+     [
+      [
+       "Start small",
+       "Press start on 25/5 and promise yourself only the first block. A clear end makes starting feel less heavy."
+      ],
+      [
+       "Write the step first",
+       "Before you press start, write one concrete step, such as solve problems 1 to 5 instead of study maths. You skip the first minutes of deciding what to do."
+      ],
+      [
+       "One alarm only",
+       "Silence the phone and keep this tab open. The soft chime marks the end of the block, so you do not have to watch the time."
+      ]
+     ]
+    ],
+    [
+     "Which mode to try",
+     [
+      [
+       "25/5",
+       "The default here. It is short enough to start on a bad day."
+      ],
+      [
+       "50/10",
+       "For when you are already absorbed in the task and 25 minutes feels too short."
+      ],
+      [
+       "FlowTime",
+       "It counts up, so no bell cuts you off. Work until your attention fades, then take a break."
+      ]
+     ]
+    ]
+   ],
+   "flowH": "Counting up instead of a bell",
+   "flowP": "Some people with ADHD find a bell in the middle of a task hard to handle, and prefer to count up. FlowTime mode does that: you work, press Start break when your attention fades, and the break fits the time you worked.",
+   "flowLink": [
+    "More on the Flowtime technique",
+    "technique"
+   ],
+   "extra": [
+    [
+     "Does the Pomodoro technique work for ADHD?",
+     [
+      "It helps some people and not others, so think of it as an experiment. Some people with ADHD find that a short timed block makes starting easier, because the task has a clear end and the countdown makes time visible. Others find the countdown stressful, or lose a good run of work when the bell rings.",
+      "Try it for a week, one task a day. Notice how easy it was to begin, how long you stayed and how you felt afterwards, then keep what helps and drop what does not. None of this is medical advice, and a timer does not replace support from a professional.",
+      "If a timer makes you more anxious, that is a useful answer too. Count up with FlowTime mode, or skip timing for a day and write only a list of steps."
+     ]
+    ],
+    [
+     "Can you use shorter blocks, like 10/3 or 15/5?",
+     [
+      "Yes. Many people shorten the block to 10 minutes of work and a 3 minute break, or to 15 and 5, when 25 minutes feels too long to begin. A short block you finish is worth more than a long one you dread.",
+      "The web timer on this page has three modes: 25/5, 50/10 and FlowTime. For other times, the FlowTime app lets you set your own Pomodoro times. Here you can get a similar effect in FlowTime mode: press Start break after 10 minutes and the break will be 5.",
+      "Other changes are small: keep a short list of steps in sight, take a longer break after a hard block, or pick the easiest task for the first block so the day starts moving."
+     ]
+    ],
+    [
+     "Can body doubling help you study?",
+     [
+      "Some people find that working next to someone else makes it easier to start and harder to drift off. That is body doubling: another person is there, doing their own work, in the same room or on a call. You do not need to talk or study the same subject.",
+      "If you cannot meet, a shared timer does a similar job from a distance. Coop, in the FlowTime app, is a private room where up to 8 people share one timer. A library, a study group or a friend on a video call work too.",
+      "If it helps, say your task out loud in one line before you start, then stay quiet until the break."
+     ]
+    ],
+    [
+     "What if a block goes badly, or you forget to stop?",
+     [
+      "Do not count a bad block as failed. Write one line about where you stopped, take the break anyway and start again with something smaller: 10 minutes, one step. A rough block that ends with a note for next time still moved the work forward. Then ask what made it hard: were you tired, hungry, in a noisy room, or facing a task that was too big? Change that one thing for the next block.",
+      "If you get absorbed and lose track of time, 25/5 and 50/10 help because the chime pulls you out to drink water, eat and move. Before you stop, write the next step so it is easy to restart. In FlowTime mode, glance at the counter now and then, and stop when you catch yourself rereading the same line.",
+      "Stopping early is allowed. Some days the honest result is a single 10 minute block, and that is still a day with work in it."
+     ]
+    ]
+   ]
+  },
+  "es": {
+   "title": "Pomodoro para el TDAH: temporizador gratis y consejos",
+   "desc": "Temporizador Pomodoro gratis para estudiar con TDAH: bloques cortos como 10/3, contar hacia arriba, estudiar acompañado y qué hacer si un bloque sale mal.",
+   "h1": "Pomodoro para el TDAH",
+   "sub": "Un temporizador gratis para estudiar que empieza en 25/5 y también puede contar hacia arriba. Son consejos prácticos, no médicos, y no sustituyen a un profesional.",
+   "sections": [
+    [
+     "Cómo empezar con el temporizador",
+     [
+      [
+       "Empieza pequeño",
+       "Dale a empezar en 25/5 y comprométete solo con el primer bloque. Un final claro hace que empezar pese menos."
+      ],
+      [
+       "Apunta el paso antes",
+       "Antes de empezar, escribe un paso concreto, por ejemplo hacer los problemas 1 al 5 en vez de estudiar mates. Te ahorras los primeros minutos decidiendo qué hacer."
+      ],
+      [
+       "Un solo aviso",
+       "Silencia el móvil y deja esta pestaña abierta. El aviso suave marca el final del bloque, así que no tienes que vigilar la hora."
+      ]
+     ]
+    ],
+    [
+     "Qué modo probar",
+     [
+      [
+       "25/5",
+       "El de por defecto. Es lo bastante corto para arrancar en un mal día."
+      ],
+      [
+       "50/10",
+       "Para cuando ya estás metido en la tarea y 25 minutos se te quedan cortos."
+      ],
+      [
+       "FlowTime",
+       "Cuenta hacia arriba, así que ningún aviso te corta. Trabaja hasta que se te vaya la atención y luego descansa."
+      ]
+     ]
+    ]
+   ],
+   "flowH": "Contar hacia arriba en vez de esperar un aviso",
+   "flowP": "A algunas personas con TDAH les cuesta que suene un aviso en mitad de la tarea y prefieren contar hacia arriba. El modo FlowTime lo hace: trabajas, le das a Empezar descanso cuando se te va la atención y el descanso se ajusta a lo que has trabajado.",
+   "flowLink": [
+    "Más sobre la técnica Flowtime",
+    "technique"
+   ],
+   "extra": [
+    [
+     "¿Sirve el método Pomodoro para el TDAH?",
+     [
+      "A algunas personas les sirve y a otras no, así que tómalo como un experimento. Hay personas con TDAH a las que un bloque corto con final claro les facilita empezar, porque el tiempo se ve pasar. A otras la cuenta atrás las agobia, o pierden una buena racha cuando suena el aviso.",
+      "Pruébalo una semana, con una tarea al día. Fíjate en lo fácil que fue empezar, cuánto aguantaste y cómo acabaste, y quédate con lo que te ayude. Nada de esto es consejo médico, y un temporizador no sustituye el apoyo de un profesional.",
+      "Si el temporizador te agobia más, también es una respuesta útil. Cuenta hacia arriba con el modo FlowTime, o deja de medir el tiempo un día y escribe solo una lista de pasos."
+     ]
+    ],
+    [
+     "¿Se puede usar el Pomodoro 10/3 u otros bloques más cortos?",
+     [
+      "Sí. Mucha gente acorta el bloque a 10 minutos de trabajo y 3 de descanso, o a 15 y 5, cuando 25 minutos se hacen largos para empezar. Un bloque corto que terminas vale más que uno largo que te da pavor.",
+      "El temporizador web de esta página tiene tres modos: 25/5, 50/10 y FlowTime. Para otros tiempos, la app FlowTime te deja poner tus propios tiempos de Pomodoro. Aquí puedes conseguir algo parecido con el modo FlowTime: dale a Empezar descanso a los 10 minutos y el descanso será de 5.",
+      "Hay cambios pequeños que también ayudan: tener a la vista una lista corta de pasos, hacer un descanso más largo tras un bloque difícil o elegir la tarea más fácil para el primer bloque y que el día arranque."
+     ]
+    ],
+    [
+     "¿Ayuda estudiar acompañado?",
+     [
+      "A algunas personas les ayuda: trabajar junto a alguien que también está a lo suyo hace más fácil empezar y más difícil despistarse. En inglés se llama body doubling. No hace falta hablar ni estudiar lo mismo; basta con que haya alguien, en la misma sala o en una videollamada.",
+      "Si no podéis quedar, un temporizador compartido hace algo parecido desde lejos. Coop, en la app FlowTime, es una sala privada donde hasta 8 personas comparten un temporizador. También sirven una biblioteca, un grupo de estudio o un amigo en videollamada.",
+      "Si te ayuda, di tu tarea en voz alta en una frase antes de empezar y luego guarda silencio hasta el descanso."
+     ]
+    ],
+    [
+     "¿Qué hago si un bloque sale mal o se me olvida parar?",
+     [
+      "No cuentes un bloque malo como un fracaso. Apunta en una línea dónde lo dejaste, haz el descanso igualmente y vuelve a empezar con algo más pequeño: 10 minutos y un solo paso. Un bloque flojo que acaba con una nota para la próxima vez también ha hecho avanzar el trabajo. Luego pregúntate qué lo hizo difícil: ¿cansancio, hambre, ruido o una tarea demasiado grande? Cambia solo esa cosa para el siguiente bloque.",
+      "Si te enganchas y pierdes la noción del tiempo, el aviso del 25/5 y del 50/10 ayuda, porque te saca de ahí para beber agua, comer y moverte. Antes de parar, escribe el siguiente paso para retomarlo con facilidad. En el modo FlowTime, echa un vistazo al contador de vez en cuando y para cuando te pilles releyendo la misma línea.",
+      "Parar antes también vale. Hay días en que el resultado honesto es un solo bloque de 10 minutos, y eso sigue siendo un día con trabajo hecho."
+     ]
+    ]
+   ]
+  }
+ },
+ "breaks": {
+  "en": {
+   "title": "How Long Should a Study Break Be? Free Break Calculator",
+   "desc": "How long should a study break be after 1, 2 or 3 hours? Use the free calculator, then see how often to rest and what to do on a break.",
+   "h1": "Study break calculator",
+   "sub": "Type how long you studied and get a break to match. The timer below starts in FlowTime mode, so you can count your study time up and see how long you really worked before you rest.",
+   "sections": [
+    [
+     "How long should a study break be?",
+     [
+      [
+       "After 1 hour",
+       "Take about 12 minutes, one fifth of the time you studied. Stand up, drink some water and look out of a window."
+      ],
+      [
+       "After 2 hours",
+       "Take about 24 minutes. It is long enough to eat something and get outside, and short enough to pick up the thread afterwards."
+      ],
+      [
+       "After 3 hours",
+       "Take 30 minutes, which is where the rule stops. A longer break tends to make it harder to get back to work. Eat properly and go for a walk."
+      ]
+     ]
+    ],
+    [
+     "How often should you take breaks when studying?",
+     [
+      [
+       "Every 25 to 50 minutes",
+       "A short break of 5 to 10 minutes after each block of focus is a pattern most people can keep. The 25/5 and 50/10 modes follow it."
+      ],
+      [
+       "Every couple of hours, a longer one",
+       "Add a break of 20 to 30 minutes to eat, move and reset before the next stretch of study."
+      ],
+      [
+       "Sooner if you drift",
+       "If you reread the same line, check your phone without noticing or cannot say what you just read, rest now instead of pushing for ten more minutes."
+      ]
+     ]
+    ]
+   ],
+   "flowH": "Counting your study time up",
+   "flowP": "FlowTime mode counts up, so you always know how long you worked, and then sets a short break by ranges. The FlowTime app uses the same shorter default breaks between sessions (5, 10 or 15 minutes by ranges, editable in the app). The calculator answers a different question: how long to rest after a long stretch of study.",
+   "flowLink": [
+    "More on the Flowtime technique",
+    "technique"
+   ],
+   "extra": [
+    [
+     "How do you work out the length of a study break?",
+     [
+      "Take one fifth of the time you studied, round it, and keep it between 5 and 30 minutes. Fifty minutes of study gives a 10 minute break, 60 gives 12, 90 gives 18, 120 gives 24 and 180 gives 30. The calculator above does the sum for you.",
+      "The minimum of 5 minutes stops a short session from earning a break too small to be useful. The maximum of 30 keeps the rest from growing so long that you lose the thread. The rule is a starting point: if you finish a hard block drained, take a few extra minutes. A 20 minute session between classes earns the 5 minute minimum, which is enough to stand up and drink some water."
+     ]
+    ],
+    [
+     "Are short breaks or long breaks better?",
+     [
+      "You need both: short breaks keep your attention from fading, and long breaks let you eat, move and reset. Short breaks of 5 to 10 minutes suit the middle of a task, and a long break suits the end of one.",
+      "A simple day could be three blocks of 50 minutes with 10 minutes between them, followed by a break of 30 minutes. Then you start again with a different task, which also gives your attention something fresh.",
+      "If you study for four hours or more, split the day into two stretches with a proper meal between them. A long break is easier to take when it already has a purpose."
+     ]
+    ],
+    [
+     "What should you do on a study break?",
+     [
+      "Move, drink some water and rest your eyes. Walk around, stretch your neck and back, refill your glass and look at something far away for a minute or two. Eat something if you are hungry. Water matters more than it seems: put a glass on the desk before you start, so you do not wander to the kitchen and get pulled into something else.",
+      "Scrolling is not a break: your eyes stay on a screen and your attention stays busy. The same goes for starting a video. Leave the phone in another room while you rest, and use the time for something that needs no decisions, such as a stretch, a song or a few slow breaths.",
+      "When you only have five minutes, stand up, stretch, drink and look away from the screen. Do not start anything that needs a decision, because it will follow you back to the desk."
+     ]
+    ],
+    [
+     "How do you get back to work after a break?",
+     [
+      "Start with the easiest next step, and start the timer before you sit down. Before each break, write one line about what you will do first when you return; reading that line is your restart.",
+      "If it is hard to begin, promise yourself five minutes. Once you are moving, most of the pull to put it off fades. If you still cannot focus after a proper break, switch to a different task instead of staring at the same one.",
+      "Give the break a clear end. Before you leave the desk, decide the time you will return, such as 4:30, and keep that time; a rest with no end tends to swallow the next hour."
+     ]
+    ]
+   ],
+   "calc": {
+    "h": "How long should your break be?",
+    "label": "Minutes you studied",
+    "unit": "minutes",
+    "out": "Take a break of {b} minutes.",
+    "long": "That is a long stretch, so add food, water and some fresh air to your break.",
+    "rule": "Rule: one fifth of the time studied, rounded, never less than 5 and never more than 30 minutes."
+   }
+  }
+ }
+}

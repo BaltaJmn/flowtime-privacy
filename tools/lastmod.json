@@ -1,82 +1,102 @@
 {
  "/pomodoro/": {
-  "hash": "f3eec074f19c6595232ec25f2bda0eba",
+  "hash": "d14e4df76da0aaa07ce5ae34f63d94db",
   "date": "2026-11-04"
  },
  "/es/pomodoro/": {
-  "hash": "4bcbe0181244278cf9fcd166b6a1f4a7",
+  "hash": "e785b852f19f127513ceb297da9d9be4",
   "date": "2026-11-04"
  },
  "/flowtime-technique/": {
-  "hash": "c5e2fb3c198d7da5ee62a343a8cac322",
+  "hash": "6a61c519672ac3de61b0daec42bf9554",
   "date": "2026-11-04"
  },
  "/es/tecnica-flowtime/": {
-  "hash": "6c7587ad3376d25f65dd276418ba8e5f",
+  "hash": "5f5e8d040d142f846fcbb2d730341a2a",
   "date": "2026-11-04"
  },
  "/finals-week/": {
-  "hash": "f0789972f39056ca1009603717917e5a",
+  "hash": "de76552fe48b5a906dcc55231bfebd1e",
   "date": "2026-11-04"
  },
  "/exam-season/": {
-  "hash": "988062248f40ffdcd5026280933489d5",
+  "hash": "68c409f469c64e059cf4d83771de7d21",
   "date": "2026-11-04"
  },
  "/es/epoca-de-examenes/": {
-  "hash": "d698ba3451ca90c1af7ebc8bd14a85ba",
+  "hash": "2fd1cddc9478edd08928649d98dfdb45",
   "date": "2026-11-04"
  },
  "/es/oposiciones/": {
-  "hash": "54eb613063da86825409fccbd8297116",
+  "hash": "4ab9013c8f79f926de5e42d92c63c716",
   "date": "2026-11-04"
  },
  "/alternatives/": {
-  "hash": "240172289a81e0f1503147f6e5b977fd",
+  "hash": "8472e63a9609d99430b193033791637e",
   "date": "2026-11-04"
  },
  "/es/alternativas/": {
-  "hash": "c7485659e96ca2bbda44f808672a2b99",
+  "hash": "7f74fcc9da0e2bbb8e8bc545d8e4a7c5",
   "date": "2026-11-04"
  },
  "/forest-alternative/": {
-  "hash": "4c938320e2279e666637ffb58624191e",
+  "hash": "de59a4931a6d0023f0a353557c954fd9",
   "date": "2026-11-04"
  },
  "/es/alternativa-a-forest/": {
-  "hash": "e59b3284e0853d66fc958931a8472ba6",
+  "hash": "0aba65752ac6b3888c6069776b7861cf",
   "date": "2026-11-04"
  },
  "/pomofocus-alternative/": {
-  "hash": "511bc84e47c4b965910fe0076e0b91ab",
+  "hash": "c095642418edb197854b179befc958f3",
   "date": "2026-11-04"
  },
  "/es/alternativa-a-pomofocus/": {
-  "hash": "f6e0e969581b48a8dc365ac04d3eb13d",
+  "hash": "fa0611c3f350d759cb3e8da9902a91f1",
   "date": "2026-11-04"
  },
  "/focus-to-do-alternative/": {
-  "hash": "0c12559567e67b9f22c3a1bc25efe08a",
+  "hash": "18676c06c96cc4966301bb339b48b0cb",
   "date": "2026-11-04"
  },
  "/es/alternativa-a-focus-to-do/": {
-  "hash": "88284626379223731e8af8edc3b53ba7",
+  "hash": "3538d337a22c2bb57c099d0fca5e5c5f",
   "date": "2026-11-04"
  },
  "/study-bunny-alternative/": {
-  "hash": "b89d1fcf7ed4cb047305e61a2b39d528",
+  "hash": "03a8693b1dcab533a08fe75beebea018",
   "date": "2026-11-04"
  },
  "/es/alternativa-a-study-bunny/": {
-  "hash": "90d767d7e3491de41a53b0790bb5dff8",
+  "hash": "bbf0988ef62911770e4e2f03c1b54230",
   "date": "2026-11-04"
  },
  "/focus-friend-alternative/": {
-  "hash": "be171b9b7c5626ec75432450a1653dfd",
+  "hash": "a599cb9322d68c3f2a08c108730abd11",
   "date": "2026-11-04"
  },
  "/es/alternativa-a-focus-friend/": {
-  "hash": "2df6fdac690022c86014a4cbb9fba005",
+  "hash": "cf2d83b77584b926671ff2e59ff4cc2b",
+  "date": "2026-11-04"
+ },
+ "/50-10-timer/": {
+  "hash": "ab388771a15caa37198038cbcb0d6c67",
+  "date": "2026-11-04"
+ },
+ "/es/pomodoro-50-10/": {
+  "hash": "2af9c331a740d40f26c8869ec7123014",
+  "date": "2026-11-04"
+ },
+ "/pomodoro-for-adhd/": {
+  "hash": "0000125d0c42e21aae7a2127eb5c536d",
+  "date": "2026-11-04"
+ },
+ "/es/pomodoro-tdah/": {
+  "hash": "1fa35dad838d2c8c6c6c61150c5a100d",
+  "date": "2026-11-04"
+ },
+ "/study-break-calculator/": {
+  "hash": "a6a83a79c605f3016ba2f2095fcf8948",
   "date": "2026-11-04"
  }
 }

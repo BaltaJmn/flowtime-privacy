@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pomodoro 50 10: temporizador gratis y regla para estudiar</title>
+<meta name="description" content="Temporizador Pomodoro 50 10 gratis: 50 minutos de estudio y 10 de descanso. Para quién es la regla 50/10, cómo se compara con 25/5 y cuántos bloques al día.">
+<link rel="canonical" href="https://flowtime.baltajmn.dev/es/pomodoro-50-10/">
+<link rel="alternate" hreflang="en" href="https://flowtime.baltajmn.dev/50-10-timer/">
+<link rel="alternate" hreflang="es" href="https://flowtime.baltajmn.dev/es/pomodoro-50-10/">
+<link rel="alternate" hreflang="x-default" href="https://flowtime.baltajmn.dev/50-10-timer/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FlowTime">
+<meta property="og:title" content="Pomodoro 50 10: temporizador gratis y regla para estudiar">
+<meta property="og:description" content="Temporizador Pomodoro 50 10 gratis: 50 minutos de estudio y 10 de descanso. Para quién es la regla 50/10, cómo se compara con 25/5 y cuántos bloques al día.">
+<meta property="og:url" content="https://flowtime.baltajmn.dev/es/pomodoro-50-10/">
+<meta property="og:image" content="https://flowtime.baltajmn.dev/ft/og/fifty-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pomodoro 50 10: temporizador gratis y regla para estudiar">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15506A">
+<link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/ft/icon-180.png">
+<link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/ft/ft.css?v=bc504690">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Temporizador Pomodoro de FlowTime","url":"https://flowtime.baltajmn.dev/es/pomodoro-50-10/","inLanguage":"es","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","@id":"https://flowtime.baltajmn.dev/#app","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android, iOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime","https://apps.apple.com/app/id6819302003"]}]}</script>
+<script src="/ft/timer.js?v=84581286" defer></script>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="/es/pomodoro/"><img src="/ft/icon.svg" alt="" width="30" height="30">FlowTime</a>
+<nav aria-label="FlowTime">
+<a href="/es/pomodoro/">Temporizador Pomodoro</a>
+<a href="/es/tecnica-flowtime/">Técnica Flowtime</a>
+<a href="/es/epoca-de-examenes/">Exámenes</a>
+<a href="/es/oposiciones/">Oposiciones</a>
+<a href="/es/alternativas/">Alternativas</a>
+<span class="langs"><a href="/50-10-timer/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr">English</span></a><a href="/es/pomodoro-50-10/" hreflang="es" lang="es" aria-current="page"><span aria-hidden="true">ES</span><span class="sr">Español</span></a></span>
+</nav>
+</header>
+<main>
+<section class="wrap tool">
+<div class="tool-title"><h1>Temporizador Pomodoro 50/10</h1><p>Cincuenta minutos de concentración y diez de descanso. El temporizador de abajo ya está en 50/10: dale a empezar y deja la pestaña abierta.</p></div>
+
+<div class="timer" id="timer" data-mode="p50" data-phase="idle">
+<fieldset class="modes"><legend class="sr">Modo del temporizador</legend>
+<label><input type="radio" name="mode" value="p25"><span>25 / 5</span></label><label><input type="radio" name="mode" value="p50" checked><span>50 / 10</span></label><label><input type="radio" name="mode" value="flow"><span>FlowTime</span></label>
+</fieldset>
+<div class="dial">
+<svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="88"/><circle class="prog" cx="100" cy="100" r="88" stroke-dasharray="552.92" stroke-dashoffset="552.92"/></svg>
+<div class="read"><span class="phase" id="phase">Listo</span><span class="time" id="time" role="timer">50:00</span><span class="hint" id="hint">50 min de concentración y 10 de descanso</span></div>
+</div>
+<div class="ctrl">
+<figure><button class="round" id="stop" type="button" aria-label="Parar" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/></svg></button><figcaption aria-hidden="true">Parar</figcaption></figure>
+<figure><button class="round main" id="play" type="button" aria-label="Empezar"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg><svg style="display:none" class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2"/><rect x="13.5" y="5" width="4" height="14" rx="1.2"/></svg></button><figcaption id="playcap" aria-hidden="true">Empezar</figcaption></figure>
+<figure><button class="round" id="skip" type="button" aria-label="Empezar descanso" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg></button><figcaption id="skipcap" aria-hidden="true">Empezar descanso</figcaption></figure>
+</div>
+<p class="keys"><kbd>Espacio</kbd> empieza o pausa</p>
+<p class="today" id="today"></p>
+<div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
+<p class="legend"><span><i></i>Concentración</span><span><i class="b"></i>Descanso</span></p></div>
+<p class="sr" id="tlive" aria-live="polite"></p>
+</div>
+<script type="application/json" id="ft-t">{"lang":"es","start":"Empezar","pause":"Pausar","resume":"Seguir","stop":"Parar","startBreak":"Empezar descanso","skipBreak":"Saltar descanso","ready":"Listo","focus":"Concentración","break":"Descanso","pausedLabel":"En pausa","idle":{"p25":"25 min de concentración y 5 de descanso","p50":"50 min de concentración y 10 de descanso","flow":"Cuenta hacia arriba. El descanso depende de cuánto trabajes."},"thenBreak":"Después, {b} de descanso","hintAt":"A los {a}, {b} de descanso","hintMax":"{b} de descanso al parar","backAt":"Vuelves a concentrarte a las {t}","breakNow":"Descanso: {b}","breakOver":"Se acabó el descanso. Dale a empezar cuando quieras.","focusNow":"Empieza la concentración","paused":"En pausa","resumed":"Seguimos","stopped":"Parado","confirmSwitch":"¿Parar el temporizador y cambiar de modo?","today":"Hoy: {t} de concentración. Sesiones completas: {n}","rulerEmpty":"Aquí irán apareciendo tus bloques de concentración y descanso."}</script>
+<p class="offer" style="margin:22px auto 0">En el móvil, FlowTime muestra el temporizador en una notificación y en un widget, y con Coop hasta 8 personas comparten uno. <a href="#app">Consigue FlowTime</a></p>
+</section>
+<section class="band"><div class="wrap"><h2>La regla 50/10 en tres pasos</h2><div class="cols"><div><h3>Trabaja 50 minutos</h3><p>Elige una sola tarea y trabaja en ella 50 minutos, con el móvil fuera de tu alcance. Un aviso suave te dice cuándo acaba, así que no hace falta vigilar el reloj.</p></div><div><h3>Descansa 10</h3><p>Levántate y aparta la vista de la pantalla durante los 10 minutos enteros. No le robes tiempo al descanso para terminar una idea más.</p></div><div><h3>Repite y alarga la pausa</h3><p>Empieza el siguiente bloque con otra tarea o con otra parte de la misma. Tras dos o tres bloques, haz un descanso más largo.</p></div></div></div></section>
+<section class="band deep"><div class="wrap"><h2>¿Es el 50/10 para ti?</h2><div class="cols"><div><h3>Elige 50/10 para trabajo a fondo</h3><p>Úsalo cuando lees, escribes, programas o haces problemas, y a los 25 minutos apenas estás cogiendo ritmo.</p></div><div><h3>Elige 25/5 para arrancar</h3><p>Úsalo cuando vas con poca energía, la tarea es pequeña o llevas días aplazándola. Un bloque corto cuesta poco empezarlo.</p></div><div><h3>¿Dudas? Prueba los dos</h3><p>Dedica un día entero a cada ritmo y quédate con el que de verdad terminas, no con el que suena más serio.</p></div></div></div></section>
+<section class="band"><div class="wrap"><h2>Sin aviso fijo</h2><p>Hay días en que la concentración se acaba a los 35 minutos y días en que pasa de los 50. El modo FlowTime cuenta hacia arriba: paras cuando se te va la atención y el descanso se ajusta a lo que has trabajado. Es la misma idea que el 50/10 sin el aviso fijo: una tirada larga de trabajo y un descanso proporcionado.</p><div class="tablewrap"><table class="ranges"><thead><tr><th scope="col">Trabajado</th><th scope="col">Descanso</th></tr></thead><tbody>
+<tr><td>Hasta 15 min</td><td>5 min</td></tr><tr><td>Más de 15, hasta 30 min</td><td>10 min</td></tr><tr><td>Más de 30 min</td><td>15 min</td></tr></tbody></table></div><p><a href="/es/tecnica-flowtime/">Más sobre la técnica Flowtime</a></p></div></section>
+<section class="band deep"><div class="wrap"><h2>¿Qué es la regla 50/10 para estudiar?</h2><p>La regla 50/10 es un método de estudio con bloques de 50 minutos de trabajo concentrado y 10 minutos de descanso. Es la versión larga del método Pomodoro, que usa 25 minutos de trabajo y 5 de descanso.</p><p>La proporción es la misma, cinco a uno, pero cada bloque dura el doble. Eso ayuda en las tareas que tardan en arrancar, como seguir una demostración, escribir un trabajo o buscar un fallo en el código: con 25 minutos, el aviso suele sonar justo cuando por fin has entrado.</p><p>La regla va bien a quien tiene textos largos que leer, trabajos que redactar o hojas de problemas, y a cualquiera cuyo trabajo pide una tirada larga, como programar o diseñar. También encaja si 25 minutos se te quedan cortos y te molesta tener que arrancar de nuevo cada poco.</p></div></section>
+<section class="band"><div class="wrap"><h2>¿Es mejor el Pomodoro 50/10 que el 25/5?</h2><p>Ninguno es mejor: el 50/10 va bien para el trabajo a fondo y el 25/5 para empezar y para los días de poca energía. Usa 50/10 para un tema entero, un trabajo, una hoja de problemas o un código que tienes que tener en la cabeza.</p><p>Usa 25/5 cuando vas con poca energía, te agobia un montón de tareas o llevas días aplazando algo, porque 25 minutos cuesta poco empezarlos. Mucha gente combina los dos: 50/10 por la mañana, con la cabeza fresca, y 25/5 después de comer, cuando baja la energía. En la app FlowTime puedes poner tus propios tiempos, así que el 50/10 es solo una opción.</p><p>Una prueba sencilla: en el minuto 40, ¿sigues sabiendo qué estás haciendo? Si te pillas releyendo la misma línea, el bloque es demasiado largo para hoy. Acórtalo en vez de forzarlo.</p></div></section>
+<section class="band deep"><div class="wrap"><h2>¿Cuántos bloques de 50/10 se pueden hacer al día?</h2><p>Entre cuatro y seis bloques es un buen día para la mayoría de la gente, es decir, de tres a cinco horas de concentración real, porque los descansos no cuentan. Empieza con tres y añade uno cuando los termines sin pelea.</p><p>Cuenta solo los bloques que acabas con el móvil lejos y apunta la tarea de cada uno antes de empezar. Cuando llegues a tu cifra, para: poder repetir mañana importa más que un día heroico.</p><p>Un día podría ser así: dos bloques por la mañana, un descanso largo, uno o dos después de comer y otro por la tarde si te queda energía. Pon la asignatura más difícil en el primer bloque, mientras tienes la cabeza fresca.</p></div></section>
+<section class="band"><div class="wrap"><h2>¿Qué hacer en los 10 minutos de descanso y cuándo hacer una pausa larga?</h2><p>Muévete, bebe agua y mira algo lejano; deja el móvil en paz. Camina, estírate, rellena el vaso o asómate a la ventana. Diez minutos dan para un tentempié o un recado rápido, pero no para una tanda de redes y volver puntual.</p><p>Haz una pausa larga de 20 a 30 minutos tras dos o tres bloques, o antes si te pillas leyendo sin enterarte de nada. Come algo, sal a la calle o túmbate con los ojos cerrados, y empieza el siguiente bloque con otra tarea.</p><p>Mantén firme el final del descanso. Cuando suene el segundo aviso, deja el móvil y empieza; un descanso sin final se come la hora siguiente.</p></div></section>
+<section class="band"><div class="wrap"><h2>Más sobre estudiar con temporizador</h2><ul class="related"><li><a href="/es/pomodoro/">Temporizador Pomodoro</a></li><li><a href="/es/tecnica-flowtime/">La técnica Flowtime</a></li><li><a href="/es/epoca-de-examenes/">Época de exámenes, bloque a bloque</a></li><li><a href="/es/oposiciones/">Pomodoro para oposiciones, bloque a bloque</a></li><li><a href="/es/alternativas/">FlowTime comparada con otras apps de concentración y Pomodoro</a></li><li><a href="/es/pomodoro-tdah/">Pomodoro para el TDAH</a></li></ul></div></section>
+<section class="band deep" id="app"><div class="wrap split">
+<div>
+<h2>FlowTime en el móvil</h2>
+<p>Los mismos modos Pomodoro y FlowTime con tus propios tiempos, un tercero (Porcentaje) y lo que una pestaña del navegador no puede hacer: el temporizador en una notificación y en un widget, las tareas del día, 12 sonidos para concentrarte, tu racha, tu objetivo y tus estadísticas.</p>
+<p>Coop es una sala privada donde hasta 8 personas comparten un temporizador: cualquiera puede empezar, pausar o saltar el descanso, así que podéis estudiar juntos desde sitios distintos.</p>
+<p class="note">Gratis, con anuncios que Pro quita. Sin cuenta: solo Coop te pide iniciar sesión.</p>
+<div class="stores">
+<a class="btn fill" data-store="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime&amp;referrer=utm_source%3Dflowtime.baltajmn.dev%26utm_medium%3Dweb%26utm_campaign%3Dft-fifty-es">Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+<a class="btn" data-store="apple" href="https://apps.apple.com/app/apple-store/id6819302003?pt=129564006&amp;ct=ft-fifty-es&amp;mt=8" hidden>App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+</div>
+<p class="note" id="ios-soon" hidden>FlowTime llega pronto al iPhone.</p>
+</div>
+<img src="/ft/img/app-es.webp" alt="FlowTime en Android: una sesión de concentración contando hacia arriba, en 42:10" width="640" height="1134" loading="lazy">
+</div></section>
+</main>
+<footer><div class="wrap"><span>FlowTime: temporizador Pomodoro, de Baltasar Jiménez.</span><nav aria-label="Privacidad">
+<a href="/es/pomodoro/">Temporizador Pomodoro</a><a href="/es/tecnica-flowtime/">Técnica Flowtime</a><a href="/es/epoca-de-examenes/">Exámenes</a><a href="/es/oposiciones/">Oposiciones</a><a href="/es/alternativas/">Alternativas</a><a href="/es/pomodoro-50-10/">Pomodoro 50/10</a><a href="/es/pomodoro-tdah/">Pomodoro y TDAH</a><a href="/">Privacidad</a><a href="/legal.html#es">Aviso legal</a></nav></div></footer>
+<script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
+document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
+document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>
+<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
+var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
+if(i)P.forEach(function(e){e.hidden=true});if(a)return;
+fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
+if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+</body>
+</html>

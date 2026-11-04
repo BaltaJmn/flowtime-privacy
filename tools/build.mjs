@@ -29,7 +29,12 @@ export const PAGES = {
   // 4-11-2026: opositores, solo en espanol (las oposiciones son de Espana; enlazada desde opobot)
   opos: { es: '/es/oposiciones/' },
   hub: { en: '/alternatives/', es: '/es/alternativas/' },
+  // 4-11-2026: busquedas que un dominio nuevo aun puede ganar (informe de palabras clave); fuera del menu de arriba
+  fifty: { en: '/50-10-timer/', es: '/es/pomodoro-50-10/' },
+  adhd: { en: '/pomodoro-for-adhd/', es: '/es/pomodoro-tdah/' },
+  breaks: { en: '/study-break-calculator/' },
 }
+const NAV = ['timer', 'technique', 'finals', 'exams', 'opos', 'hub']
 const LOCALE = { en: 'en_US', es: 'es_ES' }
 const LANG_NAME = { en: 'English', es: 'Español' }
 
@@ -58,7 +63,7 @@ const UI = {
 
 const COMMON = {
   en: {
-    nav: { timer: 'Pomodoro timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', privacy: 'Privacy', legal: 'Legal notice' },
+    nav: { timer: 'Pomodoro timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', fifty: '50/10 timer', adhd: 'Pomodoro for ADHD', breaks: 'Study break calculator', privacy: 'Privacy', legal: 'Legal notice' },
     modes: 'Timer mode',
     relatedH: 'More on studying with a timer',
     legendFocus: 'Focus', legendBreak: 'Break',
@@ -76,7 +81,7 @@ const COMMON = {
     ranges: [['Up to 15 min', '5 min'], ['Over 15, up to 30 min', '10 min'], ['More than 30 min', '15 min']],
   },
   es: {
-    nav: { timer: 'Temporizador Pomodoro', technique: 'Técnica Flowtime', exams: 'Exámenes', opos: 'Oposiciones', hub: 'Alternativas', privacy: 'Privacidad', legal: 'Aviso legal' },
+    nav: { timer: 'Temporizador Pomodoro', technique: 'Técnica Flowtime', exams: 'Exámenes', opos: 'Oposiciones', hub: 'Alternativas', fifty: 'Pomodoro 50/10', adhd: 'Pomodoro y TDAH', privacy: 'Privacidad', legal: 'Aviso legal' },
     modes: 'Modo del temporizador',
     relatedH: 'Más sobre estudiar con temporizador',
     legendFocus: 'Concentración', legendBreak: 'Descanso',
@@ -203,7 +208,7 @@ const P = {
         'Flowtime is a way of timing your work without a fixed countdown. You start a timer, work on one task, and stop when your attention starts to drift or the task reaches a natural end. Then you rest for a time that depends on how long you worked: a short session earns a short break, a long one a longer break.',
         'It suits work that takes a while to get into, like writing, coding or studying a hard topic, where a 25 minute bell can interrupt you at the worst moment.',
       ],
-      breakH: 'How long should the break be?',
+      breakH: 'How long is a Flowtime break?',
       breakP: "This timer uses the FlowTime app's default ranges:",
       breakNote: 'In the app you can change these ranges or add your own.',
       vsH: 'Flowtime vs Pomodoro',
@@ -316,6 +321,11 @@ const P = {
     },
   },
 }
+// Paginas nuevas del 4-11 (50/10, TDAH, calculadora de descanso): mismo formato que timer, textos en JSON.
+Object.assign(P, JSON.parse(readFileSync(join(ROOT, 'tools/paginas.json'), 'utf8')))
+P.fifty.en.mode = P.fifty.es.mode = 'p50'
+P.adhd.en.mode = P.adhd.es.mode = 'p25'
+P.breaks.en.mode = 'flow'
 // Secciones de texto propio por pagina (auditoria SEO del 4-11): [h2, [parrafos]], tras el contenido de cada una.
 for (const [kind, langs] of Object.entries(JSON.parse(readFileSync(join(ROOT, 'tools/extra.json'), 'utf8')))) {
   for (const [lang, sections] of Object.entries(langs)) P[kind][lang].extra = sections
@@ -364,7 +374,7 @@ ${alts}
 
 function header(kind, lang, paths = PAGES[kind]) {
   const c = COMMON[lang]
-  const links = Object.keys(PAGES).filter((k) => PAGES[k][lang])
+  const links = NAV.filter((k) => PAGES[k][lang])
   const other = (l) => paths[l] || PAGES.timer[l]
   const on = (k) => k === kind || (k === 'hub' && kind.startsWith('vs-'))
   const langs = Object.keys(LOCALE).map((l) => `<a href="${other(l)}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="page"' : ''}><span aria-hidden="true">${l.toUpperCase()}</span><span class="sr">${LANG_NAME[l]}</span></a>`).join('')
@@ -483,14 +493,27 @@ function rangesTable(lang) {
 ${c.ranges.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div>`
 }
 
+// Study break calculator (breaks page): one fifth of the minutes studied, between 5 and 30, the rule its text explains.
+// The result for 60 minutes is in the HTML so it reads without JS.
+const breakFor = (m) => Math.min(30, Math.max(5, Math.round(m / 5)))
+function calc(c) {
+  return `<div class="calc" id="calc"><h2>${esc(c.h)}</h2>
+<p><label for="worked">${esc(c.label)}</label> <span class="in"><input id="worked" type="number" min="1" max="600" value="60" inputmode="numeric"> ${esc(c.unit)}</span></p>
+<p class="calc-out" id="calc-out" aria-live="polite">${esc(c.out.replace('{b}', breakFor(60)))}</p>
+<p class="note">${esc(c.rule)}</p>
+</div>
+<script>(function(){var i=document.getElementById("worked"),o=document.getElementById("calc-out"),t=${JSON.stringify({ out: c.out, long: c.long })};
+i.addEventListener("input",function(){var m=Math.max(0,+i.value||0),b=Math.min(30,Math.max(5,Math.round(m/5)));o.textContent=t.out.replace("{b}",b)+(m>=90?" "+t.long:"")})})()</script>`
+}
+
 function page(kind, lang) {
   const t = P[kind][lang]
   const c = COMMON[lang]
   let body, graph
-  if (kind === 'timer' || kind === 'technique') {
+  if (t.sections || kind === 'technique') {
     graph = [webLd(kind, lang), appLd()]
     let reading
-    if (kind === 'timer') {
+    if (t.sections) {
       reading = t.sections.map(([h, items], i) => `<section class="band${i % 2 ? ' deep' : ''}"><div class="wrap"><h2>${esc(h)}</h2><div class="cols">${items.map(([a, b]) => `<div><h3>${esc(a)}</h3><p>${esc(b)}</p></div>`).join('')}</div></div></section>`).join('\n') +
         `\n<section class="band"><div class="wrap"><h2>${esc(t.flowH)}</h2><p>${esc(t.flowP)}</p>${rangesTable(lang)}<p><a href="${PAGES[t.flowLink[1]][lang]}">${esc(t.flowLink[0])}</a></p></div></section>`
     } else {
@@ -502,6 +525,7 @@ ${t.vs.map(([a, b, d]) => `<tr><th scope="row">${esc(a)}</th><td>${esc(b)}</td><
     }
     body = `<section class="wrap tool">
 <div class="tool-title"><h1>${esc(t.h1)}</h1><p>${esc(t.sub)}</p></div>
+${t.calc ? calc(t.calc) : ''}
 ${timer(lang, t.mode)}
 <p class="offer" style="margin:22px auto 0">${c.offer}</p>
 </section>

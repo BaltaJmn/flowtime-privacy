@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pomodoro for ADHD: Free Study Timer and Practical Tips</title>
+<meta name="description" content="Free Pomodoro timer for ADHD study sessions: shorter blocks, counting up instead of a bell, body doubling and what to do when a block goes badly.">
+<link rel="canonical" href="https://flowtime.baltajmn.dev/pomodoro-for-adhd/">
+<link rel="alternate" hreflang="en" href="https://flowtime.baltajmn.dev/pomodoro-for-adhd/">
+<link rel="alternate" hreflang="es" href="https://flowtime.baltajmn.dev/es/pomodoro-tdah/">
+<link rel="alternate" hreflang="x-default" href="https://flowtime.baltajmn.dev/pomodoro-for-adhd/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FlowTime">
+<meta property="og:title" content="Pomodoro for ADHD: Free Study Timer and Practical Tips">
+<meta property="og:description" content="Free Pomodoro timer for ADHD study sessions: shorter blocks, counting up instead of a bell, body doubling and what to do when a block goes badly.">
+<meta property="og:url" content="https://flowtime.baltajmn.dev/pomodoro-for-adhd/">
+<meta property="og:image" content="https://flowtime.baltajmn.dev/ft/og/adhd-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pomodoro for ADHD: Free Study Timer and Practical Tips">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15506A">
+<link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/ft/icon-180.png">
+<link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/ft/ft.css?v=bc504690">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"FlowTime Pomodoro Timer","url":"https://flowtime.baltajmn.dev/pomodoro-for-adhd/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","@id":"https://flowtime.baltajmn.dev/#app","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android, iOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime","https://apps.apple.com/app/id6819302003"]}]}</script>
+<script src="/ft/timer.js?v=84581286" defer></script>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="/pomodoro/"><img src="/ft/icon.svg" alt="" width="30" height="30">FlowTime</a>
+<nav aria-label="FlowTime">
+<a href="/pomodoro/">Pomodoro timer</a>
+<a href="/flowtime-technique/">Flowtime technique</a>
+<a href="/finals-week/">Finals week</a>
+<a href="/exam-season/">Exam season</a>
+<a href="/alternatives/">Alternatives</a>
+<span class="langs"><a href="/pomodoro-for-adhd/" hreflang="en" lang="en" aria-current="page"><span aria-hidden="true">EN</span><span class="sr">English</span></a><a href="/es/pomodoro-tdah/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="sr">Español</span></a></span>
+</nav>
+</header>
+<main>
+<section class="wrap tool">
+<div class="tool-title"><h1>Pomodoro timer for ADHD</h1><p>A free study timer that starts at 25/5 and can also count up instead of down. This page is practical advice, not medical advice, and it does not replace a professional.</p></div>
+
+<div class="timer" id="timer" data-mode="p25" data-phase="idle">
+<fieldset class="modes"><legend class="sr">Timer mode</legend>
+<label><input type="radio" name="mode" value="p25" checked><span>25 / 5</span></label><label><input type="radio" name="mode" value="p50"><span>50 / 10</span></label><label><input type="radio" name="mode" value="flow"><span>FlowTime</span></label>
+</fieldset>
+<div class="dial">
+<svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="88"/><circle class="prog" cx="100" cy="100" r="88" stroke-dasharray="552.92" stroke-dashoffset="552.92"/></svg>
+<div class="read"><span class="phase" id="phase">Ready</span><span class="time" id="time" role="timer">25:00</span><span class="hint" id="hint">25 min focus, then a 5 min break</span></div>
+</div>
+<div class="ctrl">
+<figure><button class="round" id="stop" type="button" aria-label="Stop" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/></svg></button><figcaption aria-hidden="true">Stop</figcaption></figure>
+<figure><button class="round main" id="play" type="button" aria-label="Start"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg><svg style="display:none" class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2"/><rect x="13.5" y="5" width="4" height="14" rx="1.2"/></svg></button><figcaption id="playcap" aria-hidden="true">Start</figcaption></figure>
+<figure><button class="round" id="skip" type="button" aria-label="Start break" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg></button><figcaption id="skipcap" aria-hidden="true">Start break</figcaption></figure>
+</div>
+<p class="keys"><kbd>Space</kbd> starts or pauses</p>
+<p class="today" id="today"></p>
+<div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
+<p class="legend"><span><i></i>Focus</span><span><i class="b"></i>Break</span></p></div>
+<p class="sr" id="tlive" aria-live="polite"></p>
+</div>
+<script type="application/json" id="ft-t">{"lang":"en","start":"Start","pause":"Pause","resume":"Resume","stop":"Stop","startBreak":"Start break","skipBreak":"Skip break","ready":"Ready","focus":"Focus","break":"Break","pausedLabel":"Paused","idle":{"p25":"25 min focus, then a 5 min break","p50":"50 min focus, then a 10 min break","flow":"Counts up. Your break depends on how long you work."},"thenBreak":"Then a {b} break","hintAt":"At {a}, {b} break","hintMax":"{b} break when you stop","backAt":"Back to focus at {t}","breakNow":"Break: {b}","breakOver":"Break over. Press start when you're ready.","focusNow":"Focus started","paused":"Paused","resumed":"Resumed","stopped":"Stopped","confirmSwitch":"Stop the current timer and switch mode?","today":"Focus today: {t}. Sessions done: {n}","rulerEmpty":"Your focus and breaks will show up here as you go."}</script>
+<p class="offer" style="margin:22px auto 0">On your phone, FlowTime shows the timer in a notification and a widget, and Coop lets up to 8 people share one. <a href="#app">Get FlowTime</a></p>
+</section>
+<section class="band"><div class="wrap"><h2>Getting started with a timer</h2><div class="cols"><div><h3>Start small</h3><p>Press start on 25/5 and promise yourself only the first block. A clear end makes starting feel less heavy.</p></div><div><h3>Write the step first</h3><p>Before you press start, write one concrete step, such as solve problems 1 to 5 instead of study maths. You skip the first minutes of deciding what to do.</p></div><div><h3>One alarm only</h3><p>Silence the phone and keep this tab open. The soft chime marks the end of the block, so you do not have to watch the time.</p></div></div></div></section>
+<section class="band deep"><div class="wrap"><h2>Which mode to try</h2><div class="cols"><div><h3>25/5</h3><p>The default here. It is short enough to start on a bad day.</p></div><div><h3>50/10</h3><p>For when you are already absorbed in the task and 25 minutes feels too short.</p></div><div><h3>FlowTime</h3><p>It counts up, so no bell cuts you off. Work until your attention fades, then take a break.</p></div></div></div></section>
+<section class="band"><div class="wrap"><h2>Counting up instead of a bell</h2><p>Some people with ADHD find a bell in the middle of a task hard to handle, and prefer to count up. FlowTime mode does that: you work, press Start break when your attention fades, and the break fits the time you worked.</p><div class="tablewrap"><table class="ranges"><thead><tr><th scope="col">Worked</th><th scope="col">Break</th></tr></thead><tbody>
+<tr><td>Up to 15 min</td><td>5 min</td></tr><tr><td>Over 15, up to 30 min</td><td>10 min</td></tr><tr><td>More than 30 min</td><td>15 min</td></tr></tbody></table></div><p><a href="/flowtime-technique/">More on the Flowtime technique</a></p></div></section>
+<section class="band deep"><div class="wrap"><h2>Does the Pomodoro technique work for ADHD?</h2><p>It helps some people and not others, so think of it as an experiment. Some people with ADHD find that a short timed block makes starting easier, because the task has a clear end and the countdown makes time visible. Others find the countdown stressful, or lose a good run of work when the bell rings.</p><p>Try it for a week, one task a day. Notice how easy it was to begin, how long you stayed and how you felt afterwards, then keep what helps and drop what does not. None of this is medical advice, and a timer does not replace support from a professional.</p><p>If a timer makes you more anxious, that is a useful answer too. Count up with FlowTime mode, or skip timing for a day and write only a list of steps.</p></div></section>
+<section class="band"><div class="wrap"><h2>Can you use shorter blocks, like 10/3 or 15/5?</h2><p>Yes. Many people shorten the block to 10 minutes of work and a 3 minute break, or to 15 and 5, when 25 minutes feels too long to begin. A short block you finish is worth more than a long one you dread.</p><p>The web timer on this page has three modes: 25/5, 50/10 and FlowTime. For other times, the FlowTime app lets you set your own Pomodoro times. Here you can get a similar effect in FlowTime mode: press Start break after 10 minutes and the break will be 5.</p><p>Other changes are small: keep a short list of steps in sight, take a longer break after a hard block, or pick the easiest task for the first block so the day starts moving.</p></div></section>
+<section class="band deep"><div class="wrap"><h2>Can body doubling help you study?</h2><p>Some people find that working next to someone else makes it easier to start and harder to drift off. That is body doubling: another person is there, doing their own work, in the same room or on a call. You do not need to talk or study the same subject.</p><p>If you cannot meet, a shared timer does a similar job from a distance. Coop, in the FlowTime app, is a private room where up to 8 people share one timer. A library, a study group or a friend on a video call work too.</p><p>If it helps, say your task out loud in one line before you start, then stay quiet until the break.</p></div></section>
+<section class="band"><div class="wrap"><h2>What if a block goes badly, or you forget to stop?</h2><p>Do not count a bad block as failed. Write one line about where you stopped, take the break anyway and start again with something smaller: 10 minutes, one step. A rough block that ends with a note for next time still moved the work forward. Then ask what made it hard: were you tired, hungry, in a noisy room, or facing a task that was too big? Change that one thing for the next block.</p><p>If you get absorbed and lose track of time, 25/5 and 50/10 help because the chime pulls you out to drink water, eat and move. Before you stop, write the next step so it is easy to restart. In FlowTime mode, glance at the counter now and then, and stop when you catch yourself rereading the same line.</p><p>Stopping early is allowed. Some days the honest result is a single 10 minute block, and that is still a day with work in it.</p></div></section>
+<section class="band"><div class="wrap"><h2>More on studying with a timer</h2><ul class="related"><li><a href="/pomodoro/">Pomodoro timer</a></li><li><a href="/flowtime-technique/">The Flowtime technique</a></li><li><a href="/finals-week/">Finals week study plan, one block at a time</a></li><li><a href="/exam-season/">Exam season revision timetable, block by block</a></li><li><a href="/alternatives/">FlowTime compared with other focus and Pomodoro apps</a></li><li><a href="/50-10-timer/">50/10 Pomodoro timer</a></li><li><a href="/study-break-calculator/">Study break calculator</a></li></ul></div></section>
+<section class="band deep" id="app"><div class="wrap split">
+<div>
+<h2>FlowTime on your phone</h2>
+<p>The same Pomodoro and FlowTime modes with your own times, plus a third one, Percentage, and what a browser tab can't do: the timer in a notification and a widget, today's tasks, 12 focus sounds, and your streak, goal and stats.</p>
+<p>Coop is a private room where up to 8 people share one timer: anyone can start, pause or skip the break, so you can study together from different places.</p>
+<p class="note">Free, with ads that Pro removes. No account: only Coop asks you to sign in.</p>
+<div class="stores">
+<a class="btn fill" data-store="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime&amp;referrer=utm_source%3Dflowtime.baltajmn.dev%26utm_medium%3Dweb%26utm_campaign%3Dft-adhd-en">Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+<a class="btn" data-store="apple" href="https://apps.apple.com/app/apple-store/id6819302003?pt=129564006&amp;ct=ft-adhd-en&amp;mt=8" hidden>App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+</div>
+<p class="note" id="ios-soon" hidden>FlowTime is coming to iPhone soon.</p>
+</div>
+<img src="/ft/img/app-en.webp" alt="FlowTime on Android: a focus session counting up, at 42:10" width="640" height="1134" loading="lazy">
+</div></section>
+</main>
+<footer><div class="wrap"><span>FlowTime: Pomodoro Focus Timer, by Baltasar Jiménez.</span><nav aria-label="Privacy">
+<a href="/pomodoro/">Pomodoro timer</a><a href="/flowtime-technique/">Flowtime technique</a><a href="/finals-week/">Finals week</a><a href="/exam-season/">Exam season</a><a href="/alternatives/">Alternatives</a><a href="/50-10-timer/">50/10 timer</a><a href="/pomodoro-for-adhd/">Pomodoro for ADHD</a><a href="/study-break-calculator/">Study break calculator</a><a href="/">Privacy</a><a href="/legal.html">Legal notice</a></nav></div></footer>
+<script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
+document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
+document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>
+<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
+var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
+if(i)P.forEach(function(e){e.hidden=true});if(a)return;
+fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
+if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+</body>
+</html>

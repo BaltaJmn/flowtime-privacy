@@ -25,7 +25,7 @@
 <link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/ft/icon-180.png">
 <link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/ft/ft.css?v=4fbe385a">
+<link rel="stylesheet" href="/ft/ft.css?v=bc504690">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"FlowTime Pomodoro Timer","url":"https://flowtime.baltajmn.dev/flowtime-technique/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","@id":"https://flowtime.baltajmn.dev/#app","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android, iOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime","https://apps.apple.com/app/id6819302003"]}]}</script>
 <script src="/ft/timer.js?v=84581286" defer></script>
 </head>
@@ -44,6 +44,7 @@
 <main>
 <section class="wrap tool">
 <div class="tool-title"><h1>The Flowtime technique</h1><p>Work for as long as your focus lasts, then take a break that fits. A free Flowtime timer, how it works and how it compares with Pomodoro.</p></div>
+
 <div class="timer" id="timer" data-mode="flow" data-phase="idle">
 <fieldset class="modes"><legend class="sr">Timer mode</legend>
 <label><input type="radio" name="mode" value="p25"><span>25 / 5</span></label><label><input type="radio" name="mode" value="p50"><span>50 / 10</span></label><label><input type="radio" name="mode" value="flow" checked><span>FlowTime</span></label>
@@ -67,7 +68,7 @@
 <p class="offer" style="margin:22px auto 0">On your phone, FlowTime shows the timer in a notification and a widget, and Coop lets up to 8 people share one. <a href="#app">Get FlowTime</a></p>
 </section>
 <section class="band"><div class="wrap"><h2>What is the Flowtime technique?</h2><p>Flowtime is a way of timing your work without a fixed countdown. You start a timer, work on one task, and stop when your attention starts to drift or the task reaches a natural end. Then you rest for a time that depends on how long you worked: a short session earns a short break, a long one a longer break.</p><p>It suits work that takes a while to get into, like writing, coding or studying a hard topic, where a 25 minute bell can interrupt you at the worst moment.</p></div></section>
-<section class="band deep"><div class="wrap"><h2>How long should the break be?</h2><p>This timer uses the FlowTime app's default ranges:</p><div class="tablewrap"><table class="ranges"><thead><tr><th scope="col">Worked</th><th scope="col">Break</th></tr></thead><tbody>
+<section class="band deep"><div class="wrap"><h2>How long is a Flowtime break?</h2><p>This timer uses the FlowTime app's default ranges:</p><div class="tablewrap"><table class="ranges"><thead><tr><th scope="col">Worked</th><th scope="col">Break</th></tr></thead><tbody>
 <tr><td>Up to 15 min</td><td>5 min</td></tr><tr><td>Over 15, up to 30 min</td><td>10 min</td></tr><tr><td>More than 30 min</td><td>15 min</td></tr></tbody></table></div><p class="note">In the app you can change these ranges or add your own.</p></div></section>
 <section class="band"><div class="wrap"><h2>Flowtime vs Pomodoro</h2><div class="tablewrap"><table class="vs"><thead><tr><th scope="col"></th><th scope="col">Pomodoro</th><th scope="col">Flowtime</th></tr></thead><tbody>
 <tr><th scope="row">Session length</th><td>Fixed, usually 25 minutes</td><td>As long as your focus lasts</td></tr>
@@ -79,7 +80,7 @@
 <section class="band"><div class="wrap"><h2>When should you switch between Pomodoro and Flowtime?</h2><p>Switch to Pomodoro when you struggle to start, and to Flowtime once you are already absorbed in the task. A countdown gives a small push when the work feels heavy; counting up gets out of your way when it does not.</p><p>A simple pattern for a full day: begin with one or two Pomodoros to warm up, change to Flowtime when you notice the bell annoying you, and go back to 25/5 in the afternoon, when energy dips and shorter blocks are easier. If you keep skipping the break after Flowtime sessions, go back to a fixed timer for a while.</p></div></section>
 <section class="band deep"><div class="wrap"><h2>How do you log your Flowtime sessions?</h2><p>Write down four things after each session: the task, the start time, the minutes worked and the break you took. A notebook or a notes app is enough. The point is not to score yourself; it is to see your real pattern.</p><p>After a week, look at the numbers. If most sessions last between 40 and 55 minutes, you know your natural focus span and can plan around it. If they are all around 15, the problem is probably distractions, not willpower: move the phone and try again. The FlowTime app keeps statistics of your focused time, so you do not have to keep the log by hand.</p></div></section>
 <section class="band"><div class="wrap"><h2>What are the most common Flowtime mistakes?</h2><p>The most common mistake is starting without a clear task. Without one, the timer just counts how long you sat there. Decide what you are doing before you press start.</p><p>The next ones are stopping at the first itch of boredom, which makes every session tiny; skipping the break because you feel good; and turning the break into a phone session that lasts three times longer than it should. Treat the break as part of the work. When an unrelated thought pops up, write it on paper and carry on instead of ending the session.</p></div></section>
-<section class="band"><div class="wrap"><h2>More on studying with a timer</h2><ul class="related"><li><a href="/pomodoro/">Pomodoro timer</a></li><li><a href="/finals-week/">Finals week study plan, one block at a time</a></li><li><a href="/exam-season/">Exam season revision timetable, block by block</a></li><li><a href="/alternatives/">FlowTime compared with other focus and Pomodoro apps</a></li></ul></div></section>
+<section class="band"><div class="wrap"><h2>More on studying with a timer</h2><ul class="related"><li><a href="/pomodoro/">Pomodoro timer</a></li><li><a href="/finals-week/">Finals week study plan, one block at a time</a></li><li><a href="/exam-season/">Exam season revision timetable, block by block</a></li><li><a href="/alternatives/">FlowTime compared with other focus and Pomodoro apps</a></li><li><a href="/50-10-timer/">50/10 Pomodoro timer</a></li><li><a href="/pomodoro-for-adhd/">Pomodoro timer for ADHD</a></li><li><a href="/study-break-calculator/">Study break calculator</a></li></ul></div></section>
 <section class="band deep" id="app"><div class="wrap split">
 <div>
 <h2>FlowTime on your phone</h2>
@@ -96,7 +97,7 @@
 </div></section>
 </main>
 <footer><div class="wrap"><span>FlowTime: Pomodoro Focus Timer, by Baltasar Jiménez.</span><nav aria-label="Privacy">
-<a href="/pomodoro/">Pomodoro timer</a><a href="/flowtime-technique/">Flowtime technique</a><a href="/finals-week/">Finals week</a><a href="/exam-season/">Exam season</a><a href="/alternatives/">Alternatives</a><a href="/">Privacy</a><a href="/legal.html">Legal notice</a></nav></div></footer>
+<a href="/pomodoro/">Pomodoro timer</a><a href="/flowtime-technique/">Flowtime technique</a><a href="/finals-week/">Finals week</a><a href="/exam-season/">Exam season</a><a href="/alternatives/">Alternatives</a><a href="/50-10-timer/">50/10 timer</a><a href="/pomodoro-for-adhd/">Pomodoro for ADHD</a><a href="/study-break-calculator/">Study break calculator</a><a href="/">Privacy</a><a href="/legal.html">Legal notice</a></nav></div></footer>
 <script>(function(){var q=new URLSearchParams(location.search),c=function(v){return(v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40)},s=c(q.get("utm_source"));if(!s)return;var m=c(q.get("utm_medium"))||"referral",n=c(q.get("utm_campaign"))||"none";
 document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("referrer","utm_source="+s+"&utm_medium="+m+"&utm_campaign="+n);e.href=x});
 document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>
