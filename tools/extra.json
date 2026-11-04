@@ -1,0 +1,252 @@
+{
+ "timer": {
+  "en": [
+   [
+    "How long is a Pomodoro, and why 25 minutes?",
+    [
+     "A Pomodoro is one block of 25 minutes of focused work, followed by a short break. The method comes from Francesco Cirillo, who timed his study sessions in the late 1980s with a kitchen timer shaped like a tomato; pomodoro is the Italian word for tomato.",
+     "There is nothing magic about 25. It is long enough to get properly into a task and short enough that starting never feels like a big deal. If it feels wrong for you, change it. Many people prefer 30 or 50 minutes for reading and writing, and 15 for jobs they dread. What matters is one task per block, with the phone out of reach."
+    ]
+   ],
+   [
+    "How long is the break after four Pomodoros?",
+    [
+     "After four Pomodoros, take a long break of 15 to 30 minutes instead of the usual 5. Four blocks and the short breaks between them add up to close to two hours, so a longer rest is fair.",
+     "Use it to eat, walk or lie down with your eyes closed. Scrolling is not rest: your eyes and your attention stay busy. Then start the next set with a fresh task, not the one you were stuck on."
+    ]
+   ],
+   [
+    "How many Pomodoros a day is enough?",
+    [
+     "There is no right number, but 8 solid Pomodoros, around three hours and twenty minutes of real focus, is a strong day for most people. Some reach 10 or more, and 4 is a fine place to start.",
+     "Used as a study timer, the count matters less than what you finish. Write down what each Pomodoro is for before you press start. If a task takes longer than you planned, that is useful information for tomorrow's plan, not a failure. When the timer rings, stop, note where you were, and take the break."
+    ]
+   ],
+   [
+    "Can a Pomodoro timer help with ADHD and body doubling?",
+    [
+     "Some people with ADHD find that short timed blocks make starting easier, because the task has a clear end and the countdown makes time visible. Others find a bell in the middle of a task hard to deal with and prefer to count up; the FlowTime mode on this page works that way. Try both for a week and keep the one you actually use. This is not medical advice, and a timer does not replace support from a professional.",
+     "Body doubling means working next to another person who is also working, in the same room or on a call. You do not need to talk or do the same task; their presence makes it easier to start and harder to drift off. A shared timer does the same job from a distance: the FlowTime app has Coop rooms, where friends run the same timer at once."
+    ]
+   ]
+  ],
+  "es": [
+   [
+    "¿Qué es el método Pomodoro y cómo funciona?",
+    [
+     "El método Pomodoro, también llamado técnica Pomodoro, es una forma de organizar el estudio y el trabajo en bloques cortos de concentración separados por descansos. Lo creó Francesco Cirillo a finales de los años ochenta, y el nombre viene de un temporizador de cocina con forma de tomate.",
+     "Funciona así: eliges una tarea, pones el reloj en marcha 25 minutos y trabajas solo en eso. Cuando suena, descansas 5 minutos. Tras cuatro bloques, haces un descanso largo. Lo bueno es que empezar cuesta menos, porque no te comprometes a toda la tarde, solo a 25 minutos."
+    ]
+   ],
+   [
+    "¿Por qué 25 minutos y cuánto dura el descanso largo?",
+    [
+     "No hay ninguna razón mágica para los 25 minutos: es un tiempo lo bastante largo para meterte en la tarea y lo bastante corto para que no dé pereza empezar. Si no te encaja, cámbialo. A mucha gente le va mejor con 30 o 50 minutos para leer y escribir, y con 15 para lo que más le cuesta arrancar.",
+     "El descanso largo llega tras cuatro Pomodoros y suele durar entre 15 y 30 minutos. Es el momento de comer algo, andar o estirarte. Evita el móvil: mirar redes cansa la vista y la atención justo cuando más necesitan parar."
+    ]
+   ],
+   [
+    "¿Cuántos Pomodoros al día se pueden hacer?",
+    [
+     "Para la mayoría, unos 8 Pomodoros bien hechos, que son algo más de tres horas de concentración real, forman un día muy productivo. Hay quien llega a 10 o más, y empezar con 4 también vale.",
+     "Cuenta lo que terminas, no los Pomodoros. Antes de cada bloque apunta para qué es, y al acabar anota si llegaste. Si una tarea te lleva más de lo previsto, es un dato para planificar mañana, no un fracaso. Con un Pomodoro online como este no hace falta instalar nada: abres la pestaña y empiezas."
+    ]
+   ],
+   [
+    "¿Sirve el método Pomodoro para estudiar con TDAH?",
+    [
+     "A algunas personas con TDAH les ayudan los bloques cortos con un final claro, porque empezar cuesta menos y el tiempo se ve pasar. A otras les molesta que suene un aviso en mitad de la tarea y prefieren un temporizador que cuente hacia arriba, como el modo FlowTime de esta página. Prueba las dos formas durante una semana y quédate con la que de verdad uses. No es un consejo médico ni sustituye el apoyo de un profesional.",
+     "Otra idea que le gusta a mucha gente es estudiar acompañado: trabajar junto a alguien que también está a lo suyo, aunque cada uno haga cosas distintas. En inglés lo llaman body doubling. Si no podéis quedar, una app de Pomodoro como FlowTime tiene salas Coop, donde unos amigos usan el mismo temporizador a la vez."
+    ]
+   ]
+  ]
+ },
+ "technique": {
+  "en": [
+   [
+    "Is flowmodoro the same as the Flowtime technique?",
+    [
+     "They are close cousins, not twins. Both count up instead of down and let your attention decide when to stop. Flowmodoro usually ties the break to a simple share of the work time, often one fifth: 50 minutes of work earns a break of about 10, and 25 minutes earns about 5. Flowtime usually uses ranges of work time instead, which is easier to follow when you stop at an odd moment like 37 minutes.",
+     "The Flowtime technique was described in 2016 by Zoe Read-Bivens. Since then people have built their own versions, and flowmodoro is one of them. Pick the break rule you will really follow; the exact formula matters less than taking the break at all."
+    ]
+   ],
+   [
+    "When should you switch between Pomodoro and Flowtime?",
+    [
+     "Switch to Pomodoro when you struggle to start, and to Flowtime once you are already absorbed in the task. A countdown gives a small push when the work feels heavy; counting up gets out of your way when it does not.",
+     "A simple pattern for a full day: begin with one or two Pomodoros to warm up, change to Flowtime when you notice the bell annoying you, and go back to 25/5 in the afternoon, when energy dips and shorter blocks are easier. If you keep skipping the break after Flowtime sessions, go back to a fixed timer for a while."
+    ]
+   ],
+   [
+    "How do you log your Flowtime sessions?",
+    [
+     "Write down four things after each session: the task, the start time, the minutes worked and the break you took. A notebook or a notes app is enough. The point is not to score yourself; it is to see your real pattern.",
+     "After a week, look at the numbers. If most sessions last between 40 and 55 minutes, you know your natural focus span and can plan around it. If they are all around 15, the problem is probably distractions, not willpower: move the phone and try again. The FlowTime app keeps statistics of your focused time, so you do not have to keep the log by hand."
+    ]
+   ],
+   [
+    "What are the most common Flowtime mistakes?",
+    [
+     "The most common mistake is starting without a clear task. Without one, the timer just counts how long you sat there. Decide what you are doing before you press start.",
+     "The next ones are stopping at the first itch of boredom, which makes every session tiny; skipping the break because you feel good; and turning the break into a phone session that lasts three times longer than it should. Treat the break as part of the work. When an unrelated thought pops up, write it on paper and carry on instead of ending the session."
+    ]
+   ]
+  ],
+  "es": [
+   [
+    "¿Qué es el flowmodoro y en qué se diferencia de Flowtime?",
+    [
+     "El flowmodoro es una variante de la técnica Flowtime en la que el descanso suele ser una quinta parte del tiempo que has trabajado. Si trabajas 50 minutos, descansas unos 10; si trabajas 25, unos 5. Como en Flowtime, el reloj cuenta hacia arriba y decides tú cuándo parar.",
+     "La diferencia está en cómo se calcula el descanso: el flowmodoro usa una proporción sencilla, y Flowtime suele usar tramos según lo trabajado. Zoe Read-Bivens describió la técnica Flowtime en 2016, y desde entonces cada cual ha ido haciendo su versión. Elige la regla que vayas a cumplir de verdad: importa más descansar que acertar la fórmula."
+    ]
+   ],
+   [
+    "¿Cuándo conviene cambiar de Pomodoro a Flowtime?",
+    [
+     "Cambia a Flowtime cuando ya estás metido en la tarea y el aviso del Pomodoro te corta, y vuelve al Pomodoro cuando te cueste arrancar. La cuenta atrás ayuda a empezar; la cuenta hacia arriba te deja en paz cuando ya estás dentro.",
+     "Un día típico: uno o dos Pomodoros para calentar por la mañana, Flowtime en cuanto notes que el aviso te estorba, y 25/5 otra vez por la tarde, cuando bajas de energía. Si tras varias sesiones Flowtime te saltas el descanso, vuelve un tiempo a un temporizador fijo."
+    ]
+   ],
+   [
+    "¿Cómo apuntar las sesiones de Flowtime?",
+    [
+     "Basta una línea por sesión: la tarea, la hora de inicio y los minutos trabajados. Añade el descanso que te tomaste si quieres, pero lo básico son esos tres datos. Vale una libreta o la app de notas del móvil. No es para ponerte nota, sino para ver cómo trabajas de verdad.",
+     "Al acabar la semana, fíjate en la sesión más larga y en la más corta, y en la hora a la que te salen las buenas. A muchos les pasa por la mañana y a otros bien entrada la noche: ahí conviene poner lo difícil. Si prefieres no llevarlo a mano, la app FlowTime guarda estadísticas del tiempo concentrado."
+    ]
+   ],
+   [
+    "¿Qué errores se cometen más con la técnica Flowtime?",
+    [
+     "El error más habitual es empezar sin una tarea concreta: sin ella, el reloj solo mide cuánto tiempo has estado sentado. Decide qué vas a hacer antes de darle a empezar.",
+     "Después vienen parar al primer aburrimiento, con lo que todas las sesiones salen minúsculas; saltarte el descanso porque vas lanzado; y alargar el descanso con el móvil hasta que dura el triple. El descanso también es trabajo. Y cuando se te cruce una idea que no viene a cuento, apúntala en un papel y sigue, en vez de dar la sesión por terminada."
+    ]
+   ]
+  ]
+ },
+ "finals": {
+  "en": [
+   [
+    "How do you plan a finals week study schedule?",
+    [
+     "Start with a one-page calendar of the whole week: write each exam on its date, then count the study days you have before each one. Give the exam that scares you most the earliest free day, while you still have time to fix what you find.",
+     "Then split each day into three or four blocks and give each block one job: a subject, a type of practice or a topic list. Leave one block per day empty as a buffer, because something always runs over. If two exams are close together, alternate their subjects across days so neither goes cold. The day plan on this page shows what a single day can look like."
+    ]
+   ],
+   [
+    "How many hours should you study for finals?",
+    [
+     "Most students do well with 4 to 6 hours of focused study a day, and up to 8 on the days just before the hardest exams. That means focused time, not hours spent at a desk with your phone beside you.",
+     "Count only the minutes when the timer is running. A day with five hours of real focus beats a ten-hour day of half attention, and you can repeat it tomorrow. If you have many exams, add days instead of lengthening each one; past eight hours, most people get less and less back from every extra hour. The FlowTime app keeps statistics of your focused time, so you can check the number at night instead of guessing."
+    ]
+   ],
+   [
+    "How do you study for finals when there is too much material?",
+    [
+     "Triage first: sort every topic into strong, shaky and missing, and spend most of your time on the shaky ones. Strong topics need a quick check, and missing ones may not deserve a whole day if they carry few marks.",
+     "For each topic, write a one-page summary from memory, then compare it with your notes and fill the gaps. Do old exam papers or practice questions as early as you can; they show what the exam really asks and where you lose marks. Keep a list of your mistakes and reread it every evening. It is short, personal and more useful than another chapter."
+    ]
+   ],
+   [
+    "What should you do the night before an exam?",
+    [
+     "Do a light review, pack your bag and go to bed at a normal time. Do not start new topics tonight and do not cram until 3 a.m.: a rested head recalls more than a tired one that saw one more page.",
+     "Read your one-page summaries and your mistakes list for no more than an hour. Check the exam time, the room and what you must bring: ID, pens, calculator, water. Eat a proper dinner, put the phone away and set two alarms. If worries keep you awake, write them on paper and leave them on the desk. A short walk beforehand helps many people sleep."
+    ]
+   ]
+  ]
+ },
+ "exams": {
+  "en": [
+   [
+    "How do you make a revision timetable?",
+    [
+     "Make a revision timetable in four steps: list every topic for each exam, rate each one red, amber or green, count the days you have, and fill those days with sessions weighted towards the red topics. The syllabus is your source for the topic list.",
+     "Plan in sessions, not hours. One session is a topic plus a technique, such as chemical bonding with past paper questions. A page of sessions is easier to tick off than a grid of hours, and it shows what is left. Pencil the plan in rather than printing it, because you will change it, and move unfinished sessions into the buffer day you left empty."
+    ]
+   ],
+   [
+    "How many hours of revision a day is enough?",
+    [
+     "For most students, 4 to 6 hours of focused revision a day is enough, with fewer hours in the first weeks and more in the last ten days before the exams. After that, quality drops faster than time rises.",
+     "Think in blocks: five blocks of 50 minutes is over four hours of focus, and six is five hours. Put the demanding subject in the first block, when you are fresh, and lighter jobs such as making flashcards in the evening. Stop when the plan is done, even if you feel you could do more. Being able to repeat tomorrow is the point."
+    ]
+   ],
+   [
+    "Which revision techniques work best?",
+    [
+     "Active recall, spaced repetition and past papers work best, and all three are about testing yourself instead of rereading. Active recall means closing the notes and writing or saying what you remember; the gaps you find are what you revise next.",
+     "Spaced repetition means meeting a topic again after a day, then after a few days, then after a week, just as you begin to forget it. It beats cramming one topic in a single sitting. Past papers show the format, the wording and the timing of the real exam: do them against the clock, mark them honestly and sort your errors by topic. Highlighting and rereading feel productive but teach less, so use them to decide what to test, not as the whole plan."
+    ]
+   ],
+   [
+    "What if you fall behind your revision timetable?",
+    [
+     "Do not try to catch up in one night: recount the days left, drop the lowest value topics and redistribute the rest. Moving the plan is part of the plan.",
+     "Use your buffer day first. With no buffer, shorten the topics you already know well and keep the sessions for the red ones. Missing one day does not ruin a month of revision, but missing three in a row does, so start again the next morning with a short 25 minute block. The FlowTime app's streak tolerates one day off a week, which suits a timetable that expects real life to get in the way."
+    ]
+   ]
+  ],
+  "es": [
+   [
+    "¿Cómo organizarse para los exámenes de enero?",
+    [
+     "Empieza por una lista: todas las asignaturas, la fecha de cada examen y los temas que entran. Con eso delante, cuenta los días de estudio que te quedan, descontando los fines de semana con planes y las fiestas de Navidad si te vas de casa.",
+     "Mucha gente lo deja todo para la semana de exámenes y llega agotada. Si empiezas antes de Navidad con una hora o dos al día de repaso, las vacaciones sirven para afianzar y no para empezar de cero. Marca los temas que no entiendes y pregunta las dudas a profesores o compañeros cuanto antes, porque cerca del examen todos las piden a la vez."
+    ]
+   ],
+   [
+    "¿Cuántas horas estudiar al día en época de exámenes?",
+    [
+     "Entre 4 y 6 horas de estudio efectivo al día bastan para la mayoría de universitarios, y hasta 8 en los días previos a un examen duro. Lo que cuenta es el tiempo concentrado, no el que pasas sentado en la biblioteca.",
+     "Cinco horas con el móvil lejos rinden más que diez a medias, y además puedes repetirlas mañana. Si tienes muchos exámenes, no alargues el día: reparte mejor las asignaturas en más días. A partir de las ocho horas efectivas, cada hora extra rinde menos y suele quitarte horas de sueño."
+    ]
+   ],
+   [
+    "¿Cómo estudiar para los exámenes finales?",
+    [
+     "Estudia poniéndote a prueba, no releyendo apuntes: cierra el cuaderno, escribe o cuenta en voz alta lo que recuerdas y luego comprueba qué se te ha escapado. Esa recuperación activa fija más que subrayar y releer.",
+     "Repasa cada tema al día siguiente, a los pocos días y a la semana, justo cuando empiezas a olvidarlo, en vez de empollarlo de una sentada. Busca exámenes de años anteriores, que suelen estar en el campus virtual o en el grupo de la clase, y hazlos con el tiempo real. Si hay test, mira cómo penalizan los fallos antes de decidir si arriesgas. Y si quedáis varios para estudiar a distancia, las salas Coop de la app FlowTime dejan usar el mismo temporizador."
+    ]
+   ],
+   [
+    "¿Qué hago si no me da tiempo a estudiar todo el temario?",
+    [
+     "Prioriza por lo que más puntúa y por lo que peor llevas: primero los temas que más caen en los exámenes anteriores y los que no dominas, y después el resto. Un examen se aprueba cubriendo lo importante, no sabiéndolo todo.",
+     "Deja un día de colchón por semana para lo que se retrase y no lo recuperes con noches en vela: dormir pesa más en el examen que dos temas más a medias. Si un día se tuerce, rehaz el plan a la mañana siguiente con los días que quedan y sigue."
+    ]
+   ]
+  ]
+ },
+ "opos": {
+  "es": [
+   [
+    "¿Cómo estudiar unas oposiciones?",
+    [
+     "Estudia las oposiciones por vueltas al temario: una primera vuelta lenta para entender y esquematizar cada tema, y varias después, cada vez más rápidas, para memorizar y repasar. No intentes saberlo todo a la primera: el temario es largo y se olvida lo que no vuelves a ver.",
+     "En la primera vuelta tarda lo que haga falta y haz tus propios esquemas. En las siguientes, canta los temas en voz alta, de memoria y con cronómetro: cantar un tema te dice enseguida dónde falla, y los fallos se apuntan para la vuelta siguiente. Según tu oposición, los test y los supuestos prácticos entran desde el principio, no al final: un test al día, aunque sea corto, te enseña cómo pregunta el examen."
+    ]
+   ],
+   [
+    "¿Cuántas horas hay que estudiar oposiciones al día?",
+    [
+     "No hay una cifra única. Lo que suele oírse entre opositores son entre 2 y 4 horas al día si trabajas a la vez, y entre 6 y 8 si estudias a tiempo completo. Son rangos que se comentan, no una promesa de plaza.",
+     "Pesan más la constancia y las horas de concentración real que el número bruto. También depende del temario, de las plazas y de cuánto falta para el examen. Haz la cuenta al revés: temas por vuelta, semanas que quedan y horas que puedes sostener sin quemarte. Si sale una cifra imposible, mejor saberlo ahora y mover tu fecha objetivo que descubrirlo a dos meses del examen."
+    ]
+   ],
+   [
+    "¿Cómo hacer una planificación semanal de oposiciones?",
+    [
+     "Una buena planificación semanal divide el temario entre las semanas que quedan y deja la semana ya montada: temas nuevos de lunes a viernes, un bloque de test cada día, repaso y simulacro el sábado, y el domingo libre o muy ligero.",
+     "Para saber cuántos temas tocan por semana, divide el número de temas entre las semanas hasta tu fecha y suma un margen para imprevistos. Da igual si tu planificador de oposiciones es papel, una hoja de cálculo o una app; lo importante es que tenga holgura. Si no cabe ni una semana floja, el plan va demasiado justo. Cada domingo, cinco minutos para ajustar la semana que viene con lo que de verdad hiciste."
+    ]
+   ],
+   [
+    "¿Cómo mantener la constancia durante meses?",
+    [
+     "La constancia no depende de la motivación, sino de que estudiar sea una rutina sin decisiones: misma hora, mismo sitio y un ritual corto para empezar, como preparar la mesa y poner el temporizador. Los días malos no se negocian: haz un bloque de 25 minutos y, si luego quieres parar, para.",
+     "Pon una regla: no fallar dos días seguidos. Un mal día pasa; dos seguidos empiezan a ser costumbre. Lleva la cuenta de las horas de cada semana para ver el avance cuando el temario no lo enseña; la app FlowTime guarda estadísticas del tiempo concentrado. Y cuida lo que sostiene todo lo demás: dormir, moverte un rato cada día y hablar de algo que no sean las oposiciones."
+    ]
+   ]
+  ]
+ }
+}

@@ -316,6 +316,10 @@ const P = {
     },
   },
 }
+// Secciones de texto propio por pagina (auditoria SEO del 4-11): [h2, [parrafos]], tras el contenido de cada una.
+for (const [kind, langs] of Object.entries(JSON.parse(readFileSync(join(ROOT, 'tools/extra.json'), 'utf8')))) {
+  for (const [lang, sections] of Object.entries(langs)) P[kind][lang].extra = sections
+}
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const ICON = {
