@@ -58,8 +58,9 @@ const UI = {
 
 const COMMON = {
   en: {
-    nav: { timer: 'Timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', privacy: 'Privacy', legal: 'Legal notice' },
+    nav: { timer: 'Pomodoro timer', technique: 'Flowtime technique', finals: 'Finals week', exams: 'Exam season', hub: 'Alternatives', privacy: 'Privacy', legal: 'Legal notice' },
     modes: 'Timer mode',
+    relatedH: 'More on studying with a timer',
     legendFocus: 'Focus', legendBreak: 'Break',
     keys: '<kbd>Space</kbd> starts or pauses',
     offer: 'On your phone, FlowTime shows the timer in a notification and a widget, and Coop lets up to 8 people share one. <a href="#app">Get FlowTime</a>',
@@ -75,8 +76,9 @@ const COMMON = {
     ranges: [['Up to 15 min', '5 min'], ['Over 15, up to 30 min', '10 min'], ['More than 30 min', '15 min']],
   },
   es: {
-    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', opos: 'Oposiciones', hub: 'Alternativas', privacy: 'Privacidad', legal: 'Aviso legal' },
+    nav: { timer: 'Temporizador Pomodoro', technique: 'Técnica Flowtime', exams: 'Exámenes', opos: 'Oposiciones', hub: 'Alternativas', privacy: 'Privacidad', legal: 'Aviso legal' },
     modes: 'Modo del temporizador',
+    relatedH: 'Más sobre estudiar con temporizador',
     legendFocus: 'Concentración', legendBreak: 'Descanso',
     keys: '<kbd>Espacio</kbd> empieza o pausa',
     offer: 'En el móvil, FlowTime muestra el temporizador en una notificación y en un widget, y con Coop hasta 8 personas comparten uno. <a href="#app">Consigue FlowTime</a>',
@@ -297,7 +299,7 @@ const P = {
   },
   opos: {
     es: {
-      title: 'Pomodoro para oposiciones: horario de estudio con temporizador',
+      title: 'Pomodoro para oposiciones: horario de estudio diario',
       desc: 'Horario de estudio para opositores con temporizador Pomodoro y FlowTime gratis: temario por la mañana, test, supuestos prácticos y repaso espaciado.',
       h1: 'Pomodoro para oposiciones, bloque a bloque',
       sub: 'Un día de estudio de opositor, con el temporizador dentro. Dale a empezar en cualquier bloque y deja la pestaña abierta.',
@@ -345,6 +347,8 @@ ${alts}
 <meta property="og:image" content="${SITE}/ft/og/${kind}-${lang}.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(t.title)}">
+<meta name="robots" content="max-image-preview:large">
 <meta property="og:locale" content="${LOCALE[lang]}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#15506A">
@@ -429,6 +433,15 @@ document.querySelectorAll('[data-store="play"]').forEach(function(e){var x=new U
 document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new URL(e.href);x.searchParams.set("ct",(s+"-"+n).slice(0,40));e.href=x})})()</script>`
 
 
+// Each page's own reading beyond the tool (audit of 4-11-2026: 160 to 260 words of their own was too thin to index)
+const extra = (t) => (t.extra ?? []).map(([h, ps], i) => `<section class="band${i % 2 ? '' : ' deep'}"><div class="wrap"><h2>${esc(h)}</h2>${ps.map((p) => `<p>${esc(p)}</p>`).join('')}</div></section>`).join('\n')
+
+// Links to the sibling pages in the body, with their H1 as the anchor: the nav alone gave every page the same generic links
+function related(kind, lang) {
+  const pages = Object.keys(PAGES).filter((k) => k !== kind && PAGES[k][lang]).map((k) => [PAGES[k][lang], k === 'hub' ? HUB[lang].h1 : P[k][lang].h1])
+  return `<section class="band"><div class="wrap"><h2>${esc(COMMON[lang].relatedH)}</h2><ul class="related">${pages.map(([href, label]) => `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ul></div></section>`
+}
+
 function footer(lang) {
   const c = COMMON[lang]
   const links = Object.keys(PAGES).filter((k) => PAGES[k][lang])
@@ -436,20 +449,24 @@ function footer(lang) {
 ${links.map((k) => `<a href="${PAGES[k][lang]}">${esc(c.nav[k])}</a>`).join('')}<a href="/">${esc(c.nav.privacy)}</a><a href="/legal.html${lang === 'es' ? '#es' : ''}">${esc(c.nav.legal)}</a></nav></div></footer>`
 }
 
+// Categories from Google's list for software apps (ProductivityApplication is not one of them; audit of 4-11-2026)
+const APP_ID = `${SITE}/#app`
 const appLd = () => ({
   '@type': 'MobileApplication',
+  '@id': APP_ID,
   name: 'FlowTime: Pomodoro Focus Timer',
-  operatingSystem: 'Android',
-  applicationCategory: 'ProductivityApplication',
+  operatingSystem: 'Android, iOS',
+  applicationCategory: 'UtilitiesApplication',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  sameAs: ['https://play.google.com/store/apps/details?id=com.baltajmn.flowtime'],
+  sameAs: ['https://play.google.com/store/apps/details?id=com.baltajmn.flowtime', 'https://apps.apple.com/app/id6819302003'],
 })
-const webLd = (kind, lang, name) => ({
+// The web timer's own name, the same on every page (it used to take each page's H1)
+const webLd = (kind, lang) => ({
   '@type': 'WebApplication',
-  name,
+  name: lang === 'es' ? 'Temporizador Pomodoro de FlowTime' : 'FlowTime Pomodoro Timer',
   url: SITE + PAGES[kind][lang],
   inLanguage: lang,
-  applicationCategory: 'ProductivityApplication',
+  applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
@@ -467,13 +484,12 @@ function page(kind, lang) {
   const c = COMMON[lang]
   let body, graph
   if (kind === 'timer' || kind === 'technique') {
-    graph = [webLd(kind, lang, t.h1), appLd()]
+    graph = [webLd(kind, lang), appLd()]
     let reading
     if (kind === 'timer') {
       reading = t.sections.map(([h, items], i) => `<section class="band${i % 2 ? ' deep' : ''}"><div class="wrap"><h2>${esc(h)}</h2><div class="cols">${items.map(([a, b]) => `<div><h3>${esc(a)}</h3><p>${esc(b)}</p></div>`).join('')}</div></div></section>`).join('\n') +
         `\n<section class="band"><div class="wrap"><h2>${esc(t.flowH)}</h2><p>${esc(t.flowP)}</p>${rangesTable(lang)}<p><a href="${PAGES[t.flowLink[1]][lang]}">${esc(t.flowLink[0])}</a></p></div></section>`
     } else {
-      graph.push({ '@type': 'HowTo', name: t.howH, inLanguage: lang, step: t.how.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, text })) })
       reading = `<section class="band"><div class="wrap"><h2>${esc(t.whatH)}</h2>${t.what.map((p) => `<p>${esc(p)}</p>`).join('')}</div></section>
 <section class="band deep"><div class="wrap"><h2>${esc(t.breakH)}</h2><p>${esc(t.breakP)}</p>${rangesTable(lang)}<p class="note">${esc(t.breakNote)}</p></div></section>
 <section class="band"><div class="wrap"><h2>${esc(t.vsH)}</h2><div class="tablewrap"><table class="vs"><thead><tr>${t.vsHead.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>
@@ -487,10 +503,8 @@ ${timer(lang, t.mode)}
 </section>
 ${reading}`
   } else {
-    graph = [webLd(kind, lang, t.h1), appLd(), {
-      '@type': 'HowTo', name: t.dayH, inLanguage: lang,
-      step: t.day.map(([time, title, text], i) => ({ '@type': 'HowToStep', position: i + 1, name: `${time} ${title}`, text: text || title })),
-    }]
+    // HowTo left Google's rich results in 2023; the day is plain HTML
+    graph = [webLd(kind, lang), appLd()]
     const rows = t.day.map(([time, title, text, mode, label]) => mode
       ? `<li><time>${time}</time><span class="bar" aria-hidden="true"></span><div><h3>${esc(title)}</h3><p>${esc(text)}</p><span class="mode">${esc(label)}</span></div><button class="btn" type="button" data-start="${mode}" aria-label="${esc(c.start)}: ${esc(title)}, ${esc(label)}">${esc(c.start)} ${ICON.arrow}</button></li>`
       : `<li class="rest"><time>${time}</time><span class="bar" aria-hidden="true"></span><div><h3>${esc(title)}</h3></div></li>`).join('\n')
@@ -512,6 +526,8 @@ ${ld(graph)}
 ${header(kind, lang)}
 <main>
 ${body}
+${extra(t)}
+${related(kind, lang)}
 ${app(kind, lang)}
 </main>
 ${footer(lang)}
@@ -533,7 +549,7 @@ const CMP = {
     sourcesH: 'How this was checked',
     sourcesP: (d) => `Everything said here about other apps comes from their own store pages, websites and FAQs, read on ${d}. Prices change by country and over time; the store shows the current one.`,
     tm: (n) => `${n} ${n.includes(' and ') || n.includes(', ') ? 'are trademarks of their owners' : 'is a trademark of its owner'}. FlowTime is not affiliated with ${n.includes(' and ') || n.includes(', ') ? 'them' : 'it'}.`,
-    fix: (m) => `Spotted something out of date? Write to <a href="mailto:${m}">${m}</a> and it gets fixed.`,
+    fix: (m) => `Spotted something out of date? Write to <!--email_off--><a href="mailto:${m}">${m}</a><!--/email_off--> and it gets fixed.`,
     more: 'More comparisons', timer: 'Or try the free Pomodoro timer in your browser',
     and: ' and ', app: 'App', line: 'What it is', price: 'Price', ads: 'Ads', platforms: 'Platforms',
     platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone coming soon',
@@ -551,7 +567,7 @@ const CMP = {
     sourcesH: 'Cómo se ha comprobado',
     sourcesP: (d) => `Todo lo que se dice aquí de otras apps sale de sus fichas en las tiendas, sus webs y sus FAQ, leídas el ${d}. Los precios cambian según el país y con el tiempo; la tienda enseña el actual.`,
     tm: (n) => `${n} ${n.includes(' y ') || n.includes(', ') ? 'son marcas de sus dueños' : 'es una marca de su dueño'}. FlowTime no tiene relación con ${n.includes(' y ') || n.includes(', ') ? 'ellas' : 'ella'}.`,
-    fix: (m) => `¿Ves algo desactualizado? Escribe a <a href="mailto:${m}">${m}</a> y se corrige.`,
+    fix: (m) => `¿Ves algo desactualizado? Escribe a <!--email_off--><a href="mailto:${m}">${m}</a><!--/email_off--> y se corrige.`,
     more: 'Más comparativas', timer: 'O prueba el temporizador Pomodoro gratis en el navegador',
     and: ' y ', app: 'App', line: 'Qué es', price: 'Precio', ads: 'Anuncios', platforms: 'Plataformas',
     platformsNow: (ios) => ios ? 'Android, iPhone' : 'Android; iPhone muy pronto',
@@ -607,9 +623,10 @@ function sourcesBand(lang, sources, names, others) {
 <p>${esc(c.sourcesP(fmtDate(lang)))}</p>
 <ul>${sources.map(([label, href]) => `<li><a href="${esc(href)}" rel="nofollow noopener">${esc(label)}</a></li>`).join('')}</ul>
 <p class="note">${esc(c.tm(names))} ${c.fix(CONTACT)}</p>
-${others.length ? `<h3>${esc(c.more)}</h3>
+${others.length ? `<h2>${esc(c.more)}</h2>
 <ul class="more">${others.map(([href, label]) => `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ul>` : ''}
 <p><a href="${PAGES.timer[lang]}">${esc(c.timer)}</a></p>
+<p><a href="${PAGES.technique[lang]}">${esc(P.technique[lang].h1)}</a></p>
 </div></section>`
 }
 
@@ -635,7 +652,7 @@ function comparePage(id, lang) {
   const c = CMP[lang]
   const kind = `vs-${id}`
   const cols = ['FlowTime', ...P.others]
-  const graph = [appLd(), { '@type': 'WebPage', name: t.title, url: SITE + P.path[lang], inLanguage: lang, dateModified: CHECKED, about: appLd().name }]
+  const graph = [appLd(), { '@type': 'WebPage', name: t.title, url: SITE + P.path[lang], inLanguage: lang, dateModified: CHECKED, about: { '@id': APP_ID } }]
   const others = [[PAGES.hub[lang], HUB[lang].h1], ...Object.keys(COMPARE).filter((k) => k !== id && COMPARE[k].path[lang]).map((k) => [COMPARE[k].path[lang], COMPARE[k][lang].h1])]
   return `${head(kind, lang, t, P.path)}
 ${ld(graph)}
@@ -726,18 +743,28 @@ ${STORE_JS}
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   // The iPhone app is live once the App Store finds it; until then the pages say it is coming.
   IOS = await fetch('https://itunes.apple.com/lookup?id=6819302003').then((r) => r.json()).then((j) => j.resultCount > 0).catch(() => false)
+  // lastmod: the day each page's HTML last changed (by hash, ignoring the ?v= of the assets), not today on all of them:
+  // Google stops trusting a sitemap whose dates move every build (audit of 4-11-2026)
+  const MODS = join(ROOT, 'tools/lastmod.json')
+  const mods = (() => { try { return JSON.parse(readFileSync(MODS, 'utf8')) } catch { return {} } })()
   const write = (path, html) => {
     mkdirSync(join(ROOT, path), { recursive: true })
     writeFileSync(join(ROOT, path, 'index.html'), html)
+    const hash = createHash('md5').update(html.replace(/\?v=[0-9a-f]{8}/g, '')).digest('hex')
+    if (mods[path]?.hash !== hash) mods[path] = { hash, date: TODAY }
   }
   for (const kind of Object.keys(PAGES)) for (const lang of Object.keys(PAGES[kind])) write(PAGES[kind][lang], kind === 'hub' ? hubPage(lang) : page(kind, lang))
   for (const id of Object.keys(COMPARE)) for (const lang of Object.keys(COMPARE[id].path)) write(COMPARE[id].path[lang], comparePage(id, lang))
+  // /es/ gave Google a 404; it goes to the Spanish timer (not in the sitemap)
+  mkdirSync(join(ROOT, 'es'), { recursive: true })
+  writeFileSync(join(ROOT, 'es/index.html'), `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>FlowTime</title><link rel="canonical" href="${SITE}${PAGES.timer.es}"><meta http-equiv="refresh" content="0; url=${PAGES.timer.es}"></head><body><a href="${PAGES.timer.es}">Temporizador Pomodoro</a></body></html>\n`)
+  writeFileSync(MODS, JSON.stringify(mods, null, 1) + '\n')
   const urls = []
   for (const paths of [...Object.values(PAGES), ...Object.values(COMPARE).map((c) => c.path)]) {
     for (const lang of Object.keys(paths)) {
       const langs = Object.keys(paths)
       const alts = langs.length > 1 ? langs.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${SITE + paths[l]}"/>`).join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${SITE + paths.en}"/>` : ''
-      urls.push(`<url><loc>${SITE + paths[lang]}</loc><lastmod>${TODAY}</lastmod>${alts}</url>`)
+      urls.push(`<url><loc>${SITE + paths[lang]}</loc><lastmod>${mods[paths[lang]].date}</lastmod>${alts}</url>`)
     }
   }
   for (const p of ['/', '/terms.html', '/delete.html', '/legal.html']) urls.push(`<url><loc>${SITE + p}</loc></url>`)

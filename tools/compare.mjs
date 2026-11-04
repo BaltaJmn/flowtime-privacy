@@ -40,7 +40,7 @@ export const HUB = {
   },
   es: {
     title: 'FlowTime frente a Forest, Pomofocus y otros temporizadores',
-    desc: 'FlowTime comparada con Forest, Pomofocus, Focus To-Do, Study Bunny y Focus Friend: precio, anuncios, plataformas y a quién le va mejor cada una, con datos fechados.',
+    desc: 'FlowTime comparada con Forest, Pomofocus, Focus To-Do, Study Bunny y Focus Friend: precio, anuncios, plataformas y para quién es cada una, con datos fechados.',
     h1: 'FlowTime comparada con otras apps de concentración y Pomodoro',
     lede: 'Cinco apps que la gente suele poner frente a FlowTime, lado a lado. Cada dato sobre otra app sale de sus fichas de las tiendas, de su web o de su FAQ, con la fecha de comprobación en cada página, y cada página dice cuándo esa app es mejor opción.',
     tableH: 'Las cinco apps de un vistazo',
@@ -162,7 +162,7 @@ export const COMPARE = {
     en: {
       nav: 'Pomofocus',
       title: 'Pomofocus App for Android? FlowTime, a Native Alternative',
-      desc: 'Looking for a Pomofocus app for Android? Its own site lists a website and desktop downloads. FlowTime is a native Android Pomodoro timer: free, and Pro removes its ads.',
+      desc: 'Looking for a Pomofocus app for Android? It offers a web page and desktop apps. FlowTime is a native Android Pomodoro timer, free; Pro removes the ads.',
       h1: 'Pomofocus on your phone: a native Android alternative',
       lede: "Pomofocus is a Pomodoro timer that runs in the browser, and its own site lists desktop downloads for Mac, Windows and Linux, but no Android or iPhone app. FlowTime is built as a phone app, with a notification you can control, a home screen widget and a quick settings tile.",
       fitUs: [
@@ -213,7 +213,7 @@ export const COMPARE = {
     es: {
       nav: 'Pomofocus',
       title: '¿Pomofocus para Android? FlowTime, una alternativa nativa',
-      desc: '¿Buscas Pomofocus para Android? Su web ofrece una página y descargas de escritorio. FlowTime es un Pomodoro nativo para Android: gratis, y Pro quita los anuncios.',
+      desc: '¿Buscas Pomofocus para Android? Su web ofrece una página y descargas de escritorio. FlowTime es un Pomodoro nativo para Android, gratis; Pro quita los anuncios.',
       h1: 'Pomofocus en el móvil: una alternativa nativa para Android',
       lede: 'Pomofocus es un temporizador Pomodoro que funciona en el navegador, y su propia web ofrece descargas de escritorio para Mac, Windows y Linux, pero ninguna app para Android ni iPhone. FlowTime está hecho como app de móvil, con una notificación que controlas, un widget en la pantalla de inicio y un botón en los ajustes rápidos.',
       fitUs: [
@@ -320,7 +320,7 @@ export const COMPARE = {
     },
     es: {
       nav: 'Focus To-Do',
-      title: 'Alternativa a Focus To-Do: FlowTime, un Pomodoro más sencillo',
+      title: 'Alternativa a Focus To-Do: FlowTime, Pomodoro más sencillo',
       desc: 'Una alternativa a Focus To-Do para quien quiere el temporizador antes que el gestor de tareas: FlowTime es gratis, con tres modos y un Pro de 4,99 €. Con datos.',
       h1: 'Una alternativa más sencilla a Focus To-Do, con el temporizador primero',
       lede: 'Focus To-Do une un temporizador Pomodoro con un gestor de tareas completo en casi todos los dispositivos. FlowTime hace menos a propósito: un temporizador con tres modos, las tareas de hoy y etiquetas. Así se comparan.',
@@ -378,7 +378,7 @@ export const COMPARE = {
     en: {
       nav: 'Study Bunny',
       title: 'Study Bunny Alternative: FlowTime Pomodoro and Focus Timer',
-      desc: 'A Study Bunny alternative with a Pomodoro mode: FlowTime is a free focus timer with Pomodoro, FlowTime and Percentage modes. Compared honestly, with dated facts.',
+      desc: 'A Study Bunny alternative with a Pomodoro mode: FlowTime is a free focus timer with Pomodoro, FlowTime and Percentage modes, compared with dated facts.',
       h1: 'A Study Bunny alternative with a real Pomodoro mode',
       lede: 'Study Bunny is a study timer with a reward loop of coins, carrots and a bunny, and its own FAQ says it has no Pomodoro mode. FlowTime is a Pomodoro timer; its free version has ads too, and Pro removes them. Here is how the two compare.',
       fitUs: [
@@ -428,8 +428,8 @@ export const COMPARE = {
     },
     es: {
       nav: 'Study Bunny',
-      title: 'Alternativa a Study Bunny: FlowTime, Pomodoro y concentración',
-      desc: 'Una alternativa a Study Bunny con modo Pomodoro: FlowTime es un temporizador gratis con los modos Pomodoro, FlowTime y Porcentaje. Comparadas con datos fechados.',
+      title: 'Alternativa a Study Bunny: FlowTime, temporizador Pomodoro',
+      desc: 'Alternativa a Study Bunny con modo Pomodoro: FlowTime es un temporizador gratis con modos Pomodoro, FlowTime y Porcentaje, comparadas con datos fechados.',
       h1: 'Una alternativa a Study Bunny con un modo Pomodoro de verdad',
       lede: 'Study Bunny es un temporizador de estudio con un sistema de recompensas de monedas, zanahorias y un conejo, y su propia FAQ dice que no tiene modo Pomodoro. FlowTime es un temporizador Pomodoro; su versión gratis también tiene anuncios y Pro los quita. Así se comparan.',
       fitUs: [
@@ -535,8 +535,8 @@ export const COMPARE = {
     },
     es: {
       nav: 'Focus Friend',
-      title: 'Alternativa a Focus Friend: FlowTime, un Pomodoro sin adornos',
-      desc: 'Una alternativa a Focus Friend si quieres un temporizador sencillo: FlowTime es gratis, con tres modos y Coop para 8. Pro quita sus anuncios; Focus Friend no tiene.',
+      title: 'Alternativa a Focus Friend: FlowTime, Pomodoro sin adornos',
+      desc: 'Alternativa a Focus Friend si quieres un temporizador sencillo: FlowTime es gratis, con tres modos y Coop para 8 personas. Pro quita los anuncios.',
       h1: 'Una alternativa a Focus Friend para quien quiere un temporizador sencillo',
       lede: 'Focus Friend, de Hank Green y Honey B Games, es una app de concentración acogedora con una habitación que decorar, y puede bloquear apps que distraen. FlowTime es un temporizador Pomodoro sencillo. Focus Friend no tiene anuncios; FlowTime los muestra en su versión gratis hasta que compras Pro. La diferencia está en lo que recibes y en lo que pagas.',
       fitUs: [

@@ -1,0 +1,82 @@
+{
+ "/pomodoro/": {
+  "hash": "a16ef98af13f4a6d222ee0c5aa972533",
+  "date": "2026-11-04"
+ },
+ "/es/pomodoro/": {
+  "hash": "1d13ee0f60cc476ad41c6fa59e963e60",
+  "date": "2026-11-04"
+ },
+ "/flowtime-technique/": {
+  "hash": "22cec01088fbd0621499449ad3a6d201",
+  "date": "2026-11-04"
+ },
+ "/es/tecnica-flowtime/": {
+  "hash": "309135ce9ba380c5230fa91c818415c0",
+  "date": "2026-11-04"
+ },
+ "/finals-week/": {
+  "hash": "cb4ec2ce656a4e02a19b0fcd9edbf1c4",
+  "date": "2026-11-04"
+ },
+ "/exam-season/": {
+  "hash": "d1524e9254f13c3ffd088e7a7953d303",
+  "date": "2026-11-04"
+ },
+ "/es/epoca-de-examenes/": {
+  "hash": "8e4f0fc02e578de74967b6899a62b0d2",
+  "date": "2026-11-04"
+ },
+ "/es/oposiciones/": {
+  "hash": "b317f1e23f754e6c0d666b81b14344e0",
+  "date": "2026-11-04"
+ },
+ "/alternatives/": {
+  "hash": "240172289a81e0f1503147f6e5b977fd",
+  "date": "2026-11-04"
+ },
+ "/es/alternativas/": {
+  "hash": "c7485659e96ca2bbda44f808672a2b99",
+  "date": "2026-11-04"
+ },
+ "/forest-alternative/": {
+  "hash": "4c938320e2279e666637ffb58624191e",
+  "date": "2026-11-04"
+ },
+ "/es/alternativa-a-forest/": {
+  "hash": "e59b3284e0853d66fc958931a8472ba6",
+  "date": "2026-11-04"
+ },
+ "/pomofocus-alternative/": {
+  "hash": "511bc84e47c4b965910fe0076e0b91ab",
+  "date": "2026-11-04"
+ },
+ "/es/alternativa-a-pomofocus/": {
+  "hash": "f6e0e969581b48a8dc365ac04d3eb13d",
+  "date": "2026-11-04"
+ },
+ "/focus-to-do-alternative/": {
+  "hash": "0c12559567e67b9f22c3a1bc25efe08a",
+  "date": "2026-11-04"
+ },
+ "/es/alternativa-a-focus-to-do/": {
+  "hash": "88284626379223731e8af8edc3b53ba7",
+  "date": "2026-11-04"
+ },
+ "/study-bunny-alternative/": {
+  "hash": "b89d1fcf7ed4cb047305e61a2b39d528",
+  "date": "2026-11-04"
+ },
+ "/es/alternativa-a-study-bunny/": {
+  "hash": "90d767d7e3491de41a53b0790bb5dff8",
+  "date": "2026-11-04"
+ },
+ "/focus-friend-alternative/": {
+  "hash": "be171b9b7c5626ec75432450a1653dfd",
+  "date": "2026-11-04"
+ },
+ "/es/alternativa-a-focus-friend/": {
+  "hash": "2df6fdac690022c86014a4cbb9fba005",
+  "date": "2026-11-04"
+ }
+}
