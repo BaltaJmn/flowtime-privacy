@@ -26,6 +26,8 @@ export const PAGES = {
   technique: { en: '/flowtime-technique/', es: '/es/tecnica-flowtime/' },
   finals: { en: '/finals-week/' },
   exams: { en: '/exam-season/', es: '/es/epoca-de-examenes/' },
+  // 4-11-2026: opositores, solo en espanol (las oposiciones son de Espana; enlazada desde opobot)
+  opos: { es: '/es/oposiciones/' },
   hub: { en: '/alternatives/', es: '/es/alternativas/' },
 }
 const LOCALE = { en: 'en_US', es: 'es_ES' }
@@ -73,7 +75,7 @@ const COMMON = {
     ranges: [['Up to 15 min', '5 min'], ['Over 15, up to 30 min', '10 min'], ['More than 30 min', '15 min']],
   },
   es: {
-    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', hub: 'Alternativas', privacy: 'Privacidad', legal: 'Aviso legal' },
+    nav: { timer: 'Temporizador', technique: 'Técnica Flowtime', exams: 'Exámenes', opos: 'Oposiciones', hub: 'Alternativas', privacy: 'Privacidad', legal: 'Aviso legal' },
     modes: 'Modo del temporizador',
     legendFocus: 'Concentración', legendBreak: 'Descanso',
     keys: '<kbd>Espacio</kbd> empieza o pausa',
@@ -125,6 +127,18 @@ const DAY = {
     ['18:00', 'Segunda asignatura', 'FlowTime: estudia hasta que se te vaya la concentración y toma el descanso que te da.', 'flow', 'FlowTime'],
     ['20:00', 'Repaso activo', 'Tarjetas de estudio, preguntas tipo test, explicarlo en voz alta. Dos rondas de 25/5.', 'p25', '2 x 25/5'],
     ['21:00', 'Cena. Planifica mañana en cinco minutos y para', '', null],
+  ],
+  // Unas 7 horas y media de estudio, que es lo que suele pedir una oposicion con temario largo
+  opos: [
+    ['08:00', 'Repaso de ayer', 'Relee los esquemas de ayer y apunta qué temas tocan hoy.', 'p25', '1 x 25/5'],
+    ['08:30', 'Tema nuevo', 'Tres bloques de 50 minutos con el temario: lectura, subrayado y esquema. El móvil, en otra habitación.', 'p50', '3 x 50/10'],
+    ['11:30', 'Descanso largo: sal a andar', '', null],
+    ['12:00', 'Test del temario', 'Rondas cortas de preguntas tipo test, cronometradas como en el examen. Apunta cada fallo.', 'p25', '3 x 25/5'],
+    ['13:30', 'Comida, lejos de la mesa', '', null],
+    ['15:30', 'Supuestos prácticos o temas para cantar', 'FlowTime: estudia hasta que se te vaya la concentración y toma el descanso que te da.', 'flow', 'FlowTime'],
+    ['17:30', 'Merienda y desconexión', '', null],
+    ['18:00', 'Repaso espaciado', 'Vuelve a los temas de hace una semana y de hace un mes antes de que se te olviden.', 'p25', '3 x 25/5'],
+    ['19:30', 'Apunta las horas de hoy y para', '', null],
   ],
 }
 
@@ -278,6 +292,24 @@ const P = {
         ['Empieza por las fechas', 'Apunta cada examen en el calendario y da más mañanas al más cercano y al más difícil.'],
         ['Una asignatura por bloque largo', 'Cambiar de asignatura cada hora parece productivo, pero cada cambio te cuesta volver a entrar. Dedica cada mañana a una sola.'],
         ['Una tarde libre a la semana', 'Un descanso previsto se cumple mejor que un bajón imprevisto.'],
+      ],
+    },
+  },
+  opos: {
+    es: {
+      title: 'Pomodoro para oposiciones: horario de estudio con temporizador',
+      desc: 'Horario de estudio para opositores con temporizador Pomodoro y FlowTime gratis: temario por la mañana, test, supuestos prácticos y repaso espaciado.',
+      h1: 'Pomodoro para oposiciones, bloque a bloque',
+      sub: 'Un día de estudio de opositor, con el temporizador dentro. Dale a empezar en cualquier bloque y deja la pestaña abierta.',
+      mode: 'p50',
+      dayH: 'Un día de estudio',
+      dayP: 'Temario por la mañana, test a mediodía, supuestos o temas para cantar por la tarde y repaso al final: unas siete horas y media de estudio. Ajusta las horas a tu vida y mantén el orden.',
+      day: DAY.opos,
+      tipsH: 'Cómo aguantar meses de temario',
+      tips: [
+        ['Cuenta horas, no páginas', 'El temario no avanza igual cada día, pero las horas sí se pueden cumplir. Ponte un objetivo diario de horas y mira cómo va la semana.'],
+        ['Un tema por bloque largo', 'Saltar de tema cada hora parece productivo, pero cada cambio cuesta volver a entrar. Dedica cada mañana a uno.'],
+        ['Un día libre a la semana', 'Una oposición dura meses o años: un día libre previsto se cumple mejor que un bajón imprevisto. En FlowTime, la racha aguanta un día libre a la semana.'],
       ],
     },
   },

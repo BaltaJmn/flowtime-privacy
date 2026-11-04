@@ -14,6 +14,7 @@ const CARD = {
   technique: { en: ['The Flowtime technique', 'Work until you stop. Break by how long you worked.', '42:10', 0.81], es: ['La técnica Flowtime', 'Trabaja hasta que pares. Descansa según lo trabajado.', '42:10', 0.81] },
   finals: { en: ['Finals week study plan', 'A study day you can press play on.', '50:00', 0.34] },
   exams: { en: ['Exam season revision', 'A revision day, block by block, with the timer built in.', '50:00', 0.34], es: ['Época de exámenes', 'Un día de estudio, bloque a bloque, con el temporizador dentro.', '50:00', 0.34] },
+  opos: { es: ['Pomodoro para oposiciones', 'Un día de opositor, bloque a bloque, con el temporizador dentro.', '50:00', 0.34] },
   hub: { en: ['FlowTime and other focus apps', 'Forest, Pomofocus, Focus To-Do, Study Bunny, Focus Friend.', '38:00', 0.7], es: ['FlowTime y otras apps de concentración', 'Forest, Pomofocus, Focus To-Do, Study Bunny, Focus Friend.', '38:00', 0.7] },
 }
 for (const [id, c] of Object.entries(COMPARE)) {
