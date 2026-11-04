@@ -85,11 +85,22 @@
       .catch(function () { return true; });
   }
 
+  // Una invitacion lleva su campana a la tienda, para medirla, y en Play tambien el codigo: la app lo
+  // lee al primer arranque (Install Referrer) y entra en la sala o la amistad sin volver al enlace.
+  if (link) {
+    var kind = location.pathname.charAt(1), code = location.pathname.slice(3).replace(/\/$/, "");
+    var camp = kind === "r" ? "ft-coop-room" : "ft-coop-friend";
+    document.getElementById("play").href = PLAY + "&referrer=" + encodeURIComponent(
+      "utm_source=coop&utm_medium=invite&utm_campaign=" + camp + "&utm_content=" + kind + "-" + code);
+    APPLE = APPLE + "?pt=129564006&ct=" + camp + "&mt=8";
+    document.getElementById("apple").href = APPLE;
+  }
+
   if (!link) {
     show(t[2], '<a class="home" href="/">flowtime.baltajmn.dev</a>', false, false);
   } else if (android) {
     show(t[0], t[1], true, false);
-    go(PLAY);
+    go(document.getElementById("play").href);
   } else if (ios) {
     show(t[0], "", false, false);
     onAppStore().then(function (live) {
