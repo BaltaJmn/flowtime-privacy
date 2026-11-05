@@ -49,20 +49,27 @@
   var LOOKUP = "https://itunes.apple.com/lookup?id=6819302003";
   var T = {
     en: ["Study together on FlowTime", "Install FlowTime, then open this link again.", "This page does not exist.",
-      "FlowTime is coming to iPhone", "It is not on the App Store yet. Open this link again in a few days."],
+      "FlowTime is coming to iPhone", "It is not on the App Store yet. Open this link again in a few days.",
+      "Focus with FlowTime", "A Pomodoro and Flowmodoro timer for study and work. Free on Android and iPhone."],
     es: ["Estudia en compañía con FlowTime", "Instala FlowTime y vuelve a abrir este enlace.", "Esta página no existe.",
-      "FlowTime llega pronto al iPhone", "Aún no está en la App Store. Vuelve a abrir este enlace en unos días."],
+      "FlowTime llega pronto al iPhone", "Aún no está en la App Store. Vuelve a abrir este enlace en unos días.",
+      "Concéntrate con FlowTime", "Temporizador Pomodoro y Flowmodoro para estudiar y trabajar. Gratis en Android y iPhone."],
     pt: ["Estude junto no FlowTime", "Instale o FlowTime e abra este link de novo.", "Esta página não existe.",
-      "O FlowTime chega em breve ao iPhone", "Ainda não está na App Store. Abra este link de novo em alguns dias."],
+      "O FlowTime chega em breve ao iPhone", "Ainda não está na App Store. Abra este link de novo em alguns dias.",
+      "Concentre-se com o FlowTime", "Timer Pomodoro e Flowmodoro para estudar e trabalhar. Grátis no Android e no iPhone."],
     de: ["Gemeinsam lernen mit FlowTime", "Installiere FlowTime und öffne diesen Link dann noch einmal.", "Diese Seite gibt es nicht.",
-      "FlowTime kommt bald aufs iPhone", "Es ist noch nicht im App Store. Öffne diesen Link in ein paar Tagen noch einmal."],
+      "FlowTime kommt bald aufs iPhone", "Es ist noch nicht im App Store. Öffne diesen Link in ein paar Tagen noch einmal.",
+      "Konzentriert mit FlowTime", "Pomodoro- und Flowmodoro-Timer zum Lernen und Arbeiten. Kostenlos für Android und iPhone."],
     fr: ["Étudier ensemble avec FlowTime", "Installe FlowTime, puis rouvre ce lien.", "Cette page n'existe pas.",
-      "FlowTime arrive bientôt sur iPhone", "L'app n'est pas encore sur l'App Store. Rouvre ce lien dans quelques jours."]
+      "FlowTime arrive bientôt sur iPhone", "L'app n'est pas encore sur l'App Store. Rouvre ce lien dans quelques jours.",
+      "Concentre-toi avec FlowTime", "Minuteur Pomodoro et Flowmodoro pour étudier et travailler. Gratuit sur Android et iPhone."]
   };
   var lang = (navigator.language || "en").slice(0, 2);
   var t = T[lang] || T.en;
   document.documentElement.lang = T[lang] ? lang : "en";
   var link = /^\/(f\/[0-9a-f]{10}|r\/[A-HJKMNP-Z2-9]{6})\/?$/.test(location.pathname);
+  // /get es el enlace de la imagen que se comparte desde la app: el mismo reparto, con su campana.
+  var get = /^\/get\/?$/.test(location.pathname);
   var ua = navigator.userAgent || "";
   var android = /Android/i.test(ua);
   // iPadOS pide el sitio de escritorio: se hace pasar por un Mac, pero con pantalla tactil.
@@ -94,6 +101,13 @@
       "utm_source=coop&utm_medium=invite&utm_campaign=" + camp + "&utm_content=" + kind + "-" + code);
     APPLE = APPLE + "?pt=129564006&ct=" + camp + "&mt=8";
     document.getElementById("apple").href = APPLE;
+  } else if (get) {
+    document.getElementById("play").href = PLAY + "&referrer=" + encodeURIComponent(
+      "utm_source=share&utm_medium=card&utm_campaign=ft-share");
+    APPLE = APPLE + "?pt=129564006&ct=ft-share&mt=8";
+    document.getElementById("apple").href = APPLE;
+    t = [t[5], t[6], t[2], t[3], t[4]];
+    link = true;
   }
 
   if (!link) {
