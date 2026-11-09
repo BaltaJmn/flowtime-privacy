@@ -48,7 +48,10 @@ pt and de were looked at and left out.
   (Play Console, Acquisition, once Google shows UTM data for that volume) and App Store
   `ct=ft-<page>-<lang>` (App Analytics, Campaigns). The App Store counts `ct` only with the provider
   token `pt` (`APPLE_PT` in `tools/build.mjs`, 129564006, the same for both apps). Android sees only Play, iPhone only
-  the App Store (or "coming soon" while the iTunes lookup does not find the app).
+  the App Store (or "coming soon" while the iTunes lookup does not find the app). That lookup runs at build
+  time in Node: in the browser Apple sends no CORS header to a browser user agent (10-11-2026).
+  After the first full session of the day the web timer shows a card with both stores, campaign
+  `ft-fin-<page>-<lang>`; on touch screens the keyboard hint becomes a note that the app alerts with the phone locked.
 - **Comparison pages (from 26-10-2026):** texts and sources in `tools/compare.mjs`. Every fact about
   another app comes from its store pages, site or FAQ on `CHECKED`, listed on each page; before
   changing a line about another app, check it again and move `CHECKED`. Never print a Pomofocus

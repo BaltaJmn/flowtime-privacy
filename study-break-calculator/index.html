@@ -23,9 +23,9 @@
 <link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/ft/icon-180.png">
 <link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/ft/ft.css?v=bc504690">
+<link rel="stylesheet" href="/ft/ft.css?v=6604a38c">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"FlowTime Pomodoro Timer","url":"https://flowtime.baltajmn.dev/study-break-calculator/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"MobileApplication","@id":"https://flowtime.baltajmn.dev/#app","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android, iOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime","https://apps.apple.com/app/id6819302003"]}]}</script>
-<script src="/ft/timer.js?v=84581286" defer></script>
+<script src="/ft/timer.js?v=39816327" defer></script>
 </head>
 <body>
 <header class="wrap top">
@@ -63,7 +63,12 @@ i.addEventListener("input",function(){var m=Math.max(0,+i.value||0),b=Math.min(3
 <figure><button class="round" id="skip" type="button" aria-label="Start break" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6.3v11.4a.9.9 0 0 0 1.4.75l8.3-5.7a.9.9 0 0 0 0-1.5L7.4 5.55A.9.9 0 0 0 6 6.3Z"/><rect x="16.5" y="5.5" width="2.5" height="13" rx="1"/></svg></button><figcaption id="skipcap" aria-hidden="true">Start break</figcaption></figure>
 </div>
 <p class="keys"><kbd>Space</kbd> starts or pauses</p>
+<p class="lock-note">On a phone, with the screen locked or another app open, the browser may not chime when time is up. <a href="#app">The FlowTime app</a> still alerts you.</p>
 <p class="today" id="today"></p>
+<div class="nudge" id="nudge" hidden><p><b>Session done.</b> In the FlowTime app the timer lives in a notification and a widget, alerts you with the phone locked, and keeps your streak and stats. Free on Android and iPhone.</p><div class="stores">
+<a class="btn fill" data-store="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime&amp;referrer=utm_source%3Dflowtime.baltajmn.dev%26utm_medium%3Dweb%26utm_campaign%3Dft-fin-breaks-en">Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+<a class="btn" data-store="apple" href="https://apps.apple.com/app/apple-store/id6819302003?pt=129564006&amp;ct=ft-fin-breaks-en&amp;mt=8" hidden>App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg></a>
+</div></div>
 <div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
 <p class="legend"><span><i></i>Focus</span><span><i class="b"></i>Break</span></p></div>
 <p class="sr" id="tlive" aria-live="polite"></p>
@@ -103,7 +108,6 @@ document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new 
 <script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
 var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
 if(i)P.forEach(function(e){e.hidden=true});if(a)return;
-fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
-if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})})()</script>
 </body>
 </html>

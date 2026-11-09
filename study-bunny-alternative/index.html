@@ -25,7 +25,7 @@
 <link rel="icon" href="/ft/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/ft/icon-180.png">
 <link rel="preload" href="/ft/mulish.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/ft/ft.css?v=bc504690">
+<link rel="stylesheet" href="/ft/ft.css?v=6604a38c">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"MobileApplication","@id":"https://flowtime.baltajmn.dev/#app","name":"FlowTime: Pomodoro Focus Timer","operatingSystem":"Android, iOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"sameAs":["https://play.google.com/store/apps/details?id=com.baltajmn.flowtime","https://apps.apple.com/app/id6819302003"]},{"@type":"WebPage","name":"Study Bunny Alternative: FlowTime Pomodoro and Focus Timer","url":"https://flowtime.baltajmn.dev/study-bunny-alternative/","inLanguage":"en","dateModified":"2026-10-26","about":{"@id":"https://flowtime.baltajmn.dev/#app"}}]}</script>
 </head>
 <body>
@@ -129,7 +129,6 @@ document.querySelectorAll('[data-store="apple"]').forEach(function(e){var x=new 
 <script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
 var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
 if(i)P.forEach(function(e){e.hidden=true});if(a)return;
-fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
-if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>
+A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})})()</script>
 </body>
 </html>

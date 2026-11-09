@@ -68,6 +68,10 @@ const COMMON = {
     relatedH: 'More on studying with a timer',
     legendFocus: 'Focus', legendBreak: 'Break',
     keys: '<kbd>Space</kbd> starts or pauses',
+    // 10-11-2026: the web timer stays free and complete (it is what ranks); these two lines point to the app where it does more
+    lockNote: 'On a phone, with the screen locked or another app open, the browser may not chime when time is up. <a href="#app">The FlowTime app</a> still alerts you.',
+    nudgeH: 'Session done.',
+    nudgeP: 'In the FlowTime app the timer lives in a notification and a widget, alerts you with the phone locked, and keeps your streak and stats. Free on Android and iPhone.',
     offer: 'On your phone, FlowTime shows the timer in a notification and a widget, and Coop lets up to 8 people share one. <a href="#app">Get FlowTime</a>',
     appH: 'FlowTime on your phone',
     appP1: "The same Pomodoro and FlowTime modes with your own times, plus a third one, Percentage, and what a browser tab can't do: the timer in a notification and a widget, today's tasks, 12 focus sounds, and your streak, goal and stats.",
@@ -86,6 +90,9 @@ const COMMON = {
     relatedH: 'Más sobre estudiar con temporizador',
     legendFocus: 'Concentración', legendBreak: 'Descanso',
     keys: '<kbd>Espacio</kbd> empieza o pausa',
+    lockNote: 'En el móvil, con la pantalla bloqueada o en otra app, el navegador puede no sonar al acabar. <a href="#app">La app FlowTime</a> te avisa igual.',
+    nudgeH: 'Sesión completa.',
+    nudgeP: 'En la app FlowTime el temporizador va en una notificación y en un widget, te avisa con el móvil bloqueado y guarda tu racha y tus estadísticas. Gratis en Android y iPhone.',
     offer: 'En el móvil, FlowTime muestra el temporizador en una notificación y en un widget, y con Coop hasta 8 personas comparten uno. <a href="#app">Consigue FlowTime</a>',
     appH: 'FlowTime en el móvil',
     appP1: 'Los mismos modos Pomodoro y FlowTime con tus propios tiempos, un tercero (Porcentaje) y lo que una pestaña del navegador no puede hacer: el temporizador en una notificación y en un widget, las tareas del día, 12 sonidos para concentrarte, tu racha, tu objetivo y tus estadísticas.',
@@ -309,6 +316,7 @@ const P = {
       h1: 'Pomodoro para oposiciones, bloque a bloque',
       sub: 'Un día de estudio de opositor, con el temporizador dentro. Dale a empezar en cualquier bloque y deja la pestaña abierta.',
       mode: 'p50',
+      out: [['https://oposiciones.baltajmn.dev/plazo-abierto/', 'Oposiciones con plazo abierto, con aviso diario en Telegram']],
       dayH: 'Un día de estudio',
       dayP: 'Temario por la mañana, test a mediodía, supuestos o temas para cantar por la tarde y repaso al final: unas siete horas y media de estudio. Ajusta las horas a tu vida y mantén el orden.',
       day: DAY.opos,
@@ -387,9 +395,10 @@ ${links.map((k) => `<a href="${PAGES[k][lang]}"${on(k) ? ' aria-current="page"' 
 </header>`
 }
 
-function timer(lang, mode) {
+function timer(lang, mode, kind) {
   const c = COMMON[lang]
   const u = UI[lang]
+  const camp = `ft-fin-${kind}-${lang}` // its own campaign: installs that come from the end-of-session card
   const label = (m) => ({ p25: '25 / 5', p50: '50 / 10', flow: 'FlowTime' })[m]
   return `<div class="timer" id="timer" data-mode="${mode}" data-phase="idle">
 <fieldset class="modes"><legend class="sr">${esc(c.modes)}</legend>
@@ -405,7 +414,12 @@ ${['p25', 'p50', 'flow'].map((m) => `<label><input type="radio" name="mode" valu
 <figure><button class="round" id="skip" type="button" aria-label="${esc(u.startBreak)}" disabled>${ICON.skip}</button><figcaption id="skipcap" aria-hidden="true">${esc(u.startBreak)}</figcaption></figure>
 </div>
 <p class="keys">${c.keys}</p>
+<p class="lock-note">${c.lockNote}</p>
 <p class="today" id="today"></p>
+<div class="nudge" id="nudge" hidden><p><b>${esc(c.nudgeH)}</b> ${esc(c.nudgeP)}</p><div class="stores">
+<a class="btn fill" data-store="play" href="${esc(play(camp))}">Google Play ${ICON.arrow}</a>
+<a class="btn" data-store="apple" href="${esc(apple(camp))}" hidden>App Store ${ICON.arrow}</a>
+</div></div>
 <div class="ruler" aria-hidden="true"><div class="rail" id="rail"></div><div class="ticks" id="ticks"></div>
 <p class="legend"><span><i></i>${esc(c.legendFocus)}</span><span><i class="b"></i>${esc(c.legendBreak)}</span></p></div>
 <p class="sr" id="tlive" aria-live="polite"></p>
@@ -432,13 +446,13 @@ function app(kind, lang) {
 </div></section>`
 }
 
-// Android sees Play; iPhone sees the App Store once the iTunes lookup finds FlowTime, and a "coming
-// soon" line until then; a computer sees both, the App Store only once it is live.
-const STORE_JS = `<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
+// Android sees Play; iPhone the App Store; a computer both. Whether the iPhone app is on sale is decided at build
+// time (IOS, from Node): in the browser the iTunes lookup has no CORS header for a browser user agent, so from
+// 28-10 to 10-11-2026 the pages hid the App Store and said "coming soon" with the app already out.
+const storeJs = () => `<script>(function(){var u=navigator.userAgent||"",a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/i.test(u)&&navigator.maxTouchPoints>1);
 var P=document.querySelectorAll('[data-store="play"]'),A=document.querySelectorAll('[data-store="apple"]'),S=document.getElementById("ios-soon");
 if(i)P.forEach(function(e){e.hidden=true});if(a)return;
-fetch("https://itunes.apple.com/lookup?id=6819302003&t="+Math.floor(Date.now()/36e5)).then(function(r){return r.json()}).then(function(j){return j.resultCount>0}).catch(function(){return false}).then(function(live){
-if(live){A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})}else if(S){S.hidden=false}})})()</script>`
+${IOS ? 'A.forEach(function(e){e.hidden=false;if(i)e.classList.add("fill")})' : 'if(S)S.hidden=false'}})()</script>`
 
 // A visitor who arrives with utm_* (a social post, a newsletter) takes that origin to the store instead of
 // the page's own web campaign, so the consoles tell the channels apart. Values are cut to [a-z0-9_-], 40 chars.
@@ -453,6 +467,7 @@ const extra = (t) => (t.extra ?? []).map(([h, ps], i) => `<section class="band${
 // Links to the sibling pages in the body, with their H1 as the anchor: the nav alone gave every page the same generic links
 function related(kind, lang) {
   const pages = Object.keys(PAGES).filter((k) => k !== kind && PAGES[k][lang]).map((k) => [PAGES[k][lang], k === 'hub' ? HUB[lang].h1 : P[k][lang].h1])
+  pages.push(...(P[kind]?.[lang]?.out ?? [])) // links to other sites, at the end
   return `<section class="band"><div class="wrap"><h2>${esc(COMMON[lang].relatedH)}</h2><ul class="related">${pages.map(([href, label]) => `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ul></div></section>`
 }
 
@@ -526,7 +541,7 @@ ${t.vs.map(([a, b, d]) => `<tr><th scope="row">${esc(a)}</th><td>${esc(b)}</td><
     body = `<section class="wrap tool">
 <div class="tool-title"><h1>${esc(t.h1)}</h1><p>${esc(t.sub)}</p></div>
 ${t.calc ? calc(t.calc) : ''}
-${timer(lang, t.mode)}
+${timer(lang, t.mode, kind)}
 <p class="offer" style="margin:22px auto 0">${c.offer}</p>
 </section>
 ${reading}`
@@ -539,7 +554,7 @@ ${reading}`
     body = `<section class="wrap season">
 <div><h1>${esc(t.h1)}</h1><p class="lede">${esc(t.sub)}</p>
 <div class="season-cta"><a class="btn" href="#day">${esc(t.dayH)} ${ICON.arrow}</a></div></div>
-${timer(lang, t.mode)}
+${timer(lang, t.mode, kind)}
 </section>
 <section class="band" id="day"><div class="wrap"><h2>${esc(t.dayH)}</h2><p>${esc(t.dayP)}</p><ol class="day">
 ${rows}
@@ -560,7 +575,7 @@ ${app(kind, lang)}
 </main>
 ${footer(lang)}
 ${UTM_JS}
-${STORE_JS}
+${storeJs()}
 </body>
 </html>
 `
@@ -719,7 +734,7 @@ ${sourcesBand(lang, t.sources, P.others.join(c.and), others)}
 </main>
 ${footer(lang)}
 ${UTM_JS}
-${STORE_JS}
+${storeJs()}
 </body>
 </html>
 `
@@ -762,7 +777,7 @@ ${sourcesBand(lang, sources, list, [])}
 </main>
 ${footer(lang)}
 ${UTM_JS}
-${STORE_JS}
+${storeJs()}
 </body>
 </html>
 `

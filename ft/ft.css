@@ -120,6 +120,14 @@ strong { font-weight: 800; }
 .offer { margin: 0; font-size: 15px; color: var(--muted); text-align: center; max-width: 60ch; }
 .offer a { color: var(--ink); font-weight: 700; }
 .keys { font-size: 13px; color: var(--muted); margin: -6px 0 0; }
+/* Touch screens have no space bar, but do sleep: there the hint is the lock note */
+.lock-note { display: none; font-size: 13px; color: var(--muted); margin: -6px 0 0; text-align: center; max-width: 44ch; }
+.lock-note a { color: var(--ink); font-weight: 700; }
+@media (hover: none) and (pointer: coarse) { .keys { display: none; } .lock-note { display: block; } }
+.nudge { width: 100%; background: var(--bg-deep); border-radius: 20px; padding: 18px 20px; text-align: center; }
+.nudge p { margin: 0 auto; max-width: 52ch; font-size: 15px; color: var(--muted); }
+.nudge b { color: var(--ink); }
+.nudge .stores { justify-content: center; margin-top: 14px; }
 kbd { font: 700 12px/1 var(--font); padding: 3px 6px; border-radius: 5px; background: var(--card); color: var(--ink); }
 
 .tool { padding-top: 12px; padding-bottom: 64px; }

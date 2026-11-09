@@ -141,7 +141,7 @@
   // --- Rendering ------------------------------------------------------------------------------
   const timeEl = $('time'), phaseEl = $('phase'), hintEl = $('hint'), prog = root.querySelector('.prog')
   const play = $('play'), skipBtn = $('skip'), stopBtn = $('stop')
-  const liveEl = $('tlive')
+  const liveEl = $('tlive'), nudge = $('nudge')
   const baseTitle = document.title
   const clock = new Intl.DateTimeFormat(T.lang, { hour: 'numeric', minute: '2-digit' })
   const hourFmt = new Intl.DateTimeFormat(T.lang, { hour: 'numeric' })
@@ -209,6 +209,7 @@
     document.title = s.phase === 'idle' ? baseTitle : text + ' ' + (s.phase === 'focus' ? T.focus : T.break) + ' - FlowTime'
     favicon(frac)
     ruler(now)
+    if (nudge) nudge.hidden = !log.sessions // after today's first full session, the card with the app
   }
 
   // The tab icon is a small ring with the progress, readable in a row of tabs.
