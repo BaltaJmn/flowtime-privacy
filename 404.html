@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <title>FlowTime</title>
 <style>
-  :root { --bg: #F3F3F3; --surface: #FFFFFF; --ink: #111111; --muted: #595959; --line: #D0D0D0; }
+  :root { --bg: #F3F3F3; --surface: #FFFFFF; --ink: #111111; --muted: #595959; --line: #D0D0D0; --focus: #8ECAE6; --rest: #8FCFB5; }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #121212; --surface: #1C1C1C; --ink: #F2F2F2; --muted: #A8A8A8; --line: #333333; }
   }
@@ -27,11 +27,26 @@
     font-weight: 500; color: var(--ink); background: var(--surface); border: 1px solid var(--line);
   }
   .home { color: var(--ink); }
+  /* La sala de un enlace /r/: lo que se ve antes de instalar. Fase, cuenta atras y cuantos hay; sin nombres. */
+  .room { margin: 0 0 24px; padding: 16px 18px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+  .phase { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); box-shadow: inset 0 0 0 1px rgb(127 127 127 / 0.35); }
+  .dot.work { background: var(--focus); }
+  .dot.rest { background: var(--rest); }
+  .until { margin-top: 6px; color: var(--muted); }
+  .clock { margin-right: 4px; color: var(--ink); font-size: 2rem; font-weight: 300; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .people { margin-top: 4px; color: var(--muted); font-size: 0.9rem; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 </style>
 </head>
 <body>
 <main>
   <h1 id="title"></h1>
+  <div class="room" id="room" hidden>
+    <div class="phase"><span class="dot" id="dot"></span><span id="phase"></span></div>
+    <div class="until" id="until"></div>
+    <div class="people" id="people"></div>
+  </div>
   <p id="text"></p>
   <div class="stores" id="stores" hidden>
     <a id="play" href="https://play.google.com/store/apps/details?id=com.baltajmn.flowtime">Google Play</a>
@@ -44,9 +59,18 @@
   // a su tienda: Play en Android, la App Store en iPhone y iPad. Mientras la app no este en la App
   // Store (la busqueda de iTunes no la devuelve), el iPhone ve un aviso en vez de una pagina de Apple
   // que dice que no existe. En un ordenador salen las dos.
+  // Un enlace de sala (/r/) ensena antes la sala (fase, cuenta atras y cuantos hay, sin nombres) con
+  // flowtime.room_preview, la funcion publica de Supabase que lee quien aun no tiene cuenta. Si se puede
+  // leer, nadie es redirigido: se ve la sala y los botones de la tienda. Si no (la sala no existe, sin red,
+  // lenta), todo sigue como antes.
   var PLAY = "https://play.google.com/store/apps/details?id=com.baltajmn.flowtime";
   var APPLE = "https://apps.apple.com/app/id6819302003";
   var LOOKUP = "https://itunes.apple.com/lookup?id=6819302003";
+  // El proyecto de Supabase y su clave anon: publicas a proposito, van tambien en la app. Lo que protege
+  // los datos es que room_preview solo devuelve lo de la tarjeta (docs/coop.md 3.3 de la app).
+  var SUPABASE = "https://djfbmvagflfptqhabdln.supabase.co";
+  var ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRqZmJtdmFnZmxmcHRxaGFiZGxuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI0MDEyMzQsImV4cCI6MjEwNzk3NzIzNH0.1Ybi39q6bcAnPfR9AKulFgdacx8NhtpWF-VF3vzGL98";
+  var PREVIEW_WAIT = 3000;
   var T = {
     en: ["Study together on FlowTime", "Install FlowTime, then open this link again.", "This page does not exist.",
       "FlowTime is coming to iPhone", "It is not on the App Store yet. Open this link again in a few days.",
@@ -64,12 +88,27 @@
       "FlowTime arrive bientôt sur iPhone", "L'app n'est pas encore sur l'App Store. Rouvre ce lien dans quelques jours.",
       "Concentre-toi avec FlowTime", "Minuteur Pomodoro et Flowmodoro pour étudier et travailler. Gratuit sur Android et iPhone."]
   };
+  // La tarjeta de la sala, con las palabras de la app. {t} es el tiempo y {n} cuantas personas.
+  var R = {
+    en: { work: "In focus", rest: "On a break", paused: "Paused", idle: "Ready to start", toBreak: "{t} until the break",
+      toFocus: "{t} until focus resumes", min: "min", one: "1 person in the room", many: "{n} people in the room" },
+    es: { work: "En foco", rest: "En descanso", paused: "En pausa", idle: "Listos para empezar", toBreak: "{t} para el descanso",
+      toFocus: "{t} para volver a concentrarse", min: "min", one: "1 persona en la sala", many: "{n} personas en la sala" },
+    pt: { work: "Focando", rest: "Descanso", paused: "Pausado", idle: "Pronto para começar", toBreak: "{t} para o descanso",
+      toFocus: "{t} para voltar ao foco", min: "min", one: "1 pessoa na sala", many: "{n} pessoas na sala" },
+    de: { work: "Konzentriert", rest: "Pause", paused: "Pausiert", idle: "Bereit zum Start", toBreak: "{t} bis zur Pause",
+      toFocus: "{t} bis es weitergeht", min: "Min.", one: "1 Person im Raum", many: "{n} Personen im Raum" },
+    fr: { work: "En concentration", rest: "Pause", paused: "En pause", idle: "Prêts à commencer", toBreak: "{t} avant la pause",
+      toFocus: "{t} avant la reprise", min: "min", one: "1 personne dans la salle", many: "{n} personnes dans la salle" }
+  };
   var lang = (navigator.language || "en").slice(0, 2);
   var t = T[lang] || T.en;
+  var r = R[lang] || R.en;
   document.documentElement.lang = T[lang] ? lang : "en";
   var link = /^\/(f\/[0-9a-f]{10}|r\/[A-HJKMNP-Z2-9]{6})\/?$/.test(location.pathname);
   // /get es el enlace de la imagen que se comparte desde la app: el mismo reparto, con su campana.
   var get = /^\/get\/?$/.test(location.pathname);
+  var roomCode = (location.pathname.match(/^\/r\/([A-HJKMNP-Z2-9]{6})\/?$/) || [])[1];
   var ua = navigator.userAgent || "";
   var android = /Android/i.test(ua);
   // iPadOS pide el sitio de escritorio: se hace pasar por un Mac, pero con pantalla tactil.
@@ -110,23 +149,91 @@
     link = true;
   }
 
+  // La sala del enlace, o null si no se puede leer: no existe, sin red, o tarda mas de PREVIEW_WAIT.
+  function loadPreview(roomCode) {
+    var sent = Date.now();
+    var request = fetch(SUPABASE + "/rest/v1/rpc/room_preview", {
+      method: "POST",
+      headers: { apikey: ANON, Authorization: "Bearer " + ANON, "Content-Type": "application/json", "Content-Profile": "flowtime" },
+      body: JSON.stringify({ code: roomCode })
+    })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (j) {
+        if (!j || j.result !== "ok") return null;
+        // El reloj del servidor respecto al de este movil, con la llamada a mitad de camino.
+        j.offset = j.server_now - (sent + Date.now()) / 2;
+        return j;
+      })
+      .catch(function () { return null; });
+    var timer;
+    var timeout = new Promise(function (done) { timer = setTimeout(function () { done(null); }, PREVIEW_WAIT); });
+    return Promise.race([request, timeout]).then(function (p) { clearTimeout(timer); return p; });
+  }
+
+  // La cuenta de docs/coop.md 4 de la app: un estado, no ticks. Parada, o mas de 8 ciclos en marcha, es idle.
+  function phaseOf(p, serverNow) {
+    var elapsed = p.counted_ms + (p.status === "running" && p.running_since != null ? Math.max(0, serverNow - p.running_since) : 0);
+    var cycle = p.work_ms + p.break_ms;
+    if (p.status === "idle" || elapsed >= 8 * cycle) return { kind: "idle", left: 0 };
+    var pos = elapsed % cycle;
+    return pos < p.work_ms ? { kind: "work", left: p.work_ms - pos } : { kind: "rest", left: cycle - pos };
+  }
+  function two(n) { return (n < 10 ? "0" : "") + n; }
+  // 12:34, o 01:29:34 pasada la hora, como el reloj de la app.
+  function clock(seconds) {
+    var h = Math.floor(seconds / 3600), m = Math.floor(seconds / 60) % 60;
+    return (h > 0 ? two(h) + ":" : "") + two(m) + ":" + two(seconds % 60);
+  }
+
+  // Dibuja la tarjeta y la mantiene al dia con el reloj, sin volver a preguntar.
+  function showRoom(p) {
+    var shown = "";
+    function draw() {
+      var ph = phaseOf(p, Date.now() + p.offset);
+      var running = p.status === "running";
+      var seconds = Math.ceil(ph.left / 1000);
+      var key = ph.kind + running + seconds;
+      if (key === shown) return;
+      shown = key;
+      var label = ph.kind === "idle" ? r.idle : !running ? r.paused : ph.kind === "work" ? r.work : r.rest;
+      document.getElementById("dot").className = "dot" + (running && ph.kind !== "idle" ? " " + ph.kind : "");
+      document.getElementById("phase").textContent = label;
+      var until = document.getElementById("until");
+      until.hidden = ph.kind === "idle";
+      if (ph.kind !== "idle") {
+        // El lector oye minutos y no segundos, para no oirla cambiar cada vez.
+        var spoken = Math.ceil(seconds / 60) + " " + r.min;
+        until.innerHTML = (ph.kind === "work" ? r.toBreak : r.toFocus).replace("{t}",
+          '<span class="clock" aria-hidden="true">' + clock(seconds) + '</span><span class="sr">' + spoken + "</span>");
+      }
+      document.getElementById("people").textContent = p.member_count === 1 ? r.one : r.many.replace("{n}", p.member_count);
+    }
+    draw();
+    document.getElementById("room").hidden = false;
+    setInterval(draw, 500);
+  }
+
+  var preview = roomCode ? loadPreview(roomCode) : Promise.resolve(null);
+
   if (!link) {
     show(t[2], '<a class="home" href="/">flowtime.baltajmn.dev</a>', false, false);
   } else if (android) {
     show(t[0], t[1], true, false);
-    go(document.getElementById("play").href);
+    // Con la sala a la vista se queda aqui, con el boton de Play; sin ella, a Play como siempre.
+    preview.then(function (p) { if (p) showRoom(p); else go(document.getElementById("play").href); });
   } else if (ios) {
     show(t[0], "", false, false);
-    onAppStore().then(function (live) {
-      if (live) {
-        show(t[0], t[1], false, true);
-        go(APPLE);
-      } else {
+    Promise.all([onAppStore(), preview]).then(function (found) {
+      if (!found[0]) {
         show(t[3], t[4], false, false);
+      } else {
+        show(t[0], t[1], false, true);
+        if (found[1]) showRoom(found[1]); else go(APPLE);
       }
     });
   } else {
     show(t[0], t[1], true, true);
+    preview.then(function (p) { if (p) showRoom(p); });
   }
 </script>
 </body>

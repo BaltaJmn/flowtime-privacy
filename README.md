@@ -10,7 +10,7 @@ behind Cloudflare.
 | `terms.html`, `delete.html` | Terms of use, and how to delete the Coop account |
 | `legal.html` | Legal notice (LSSI art. 10), English and Spanish, linked from every page's footer. Filled in with the owner's details on 3-11-2026; one email for the whole site (baltajmn@gmail.com). |
 | `ft/OFL.txt` | Copyright and SIL Open Font License 1.1 for Mulish, pointed to from `ft/ft.css` and `legal.html` |
-| `404.html` | Any unknown path. For Coop links (`/f/<code>`, `/r/<code>`) without the app: Android goes to Play, iPhone to the App Store once FlowTime is on sale there (iTunes lookup), a computer sees both |
+| `404.html` | Any unknown path. For Coop links (`/f/<code>`, `/r/<code>`) without the app: Android goes to Play, iPhone to the App Store once FlowTime is on sale there (iTunes lookup), a computer sees both. A room link (`/r/<code>`) first shows the room live (phase, countdown, how many are in) from `flowtime.room_preview` with the public key, above the store buttons; if the room is not found or does not answer in 3 s, it redirects as before |
 | `config.json` | The app's remote control from 2.13.0: `minVersion` (below it, update is forced), `ads` and `interstitial` switches. How to use it: `store/ci.md` of the app repository |
 | `.well-known/` | `assetlinks.json` and `apple-app-site-association`: Coop links open the app |
 | `.nojekyll` | Without it Pages runs Jekyll, which drops `.well-known` |
