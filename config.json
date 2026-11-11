@@ -1,5 +1,6 @@
 {
   "minVersion": "0",
   "ads": true,
-  "interstitial": true
+  "interstitial": true,
+  "proHasta": "2026-11-18"
 }
