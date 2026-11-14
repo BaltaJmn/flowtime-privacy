@@ -475,7 +475,7 @@ function footer(lang) {
   const c = COMMON[lang]
   const links = Object.keys(PAGES).filter((k) => PAGES[k][lang])
   return `<footer><div class="wrap"><span>${esc(c.footer)}</span><nav aria-label="${esc(c.nav.privacy)}">
-${links.map((k) => `<a href="${PAGES[k][lang]}">${esc(c.nav[k])}</a>`).join('')}<a href="/">${esc(c.nav.privacy)}</a><a href="/legal.html${lang === 'es' ? '#es' : ''}">${esc(c.nav.legal)}</a></nav></div></footer>`
+${links.map((k) => `<a href="${PAGES[k][lang]}">${esc(c.nav[k])}</a>`).join('')}<a href="/">${esc(c.nav.privacy)}</a><a href="/legal.html${lang === 'es' ? '#es' : ''}">${esc(c.nav.legal)}</a><a href="https://testers.baltajmn.dev/${lang === 'es' ? 'es/' : ''}">Test4Test: 12 testers</a></nav></div></footer>`
 }
 
 // Categories from Google's list for software apps (ProductivityApplication is not one of them; audit of 4-11-2026)
